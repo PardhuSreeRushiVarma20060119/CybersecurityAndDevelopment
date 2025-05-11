@@ -302,6 +302,9 @@ aws s3 cp s3://wiz-openbucket/flag.txt . --region us-east-1
 The Big IAM Challenge involved a series of real-world scenarios related to AWS security services. By analyzing IAM policies, exploiting misconfigurations, and interacting with various AWS resources like S3, SQS, and SNS, I was able to successfully extract the flags and complete the challenges.
 This experience enhanced my understanding of cloud security, particularly in the context of AWS IAM, S3, SQS, and SNS. It also reinforced the importance of careful policy configuration to prevent unauthorized access to sensitive resources.
 
-My Certificate : https://bigiamchallenge.com/finisher/gfgZRK6F
+---
+## My Certificate
+https://bigiamchallenge.com/finisher/gfgZRK6F
+
 ![image](https://github.com/user-attachments/assets/93aa44bf-2244-483d-9db8-f6472e2927d7)
 
