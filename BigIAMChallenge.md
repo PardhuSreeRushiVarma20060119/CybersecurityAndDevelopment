@@ -67,7 +67,7 @@ The first challenge revolves around identifying the exposed storage in a public 
 
 ---
 
-### Challenge 2: IAM Big Challenge
+### Challenge 2: AWS SQS Exploit
 
 #### Objective:
 
