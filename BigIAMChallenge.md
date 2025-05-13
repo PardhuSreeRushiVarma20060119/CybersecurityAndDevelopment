@@ -1,4 +1,4 @@
-# CTF Report: Big IAM Challenge
+# Cloud CTF Report: Big IAM Challenge
 ## Overview
 In this report, I document my approach to solving the **Big IAM Challenge**, a series of AWS-based challenges that focus on various aspects of IAM, permissions, and exploitation in the AWS cloud environment. These challenges are part of the Wiz CTF event, which emphasizes real-world scenarios in cloud security.
 
