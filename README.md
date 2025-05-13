@@ -6,16 +6,7 @@ Welcome to the **ExploitSpace-Repo** repository, a comprehensive collection of *
 
 ### Categories of Exploits Included:
 
-- **Web Application Vulnerabilities**  
-  - **SQL Injection (SQLi)**: Exploiting improper sanitization of user inputs in database queries.
-  - **Cross-Site Scripting (XSS)**: Injecting malicious scripts into web pages to target users.
-  - **Cross-Site Request Forgery (CSRF)**: Forcing users to execute unwanted actions.
-  - **Command Injection**: Exploiting untrusted user inputs in system commands.
-  - **XML External Entity (XXE)**: Attacking vulnerable XML parsers via external entity references.
-  - **File Inclusion**: Remote/Local file inclusion vulnerabilities for executing arbitrary scripts.
-  - **Open Redirects**: Redirecting users to malicious URLs by exploiting vulnerable web apps.
-  - **Server-Side Request Forgery (SSRF)**: Triggering requests from the server to internal resources.
-
+- **Web Application Vulnerabilities** 
 - **Privilege Escalation & Kernel Exploits** 
 - **Network Protocol Exploits**
 - **Mobile Platform Exploits** 
