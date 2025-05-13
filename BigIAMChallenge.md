@@ -192,6 +192,8 @@ HTTP / Webhook → "New Requests (HTTP Trigger)"
      </ConfirmSubscriptionResult>
    </ConfirmSubscriptionResponse>
    ```
+
+   in response, of pipedream, youll find the **flag**
 ---
 
 ## Challenge C4: Admin only?
