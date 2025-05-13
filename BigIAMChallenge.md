@@ -157,6 +157,15 @@ The challenge involves subscribing to an SNS (Simple Notification Service) topic
 
 2. **Subscribing to the SNS Topic:**
    - I subscribed to the SNS topic using a custom endpoint (`https://eoz7q6sn8xygiyy.m.pipedream.net/@tbic.wiz.io`), which meets the domain requirement.
+  
+   - Create HTTPS Endpoint & Capture Responses using Pipedream :
+
+Step 1: Create a Workflow
+1. Go to Pipedream Dashboard
+2. Click "+ New" and choose Workflow
+3. In "Trigger", select:
+HTTP / Webhook → "New Requests (HTTP Trigger)"
+4. Pipedream will generate a unique HTTPS endpoint (in my case `https://eoz7q6sn8xygiyy.m.pipedream.net/`)
 
    ```bash
    aws sns subscribe --topic-arn "arn:aws:sns:us-east-1:092297851374:TBICWizPushNotifications" --protocol https --notification-endpoint https://eoz7q6sn8xygiyy.m.pipedream.net/@tbic.wiz.io
@@ -166,7 +175,6 @@ The challenge involves subscribing to an SNS (Simple Notification Service) topic
 
 3. **Confirming the Subscription:**
    - I received a subscription confirmation message via the request bin, which included a `SubscribeURL`.
-
    ```json
    {
      "Message": "You have chosen to subscribe to the topic arn:aws:sns:us-east-1:092297851374:TBICWizPushNotifications.",
