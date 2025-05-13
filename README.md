@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to the **ExploitSpace-Repo** repository, a comprehensive collection of vulnerability exploits, proof-of-concept (PoC) payloads, ctf's and reverse-engineering techniques tailored for my cybersecurity and cloud security needs. This repository documents a wide spectrum of **attack vectors** across different platforms, operating systems, cloud environments, and applications. From web-based exploits to kernel-level privilege escalation, this repository covers them all.
+Welcome to the **ExploitSpace-Repo** repository, a comprehensive collection of **vulnerability exploits**, **proof-of-concept (PoC) payloads**, **ctf's** and **reverse-engineering techniques**, **various p[ractical concepts in various fields** tailored for my cybersecurity and cloud security needs. This repository documents a wide spectrum of **attack vectors** across different platforms, operating systems, cloud environments, and applications. From web-based exploits to kernel-level privilege escalation, this repository covers them all.
 
 ### Categories of Exploits Included:
 
