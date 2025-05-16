@@ -6,7 +6,7 @@
 PATH=$(/usr/bin/getconf PATH || /bin/kill $$)
 
 function check_input() {
-    if [[ $1 == *[bdksiSctr'?''*''/''<''>''&''(''{''0''1''2''3''4''5''6''7''8''9']* ]]
+    if [[ $1 == *[bdksiStr'?''*''/''<''>''&''(''{''0''1''2''3''4''5''6''7''8''9']* ]]
     then
         return 0
     fi
@@ -31,7 +31,7 @@ done
 
 The script enforces a blacklist of potentially dangerous characters including:
 
-Critical Bash characters: b, d, k, s, i, S, c, t, r, ', ?, *, /, <, >, &, (, {
+Critical Bash characters: b, d, k, s, i, S, t, r, ', ?, *, /, <, >, &, (, {
 
 All digits 0-9
 
