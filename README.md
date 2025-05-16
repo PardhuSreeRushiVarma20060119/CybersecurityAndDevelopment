@@ -15,7 +15,7 @@ Welcome to the **ExploitSpace-Repo** repository, a comprehensive collection of *
 - **Post-Exploitation Techniques** 
 - **Social Engineering Frameworks**
 - **Red Teaming Techniques**
-- **Cloud**
+- **Cloud Security and Cloud Red Teaming**
 
 ### **Why This Repository Exists**  
 The goal of this repository is to provide **continuous learning** for professionals in the field, document evolving **exploitation techniques**, and create **proof-of-concept** scripts for educational and research purposes. All exploits are **demonstrated in a controlled environment** (e.g., CTFs or vulnerable machines), following ethical hacking practices.
