@@ -7,7 +7,7 @@ Welcome to the **ExploitSpace-Repo** repository, a comprehensive collection of *
 ### Categories of Exploits Included:
 
 - **Web Application Vulnerabilities** 
-- **Privilege Escalation & Kernel Exploits** 
+- **Privilege Escalation** 
 - **Network Protocol Exploits**
 - **Mobile Platform Exploits** 
 - **Cryptographic Exploits**  
