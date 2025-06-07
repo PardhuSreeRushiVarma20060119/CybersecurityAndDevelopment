@@ -46,7 +46,7 @@ Here’s what *my home virtual lab* currently includes:
     <td><strong>🖥️ Monitored VMs</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white" title="Kali Linux (Red Team)" />
-      <img src="https://img.shields.io/badge/Parrot_OS-1F1F1F?style=flat&logo=linux&logoColor=white" title="Parrot OS (Offensive)" />
+      <img src="https://img.shields.io/badge/Parrot_OS-0085FF?style=flat&logo=linux&logoColor=white" title="Parrot OS (Offensive)" />
       <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white" title="Ubuntu (Dev Linux)" />
     </td>
   </tr>
