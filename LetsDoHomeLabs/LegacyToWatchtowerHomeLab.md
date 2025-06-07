@@ -14,8 +14,8 @@
 
 ## 🧭 Navigation
 
-- [📦 Repository Structure](#-introduction)
-- [⚒️ Tech & Tools](#️-Lab-Components)
+- [📦 Introduction](#-introduction)
+- [⚒️ Lab Components](#️-Lab-Components)
 - [🚀 Why Wazuh? & Installation Guide](#️-why-wazuh-&-installation-guide)
 - [💡 Troubleshooting Tips](#️-troubleshooting-tips)
 - [🧠 Lessons Learned](#️-lessons-learned)
