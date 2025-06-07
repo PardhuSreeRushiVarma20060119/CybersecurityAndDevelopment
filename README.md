@@ -30,7 +30,7 @@
 ```bash
 LifeAroundCybersecurity-Repo/
 ├── 🧠 Writeups/
-│   └── TryHackMe, HTB, Custom Labs
+│   └── TryHackMe, Portswigger Academy etc.
 ├── 🔍 ReconTools/
 │   └── Passive and Active Info Gathering Scripts
 ├── 💀 MalwareAnalysis/
