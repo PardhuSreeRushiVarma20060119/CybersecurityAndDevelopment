@@ -1,4 +1,4 @@
-<h1 align="center">🛡️ Legacy to Watchtower - XDR & SIEM for My Home Lab 🛡️</h1>
+<h1 align="center">🛡️ Old-School Lab Setup to Defensive & Monitored Home Lab - XDR & SIEM for My Home Lab 🛡️</h1>
 
 <p align="center">
   <b>Building a Home XDR & SIEM VM with Wazuh and Rocky Linux for Monitoring Offensive & Dev Operating Systems in my Virtual Home Lab</b><br>
