@@ -145,7 +145,7 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 ![MitreAtt&ckInParrot](https://github.com/user-attachments/assets/01b124ed-ffc5-4597-8abb-c946fd848c0b)
 
 > *Security Events Dashboard Of Kali In Rocky9*
-![SEDofKali](https://github.com/user-attachments/assets/ab8f7d25-3ae7-4813-a03f-7d9c6208cce1)
+![SEDofKali](https://github.com/user-attachments/assets/bb967edc-f0f0-4492-97f1-9f0bacf50ded)
 
 > *Security Events Of Kali In Rocky9*
 ![SEofKali](https://github.com/user-attachments/assets/43ebac4f-addd-4f5c-be55-5b4f18c4e3dc)
