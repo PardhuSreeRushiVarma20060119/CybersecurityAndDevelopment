@@ -58,13 +58,13 @@ Secure containerized labs & sandboxing
 
 ## ⚒️ Tech & Tools
 
-> A breakdown of technologies I actively use across my cybersecurity journey—from offense to cloud, RE, and infrastructure.
+> A breakdown of technologies I actively use across my cybersecurity journey — from offense to cloud, RE, and infrastructure.
 
 <table>
   <thead>
     <tr>
       <th align="left">🧩 Category</th>
-      <th align="left">🔧 Tools & Technologies</th>
+      <th align="left">🔧 Tools & Technologies (with icons)</th>
     </tr>
   </thead>
   <tbody>
@@ -72,137 +72,72 @@ Secure containerized labs & sandboxing
   <tr>
       <td><strong>💻 Languages</strong></td>
       <td>
-        <code title="Scripting & Automation">Python</code>,
-        <code title="Shell scripting">Bash</code>,
-        <code title="Web-based scripts">JavaScript</code>,
-        <code title="Windows automation & payloads">PowerShell</code>,
-        <code title="Reverse Engineering & Low-level Ops">C</code>
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" title="Scripting & Automation"/>
+        <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnu-bash&logoColor=white" title="Shell scripting"/>
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" title="Web-based scripting"/>
+        <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white" title="Windows automation & payloads"/>
+        <img src="https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white" title="Low-level programming & RE"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>☁️ Cloud</strong></td>
       <td>
-        <code title="IAM, CloudTrail, EC2 Attacks">AWS</code>,
-        <code title="Defender, Sentinel, PrivEsc">Azure</code>,
-        <code title="Container orchestration & attacks">Kubernetes</code>
+        <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white" title="IAM, CloudTrail, EC2 Attacks"/>
+        <img src="https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoft-azure&logoColor=white" title="Defender, Sentinel, PrivEsc"/>
+        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white" title="Container orchestration & attacks"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>🛡️ Offensive Security</strong></td>
       <td>
-        <code title="Exploit Framework">Metasploit</code>,
-        <code title="Red Team Command & Control">Cobalt Strike</code>,
-        <code title="Network mapping">Nmap</code>,
-        <code title="AD enumeration">BloodHound</code>
+        <img src="https://img.shields.io/badge/Metasploit-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=Metasploit" title="Exploit Framework"/>
+        <img src="https://img.shields.io/badge/Cobalt_Strike-333?style=flat&logo=cobaltstrike&logoColor=blue" title="Red Team C2"/>
+        <img src="https://img.shields.io/badge/Nmap-0088cc?style=flat&logo=gnupg&logoColor=white" title="Network mapping & recon"/>
+        <img src="https://img.shields.io/badge/BloodHound-red?style=flat&logo=bloodhound&logoColor=white" title="Active Directory Enumeration"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>🧬 Reverse Engineering</strong></td>
       <td>
-        <code title="Static RE, decompilation">Ghidra</code>,
-        <code title="Classic RE tool">IDA Free</code>,
-        <code title="Dynamic binary debugging">x64dbg</code>,
-        <code title="Hex-level analysis">Radare2</code>
+        <img src="https://img.shields.io/badge/Ghidra-E60000?style=flat&logo=ghidra&logoColor=white" title="Static Analysis, Decompiler"/>
+        <img src="https://img.shields.io/badge/IDA--Free-000000?style=flat&logo=hexo&logoColor=white" title="Disassembler"/>
+        <img src="https://img.shields.io/badge/x64dbg-black?style=flat&logo=windows&logoColor=white" title="Dynamic Debugging"/>
+        <img src="https://img.shields.io/badge/Radare2-cc0000?style=flat&logo=redhat&logoColor=white" title="Binary analysis at hex-level"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>📦 Containerization</strong></td>
       <td>
-        <code title="Container runtime">Docker</code>,
-        <code title="Alternative to Docker">Podman</code>,
-        <code title="Cluster deployment & management">Kubernetes</code>
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" title="Container runtime"/>
+        <img src="https://img.shields.io/badge/Podman-892CA0?style=flat&logo=podman&logoColor=white" title="Docker alternative"/>
+        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white" title="Cluster management"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>📈 Monitoring & Logging</strong></td>
       <td>
-        <code title="SIEM & agent-based monitoring">Wazuh</code>,
-        <code title="Windows event logging">Sysmon</code>,
-        <code title="Log collection, visualization">ELK Stack</code>
+        <img src="https://img.shields.io/badge/Wazuh-0054A6?style=flat&logo=wazuh&logoColor=white" title="SIEM & endpoint monitoring"/>
+        <img src="https://img.shields.io/badge/Sysmon-000000?style=flat&logo=windows&logoColor=white" title="Windows Event Monitoring"/>
+        <img src="https://img.shields.io/badge/ELK_Stack-005571?style=flat&logo=elasticstack&logoColor=white" title="Log collection & visualization"/>
       </td>
     </tr>
 
   <tr>
       <td><strong>🧪 Custom Stack</strong></td>
       <td>
-        <code title="Fast, minimal web backend">Fastify (Node.js)</code>,
-        <code title="Frontend web UI">React</code>,
-        <code title="NoSQL DB for storage">MongoDB</code>
+        <img src="https://img.shields.io/badge/Fastify-20232A?style=flat&logo=node.js&logoColor=white" title="Minimal & Fast Backend (Node.js)"/>
+        <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" title="Frontend UI"/>
+        <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white" title="NoSQL Database"/>
       </td>
     </tr>
 
   </tbody>
 </table>
-
-
-## tooltown
-
-> The core technologies I actively use across cybersecurity, including offensive tooling, cloud infra, RE, and automation stacks.
-
----
-
-### 💻 Languages
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-
----
-
-### ☁️ Cloud
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-
----
-
-### 🛡️ Offensive Security
-
-![Metasploit](https://img.shields.io/badge/Metasploit-000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=Metasploit)
-![Cobalt Strike](https://img.shields.io/badge/Cobalt_Strike-333?style=for-the-badge&logo=cobaltstrike&logoColor=blue)
-![Nmap](https://img.shields.io/badge/Nmap-0088cc?style=for-the-badge&logo=gnupg&logoColor=white)
-![BloodHound](https://img.shields.io/badge/BloodHound-red?style=for-the-badge&logo=bloodhound&logoColor=white)
-
----
-
-### 🧬 Reverse Engineering
-
-![Ghidra](https://img.shields.io/badge/Ghidra-E60000?style=for-the-badge&logo=ghidra&logoColor=white)
-![IDA Free](https://img.shields.io/badge/IDA--Free-000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=IDA%20Free)
-![x64dbg](https://img.shields.io/badge/x64dbg-black?style=for-the-badge&logo=windows&logoColor=white)
-![Radare2](https://img.shields.io/badge/Radare2-cc0000?style=for-the-badge&logo=redhat&logoColor=white)
-
----
-
-### 📦 Containerization
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Podman](https://img.shields.io/badge/Podman-892CA0?style=for-the-badge&logo=podman&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-
----
-
-### 📈 Monitoring & Logging
-
-![Wazuh](https://img.shields.io/badge/Wazuh-0054A6?style=for-the-badge&logo=wazuh&logoColor=white)
-![Sysmon](https://img.shields.io/badge/Sysmon-000000?style=for-the-badge&logo=windows&logoColor=white)
-![ELK Stack](https://img.shields.io/badge/ELK_Stack-005571?style=for-the-badge&logo=elasticstack&logoColor=white)
-
----
-
-### 🧪 Custom Stack
-
-![Fastify](https://img.shields.io/badge/Fastify-20232A?style=for-the-badge&logo=node.js&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 
 ## 📂 Collapsible Sections
