@@ -145,6 +145,8 @@ Secure containerized labs & sandboxing
     <img src="https://img.shields.io/badge/Rocky_Linux-10B981?style=flat&logo=rockylinux&logoColor=white" title="Rocky Linux (Fedora/RHEL-based)"/>
     <img src="https://img.shields.io/badge/-FlareVM-0078D4?style=flat&logo=windows&logoColor=white" title="FlareVM (Windows-based)"/>
     <img src="https://img.shields.io/badge/REMnux-4B286D?style=flat&logo=linux&logoColor=white" title="REMnux (Ubuntu-based)"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Windows_logo_%28color%29.svg" title="Windows" width="20" height="20"/>
+
   </td>
 </tr>
  
