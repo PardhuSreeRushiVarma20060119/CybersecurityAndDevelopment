@@ -12,6 +12,17 @@
   <img src="https://img.shields.io/badge/status-Setup Complete-black?style=flat-square">
 </p>
 
+## 🧭 Navigation
+
+- [📦 Repository Structure](#-introduction)
+- [⚒️ Tech & Tools](#️-Lab-Components)
+- [🚀 Why Wazuh? & Installation Guide](#️-why-wazuh-&-installation-guide)
+- [💡 Troubleshooting Tips](#️-troubleshooting-tips)
+- [🧠 Lessons Learned](#️-lessons-learned)
+- [📌 Final Thoughts](#️-final-thoughts)
+- [💡 Next Steps](#️-next-steps)
+- [📷 Gallery](#️-gallery)
+
 ## 🚀 Introduction
 
 In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro**.
@@ -32,13 +43,13 @@ Here’s what my home virtual lab currently includes:
 
 ---
 
-## 📦 Why Wazuh?
+## 📦 Why Wazuh? & Installation Guide
 
 Wazuh is an open-source security platform for threat detection, integrity monitoring, incident response, and compliance. It integrates everything from log analysis to vulnerability detection and integrates well with ELK stack components.
 
 ---
 
-## 🧰 Installing Wazuh on Rocky Linux 9
+### 🧰 Installing Wazuh on Rocky Linux 9
 
 ```bash
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
@@ -57,7 +68,7 @@ sudo firewall-cmd --reload
 
 ---
 
-## 🤖 Installing Wazuh Agents
+### 🤖 Installing Wazuh Agents
 
 Install Wazuh agents on Kali, Parrot, and Ubuntu:
 ```bash
