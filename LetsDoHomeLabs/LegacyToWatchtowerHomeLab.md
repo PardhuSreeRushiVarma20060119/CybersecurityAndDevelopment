@@ -110,7 +110,6 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 
 ## 💡 Next Steps
 
-- Add REMnux and FlareVM with limited access
 - Create dashboards for visualizing alerts
 - Explore Elastic and Kibana integrations
 - Start testing attack simulations using Atomic Red Team
