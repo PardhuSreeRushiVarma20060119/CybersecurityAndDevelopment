@@ -36,7 +36,7 @@ Here’s what *my home virtual lab* currently includes:
 
 <table>
   <tr>
-    <td><strong>🛡️ SIEM/XDR Server</strong></td>
+    <td><strong>🛡️ SIEM/XDR System & Software</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Rocky_Linux_9-10B981?style=flat&logo=rockylinux&logoColor=white" title="Rocky Linux 9 (SIEM & XDR Server)" />
       <img src="https://img.shields.io/badge/Wazuh-005C96?style=flat&logo=elasticstack&logoColor=white" title="Wazuh (with Elastic Stack)" />
@@ -51,7 +51,7 @@ Here’s what *my home virtual lab* currently includes:
     </td>
   </tr>
   <tr>
-    <td><strong>⛔ Excluded (for now)</strong></td>
+    <td><strong>⛔ Excluded VM's (isolated)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/REMnux-1C1C1C?style=flat&logo=linux&logoColor=white" title="REMnux (Malware Analysis - Excluded)" />
       <img src="https://img.shields.io/badge/FlareVM-181717?style=flat&logo=windows&logoColor=white" title="FlareVM (Reverse Engineering - Excluded)" />
