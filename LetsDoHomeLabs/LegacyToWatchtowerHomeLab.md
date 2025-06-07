@@ -14,15 +14,16 @@
 
 ## 🧭 Navigation
 
-- [📦 Introduction](#-introduction)
+- [📦 Introduction](#-Introduction)
 - [⚒️ Lab Components](#️-Lab-Components)
-- [🚀 Why Wazuh? & Installation Guide](#️-why-wazuh-&-installation-guide)
-- [💡 Troubleshooting Tips](#️-troubleshooting-tips)
-- [🧠 Lessons Learned](#️-lessons-learned)
-- [📌 Final Thoughts](#️-final-thoughts)
-- [💡 Next Steps](#️-next-steps)
-- [📷 Gallery](#️-gallery)
+- [🚀 Why Wazuh? & Installation Guide](#️-Why-Wazuh-&-Installation-Guide)
+- [💡 Troubleshooting Tips](#️-Troubleshooting-Tips)
+- [🧠 Lessons Learned](#️-Lessons-Learned)
+- [📌 Final Thoughts](#️-Final-Thoughts)
+- [💡 Next Steps](#️-Next-Steps)
+- [📷 Gallery](#️-Gallery)
 
+---
 ## 🚀 Introduction
 
 In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro**.
@@ -47,7 +48,6 @@ Here’s what my home virtual lab currently includes:
 
 Wazuh is an open-source security platform for threat detection, integrity monitoring, incident response, and compliance. It integrates everything from log analysis to vulnerability detection and integrates well with ELK stack components.
 
----
 
 ### 🧰 Installing Wazuh on Rocky Linux 9
 
@@ -65,8 +65,6 @@ sudo firewall-cmd --permanent --add-port=1514/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --reload
 ```
-
----
 
 ### 🤖 Installing Wazuh Agents
 
@@ -127,7 +125,7 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 
 ---
 
-## 📷 Gallery (Add Screenshots)
+## 📷 Gallery
 *(Add screenshots of dashboard, VM structure, Wazuh UI here)*
 
 ---
