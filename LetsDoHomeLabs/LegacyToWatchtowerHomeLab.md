@@ -126,7 +126,29 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 ---
 
 ## 📷 Gallery
-*(Add screenshots of dashboard, VM structure, Wazuh UI here)*
+> *My Lab Infrastructure*
+![home-lab](https://github.com/user-attachments/assets/4725edfb-e25f-46c8-a159-e569cbe9ea94)
+
+> *Leave A Message (For Fun)* 
+![leaveamsg](https://github.com/user-attachments/assets/92eeb9f1-5d3a-475c-8f6a-db3967b81bdc)
+
+> *Wazuh Agent Log In Kali*
+![agent-log-in-kali](https://github.com/user-attachments/assets/87ed2b12-0fec-441b-a789-c77be5e4200e)
+
+> *Wazuh Agent Log In Parrot*
+![agent-log-in-parrot](https://github.com/user-attachments/assets/c50a4abb-f4bb-4058-ad2c-75828b1bfc3f)
+
+> *Wazuh Agents Dashboard in Rocky9*
+![WADinRocky9](https://github.com/user-attachments/assets/b2b5c118-3dd1-4fab-847a-f36edc26d157)
+
+> *Recent MITRE ATT&CK Framework Attempts In Parrot From Rocky9*
+![MitreAtt&ckInParrot](https://github.com/user-attachments/assets/01b124ed-ffc5-4597-8abb-c946fd848c0b)
+
+> *Security Events Dashboard Of Kali In Rocky9*
+![SEDofKali](https://github.com/user-attachments/assets/ab8f7d25-3ae7-4813-a03f-7d9c6208cce1)
+
+> *Security Events Of Kali In Rocky9*
+![SEofKali](https://github.com/user-attachments/assets/43ebac4f-addd-4f5c-be55-5b4f18c4e3dc)
 
 ---
 <p align="center"> <i>“Build Defense, Before Attack” — Life Around Cybersecurity🛡️”</i> </p>
