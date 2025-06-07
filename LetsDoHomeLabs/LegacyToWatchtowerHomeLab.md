@@ -39,7 +39,7 @@ Here’s what *my home virtual lab* currently includes:
     <td><strong>🛡️ SIEM/XDR Server</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Rocky_Linux_9-10B981?style=flat&logo=rockylinux&logoColor=white" title="Rocky Linux 9 (SIEM & XDR Server)" />
-      <img src="https://img.shields.io/badge/Wazuh-005C96?style=flat&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDBDQjNCIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggZD0iTTIuNCAxMC42TDkuMiAyTDI1LjYgMi44TDMyIDIzLjdsLTYuNiA0LjctMjEuNC0xNS4zem0xNC43IDQuOGMwIC43LS41IDEuMy0xLjMgMS4zLS43IDAtMS4zLS41LTEuMy0xLjMgMC0uNy41LTEuMyAxLjMtMS4zLjcgMCAxLjMuNSAxLjMgMS4zem0tLjUgNi4zYy0uMiAwLS40IDAtLjYtLjFMMTAgMTguNmMtLjIuMi0uNC40LS42LjZsNS4zIDMuOGMxLjQuOCAzLjIgMS4xIDQuOS44LTEuMS0xLjMtMS42LTIuOS0xLjYtNC41eiIvPjwvc3ZnPg==" title="Wazuh" />
+      <img src="https://img.shields.io/badge/Wazuh-005C96?style=flat&logo=elasticstack&logoColor=white" title="Wazuh (with Elastic Stack)" />
     </td>
   </tr>
   <tr>
