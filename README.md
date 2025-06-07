@@ -29,19 +29,19 @@
 
 ```bash
 LifeAroundCybersecurity-Repo/
-├── 🧠 Writeups/
+├── 🧠 LetsDoWriteUps/
 │   └── TryHackMe, Portswigger Academy etc.
-├── 🔍 ReconTools/
+├── 🔍 LetsDoReconTools/
 │   └── Passive and Active Info Gathering Scripts
-├── 💀 MalwareAnalysis/
+├── 💀 LetsDoMalwareAnalysis/
 │   └── Static & Dynamic Reports, RE Scripts
-├── ☁️ CloudSecurity/
-│   └── IAM, Logging, Monitoring, Attacks
-├── 🛠️ RedTeamOps/
-│   └── Payloads, Post-Ex, Persistence
-├── 🧪 LabSetups/
+├── ☁️ LetsDoCloudSecurity/
+│   └── AWS, Azure, GCP, Cloud Attacks
+├── 🛠️ LetsExploitChallenges/
+│   └── Random Exploitation Challenges, CTFs
+├── 🧪 LetsDoHomeLabs/
 │   └── VM Configs, FlareVM, Docker Envs
-└── 📚 Notes/
+└── 📚 LetsDoNotes/
     └── Certs, Concepts, Walkthroughs
 ```
 
