@@ -1,4 +1,4 @@
-<h1 align="center">🛡️ Old-School Lab Setup to Defensive & Monitored Home Lab : The XDR & SIEM for My Virtual Machines🛡️</h1>
+<h2 align="center">🛡️ Old-School Lab Setup to Defensive & Monitored Home Lab : The XDR & SIEM for My Virtual Machines🛡️</h2>
 
 <p align="center">
   <b>Building a Home XDR & SIEM VM with Wazuh and Rocky Linux for Monitoring Offensive & Dev Operating Systems in my Virtual Home Lab</b><br>
