@@ -111,7 +111,7 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 ## 💡 Next Steps
 
 - Create dashboards for visualizing alerts
-- Explore Elastic and Kibana integrations
+- Explore Elastic, Suricata and Kibana integrations
 - Start testing attack simulations using Atomic Red Team
 
 ---
