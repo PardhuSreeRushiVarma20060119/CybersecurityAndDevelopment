@@ -66,7 +66,7 @@ Containerization	Docker, Podman, Kubernetes
 Monitoring/Logging	Wazuh, Sysmon, ELK Stack
 Custom Stack	Fastify (Node.js), React, MongoDB
 
-##📂 Collapsible Sections
+## 📂 Collapsible Sections
 
 <details> 
 <summary>📖 <strong>Writeups & Notes</strong></summary>
@@ -99,11 +99,11 @@ VM Setup: Rocky Linux, FlareVM, REMnux, Kali, etc.
 </details>
 
 ---
-### 🚨 Disclaimer
+## 🚨 Disclaimer
 > ⚠️ All content in this repository is for educational and ethical purposes only. You are solely responsible for how you use this information.
 
 ---
-### 📬 Connect
+## 📬 Connect
 Let's share knowledge and collaborate!
 [🌐 LinkedIn](linkedin.com/in/pardhu-sri-rushi-varma-konduru-696886279)
 [📧 Email](pardhusreerushivarma@gmail.com)
