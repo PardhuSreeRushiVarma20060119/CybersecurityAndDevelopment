@@ -136,6 +136,19 @@ Secure containerized labs & sandboxing
       </td>
     </tr>
 
+  <tr>
+  <td><strong>🖥️ Operating Systems</strong></td>
+  <td>
+    <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white" title="Kali Linux (Debian-based)"/>
+    <img src="https://img.shields.io/badge/Parrot_OS-1F1F1F?style=flat&logo=linux&logoColor=white" title="Parrot OS (Debian-based)"/>
+    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white" title="Ubuntu (Debian-based)"/>
+    <img src="https://img.shields.io/badge/Rocky_Linux-10B981?style=flat&logo=rockylinux&logoColor=white" title="Rocky Linux (Fedora/RHEL-based)"/>
+    <img src="https://img.shields.io/badge/Flare_VM-0078D4?style=flat&logo=windows&logoColor=white" title="FlareVM (Windows-based)"/>
+    <img src="https://img.shields.io/badge/REMnux-4B286D?style=flat&logo=linux&logoColor=white" title="REMnux (Ubuntu-based)"/>
+  </td>
+</tr>
+ 
+
   </tbody>
 </table>
 
