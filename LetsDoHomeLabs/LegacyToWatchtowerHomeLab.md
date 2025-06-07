@@ -14,14 +14,14 @@
 
 ## 🧭 Navigation
 
-- [📦 Introduction](#-Introduction)
-- [⚒️ Lab Components](#️-Lab-Components)
-- [🚀 Why Wazuh? & Installation Guide](#️-Why-Wazuh-&-Installation-Guide)
-- [💡 Troubleshooting Tips](#️-Troubleshooting-Tips)
-- [🧠 Lessons Learned](#️-Lessons-Learned)
-- [📌 Final Thoughts](#️-Final-Thoughts)
-- [💡 Next Steps](#️-Next-Steps)
-- [📷 Gallery](#️-Gallery)
+- [📦 Introduction](#-introduction)
+- [⚒️ Lab Components](#-lab-components)
+- [🚀 Why Wazuh and Installation Guide](#-why-wazuh-and-installation-guide)
+- [💡 Troubleshooting Tips](#-troubleshooting-tips)
+- [🧠 Lessons Learned](#-lessons-learned)
+- [📌 Final Thoughts](#-final-thoughts)
+- [💡 Next Steps](#-next-steps)
+- [📷 Gallery](#-gallery)
 
 ---
 ## 🚀 Introduction
@@ -44,7 +44,7 @@ Here’s what my home virtual lab currently includes:
 
 ---
 
-## 📦 Why Wazuh? & Installation Guide
+## 📦 Why Wazuh? and Installation Guide
 
 Wazuh is an open-source security platform for threat detection, integrity monitoring, incident response, and compliance. It integrates everything from log analysis to vulnerability detection and integrates well with ELK stack components.
 
