@@ -129,5 +129,4 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 *(Add screenshots of dashboard, VM structure, Wazuh UI here)*
 
 ---
-
-**Stay sharp, stay secure. 🛡️**
+<p align="center"> <i>“Build Defense, Before Attack” — Life Around Cybersecurity🛡️”</i> </p>
