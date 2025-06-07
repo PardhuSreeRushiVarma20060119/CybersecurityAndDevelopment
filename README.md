@@ -57,14 +57,88 @@ Deep Malware Analysis & Reverse Engineering
 Secure containerized labs & sandboxing
 
 ## ⚒️ Tech & Tools
-Category	Tools & Tech Used
-Languages	Python, Bash, JS, PowerShell, C
-Cloud	AWS, Azure, Kubernetes
-Offensive	Metasploit, CobaltStrike, Nmap, BloodHound
-Reverse Engineering	Ghidra, IDA Free, x64dbg, Radare2
-Containerization	Docker, Podman, Kubernetes
-Monitoring/Logging	Wazuh, Sysmon, ELK Stack
-Custom Stack	Fastify (Node.js), React, MongoDB
+
+> A breakdown of technologies I actively use across my cybersecurity journey—from offense to cloud, RE, and infrastructure.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">🧩 Category</th>
+      <th align="left">🔧 Tools & Technologies</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+      <td><strong>💻 Languages</strong></td>
+      <td>
+        <code title="Scripting & Automation">Python</code>,
+        <code title="Shell scripting">Bash</code>,
+        <code title="Web-based scripts">JavaScript</code>,
+        <code title="Windows automation & payloads">PowerShell</code>,
+        <code title="Reverse Engineering & Low-level Ops">C</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>☁️ Cloud</strong></td>
+      <td>
+        <code title="IAM, CloudTrail, EC2 Attacks">AWS</code>,
+        <code title="Defender, Sentinel, PrivEsc">Azure</code>,
+        <code title="Container orchestration & attacks">Kubernetes</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>🛡️ Offensive Security</strong></td>
+      <td>
+        <code title="Exploit Framework">Metasploit</code>,
+        <code title="Red Team Command & Control">Cobalt Strike</code>,
+        <code title="Network mapping">Nmap</code>,
+        <code title="AD enumeration">BloodHound</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>🧬 Reverse Engineering</strong></td>
+      <td>
+        <code title="Static RE, decompilation">Ghidra</code>,
+        <code title="Classic RE tool">IDA Free</code>,
+        <code title="Dynamic binary debugging">x64dbg</code>,
+        <code title="Hex-level analysis">Radare2</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>📦 Containerization</strong></td>
+      <td>
+        <code title="Container runtime">Docker</code>,
+        <code title="Alternative to Docker">Podman</code>,
+        <code title="Cluster deployment & management">Kubernetes</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>📈 Monitoring & Logging</strong></td>
+      <td>
+        <code title="SIEM & agent-based monitoring">Wazuh</code>,
+        <code title="Windows event logging">Sysmon</code>,
+        <code title="Log collection, visualization">ELK Stack</code>
+      </td>
+    </tr>
+
+  <tr>
+      <td><strong>🧪 Custom Stack</strong></td>
+      <td>
+        <code title="Fast, minimal web backend">Fastify (Node.js)</code>,
+        <code title="Frontend web UI">React</code>,
+        <code title="NoSQL DB for storage">MongoDB</code>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
 
 ## 📂 Collapsible Sections
 
