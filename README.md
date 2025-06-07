@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/focus-CyberSecurity-red?style=flat-square">
   <img src="https://img.shields.io/badge/cloud-AWS%20%7C%20Azure%20%7C%20GCP-blue?style=flat-square">
   <img src="https://img.shields.io/badge/RE%20%26%20Malware-Active%20%7C%20Protected-darkgreen?style=flat-square">
-  <img src="https://img.shields.io/badge/status-Evolving-lightgrey?style=flat-square">
+  <img src="https://img.shields.io/badge/status-Evolving-black?style=flat-square">
 </p>
 
 ---
