@@ -70,7 +70,7 @@ sudo apt install wazuh-agent
 Then configure the agent to point to the manager’s IP (Rocky Linux machine):
 ```bash
 sudo nano /var/ossec/etc/ossec.conf
-# Replace MANAGER_IP with 192.168.1.104 (or your Rocky9 IP)
+# Replace MANAGER_IP with 192.168.X.XX (or your Rocky9 IP)
 ```
 
 Start and enable the agent:
