@@ -140,6 +140,71 @@ Secure containerized labs & sandboxing
 </table>
 
 
+## ⚒️ Tech & Tools
+
+> The core technologies I actively use across cybersecurity, including offensive tooling, cloud infra, RE, and automation stacks.
+
+---
+
+### 💻 Languages
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+
+---
+
+### ☁️ Cloud
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+
+---
+
+### 🛡️ Offensive Security
+
+![Metasploit](https://img.shields.io/badge/Metasploit-000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=Metasploit)
+![Cobalt Strike](https://img.shields.io/badge/Cobalt_Strike-333?style=for-the-badge&logo=cobaltstrike&logoColor=blue)
+![Nmap](https://img.shields.io/badge/Nmap-0088cc?style=for-the-badge&logo=gnupg&logoColor=white)
+![BloodHound](https://img.shields.io/badge/BloodHound-red?style=for-the-badge&logo=bloodhound&logoColor=white)
+
+---
+
+### 🧬 Reverse Engineering
+
+![Ghidra](https://img.shields.io/badge/Ghidra-E60000?style=for-the-badge&logo=ghidra&logoColor=white)
+![IDA Free](https://img.shields.io/badge/IDA--Free-000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=IDA%20Free)
+![x64dbg](https://img.shields.io/badge/x64dbg-black?style=for-the-badge&logo=windows&logoColor=white)
+![Radare2](https://img.shields.io/badge/Radare2-cc0000?style=for-the-badge&logo=redhat&logoColor=white)
+
+---
+
+### 📦 Containerization
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Podman](https://img.shields.io/badge/Podman-892CA0?style=for-the-badge&logo=podman&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+
+---
+
+### 📈 Monitoring & Logging
+
+![Wazuh](https://img.shields.io/badge/Wazuh-0054A6?style=for-the-badge&logo=wazuh&logoColor=white)
+![Sysmon](https://img.shields.io/badge/Sysmon-000000?style=for-the-badge&logo=windows&logoColor=white)
+![ELK Stack](https://img.shields.io/badge/ELK_Stack-005571?style=for-the-badge&logo=elasticstack&logoColor=white)
+
+---
+
+### 🧪 Custom Stack
+
+![Fastify](https://img.shields.io/badge/Fastify-20232A?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+
+
 ## 📂 Collapsible Sections
 
 <details> 
