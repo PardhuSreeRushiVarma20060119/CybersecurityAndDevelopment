@@ -140,7 +140,7 @@ Secure containerized labs & sandboxing
 </table>
 
 
-## ⚒️ Tech & Tools
+## tooltown
 
 > The core technologies I actively use across cybersecurity, including offensive tooling, cloud infra, RE, and automation stacks.
 
