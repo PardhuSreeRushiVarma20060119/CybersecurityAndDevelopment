@@ -143,9 +143,8 @@ Secure containerized labs & sandboxing
     <img src="https://img.shields.io/badge/Parrot_OS-1F1F1F?style=flat&logo=linux&logoColor=white" title="Parrot OS (Debian-based)"/>
     <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white" title="Ubuntu (Debian-based)"/>
     <img src="https://img.shields.io/badge/Rocky_Linux-10B981?style=flat&logo=rockylinux&logoColor=white" title="Rocky Linux (Fedora/RHEL-based)"/>
-    <img src="https://img.shields.io/badge/-FlareVM-0078D4?style=flat&logo=windows&logoColor=white" title="FlareVM (Windows-based)"/>
     <img src="https://img.shields.io/badge/REMnux-4B286D?style=flat&logo=ubuntu&logoColor=white" title="REMnux (Ubuntu-based)"/>
-
+    <img src="https://img.shields.io/badge/-FlareVM-0078D4?style=flat&logo=windows&logoColor=white" title="FlareVM (Windows-based)"/>
   </td>
 </tr>
  
