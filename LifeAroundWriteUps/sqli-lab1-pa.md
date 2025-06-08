@@ -15,7 +15,7 @@
 
 <h3 align="center">🧠 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
 
-## 🧠 Lab Context
+### 🧠 Lab Context
 
 > This lab contains a SQL injection vulnerability in the product category filter. The application constructs a SQL query like:
 
@@ -27,13 +27,13 @@ Your goal is to perform a SQLi attack and **display unreleased products**.
 
 ---
 
-## 🎯 Goal
+### 🎯 Goal
 
 ✅ **Exploit SQL Injection to bypass filter and display unreleased products.**
 
 ---
 
-## 🛠️ Basic Injection Strategy
+### 🛠️ Basic Injection Strategy
 
 When selecting a category, the app builds the query dynamically without sanitization:
 
@@ -58,7 +58,7 @@ SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
 
 ---
 
-## 🧪 Test: All Categories (OR Based)
+### 🧪 Test: All Categories (OR Based)
 
 Injecting logic always true to access everything:
 
@@ -78,7 +78,7 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ---
 
-## 🧩 Injection Cheat Sheet
+### 🧩 Injection Cheat Sheet
 
 | Injection Type | Payload | Effect |
 |----------------|---------|--------|
@@ -88,7 +88,7 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ---
 
-## 📚 Learning Takeaways
+### 📚 Learning Takeaways
 
 - SQL comments can terminate rest of a query.
 - Boolean logic can bypass conditions.
@@ -96,13 +96,13 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ---
 
-## 🚨 Disclaimer
+### 🚨 Disclaimer
 
 > ⚠️ For **educational purposes only**. Do **not** perform SQLi on systems you don't own or have explicit permission to test.
 
 ---
 
-## 🧑‍💻 Author
+### 🧑‍💻 Author
 
 Built with ❤️ by [PardhuVarma](https://linkedin.com/in/pardhu-sri-rushi-varma-konduru-696886279)
 
