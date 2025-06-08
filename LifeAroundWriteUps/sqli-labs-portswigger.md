@@ -86,8 +86,74 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 | Boolean OR | `' OR 1=1--` | Always true condition |
 | Error-Based | `' AND 1=CAST((CHR(113)||CHR(107)||CHR(112)||CHR(107)||CHR(113))||(SELECT (CASE WHEN (1=1) THEN 1 ELSE 0 END))::text||CHR(113)||CHR(122)||CHR(120)||CHR(113)||CHR(113) AS NUMERIC)--` | Can cause errors and leak info |
 
+------
+
+<h3 align="center">Lab-2 - SQL Injection Vulnerability Allowing Login Bypass</h3>
+<p align="center">
+  <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
+  <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
+</p>
+---
+## 🎯 Objective
+Perform a SQL injection attack to log in to the application as the `administrator` user.
+---
+## 🧪 Scenario Description
+
+This lab contains a SQL injection vulnerability in the **login function**.
+
+The application executes a SQL query similar to:
+
+```sql
+SELECT * FROM users WHERE username = '<input>' AND password = '<input>'
+```
+
+Since the application doesn’t implement proper sanitization, you can exploit this to bypass authentication.
+
+---
+## 🧠 Understanding the Attack
+Injecting the following payload into the `username` field:
+```
+administrator'--
+```
+### Why it works?
+This transforms the backend query to:
+
+```sql
+SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
+```
+Here:
+- `--` comments out the rest of the query (including password check)
+- Only the username is validated, and since it's correct, login is bypassed
+
+---
+## 🧰 Tools Used
+- 🔍 **Burp Suite**: Used to intercept and modify HTTP request
+- 🔑 **Browser**: To view result post-exploit
+---
+## 🚦 Steps to Solve
+<details>
+<summary>📋 <strong>Step-by-step Instructions</strong></summary>
+
+1. Open the target application in your browser.
+2. Intercept the login request using **Burp Suite**.
+3. Modify the `username` field as follows:
+
+   ```administrator'-- ```
+   or 
+   username=administrator & inject the payload into the password field = ``` ' OR 1=1 --' ```
+
+4. Leave the password blank or anything.
+5. Forward the request.
+6. You should now be logged in as the administrator.
+</details>
+
+---
+## ✅ Lab Status
+> ✔️ **Completed** - Successfully bypassed authentication and logged in as administrator.
 ---
 
+
+---
 ### 📚 Learning Takeaways
 
 - SQL comments can terminate rest of a query.
