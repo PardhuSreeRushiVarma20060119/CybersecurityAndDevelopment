@@ -330,7 +330,7 @@ You must inject into the category parameter and use a UNION-based SQL injection 
 ✅ Retrieve all usernames and passwords from the users table and log in as the administrator.
 
 ## 🧠 Step-by-Step Strategy
-###🔹 Step 1: Determine Number of Columns
+🔹 Step 1: Determine Number of Columns
 Use NULL placeholders in the UNION SELECT until it succeeds:
 
 ```
@@ -338,7 +338,7 @@ Use NULL placeholders in the UNION SELECT until it succeeds:
 ```
 ✔️ If the server responds without an error and shows an extra row, then there are 2 columns in the original query.
 
-###🔹 Step 2: Identify Text-Compatible Columns
+🔹 Step 2: Identify Text-Compatible Columns
 Inject known strings to find which columns accept text:
 
 ```
@@ -346,7 +346,7 @@ Inject known strings to find which columns accept text:
 ```
 ✔️ Observe where 'abc' or 'def' appear in the UI — those are the text-compatible columns.
 
-###🔹 Step 3: Extract User Data
+🔹 Step 3: Extract User Data
 Now inject the following to exfiltrate data from the users table:
 
 ```
@@ -354,7 +354,7 @@ Now inject the following to exfiltrate data from the users table:
 ```
 ✅ This will display usernames and passwords on the application's main page.
 
-###💡 Login as Administrator
+💡 Login as Administrator
 Use the credentials you retrieved to log in as the administrator through the provided login form.
 
 🧩 Injection Cheat Sheet
