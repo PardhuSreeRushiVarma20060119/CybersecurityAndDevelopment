@@ -3,7 +3,7 @@
 
 <p align="center">
   <b>🔍 Portswigger SQLi Labs</b><br>
-  <i>Status :🧾 Ongoing</i>
+  <i>Status :🧾 Ongoing,</i>
   <i>Lab: SQL Injection vulnerability</i>
 </p>
 
@@ -18,7 +18,7 @@
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability allows retriving hidden data</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: display unreleased products via SQL Injection.</i>
 </p>
 
@@ -99,7 +99,7 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
 
@@ -175,7 +175,7 @@ Here:
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, determining the number of columns returned by the query</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: determine number of columns via SQLi + UNION attack.</i>
 </p>
 
@@ -254,7 +254,7 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 
 <p align="center">
   <b>Lab: SQL injection UNION attack to find a column that supports text</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: Identify a column that supports string data to leak usernames and passwords.</i>
 </p>
 
@@ -318,7 +318,7 @@ On Oracle: Use FROM DUAL if required.
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, retrieving data from other tables</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: Exfiltrate usernames and passwords from the <code>users</code> table via UNION-based SQL injection.</i>
 </p>
 
@@ -379,7 +379,7 @@ Use the credentials you retrieved to log in as the administrator through the pro
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, retrieving multiple values in a single column</b><br>
-  <i>Status : ✅ Solved</i>
+  <i>Status : ✅ Solved,</i>
   <i>Target: Extract usernames and passwords from the `users` table using a UNION attack with string concatenation.</i>
 </p>
 
