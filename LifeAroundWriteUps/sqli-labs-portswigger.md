@@ -305,9 +305,9 @@ On Oracle: Use FROM DUAL if required.
 
 ### ✅ Lab Status
 > ✔️ Completed - Successfully retrieved admin credentials by finding string-compatible column.
-
-
 ---
+
+
 <h3 align="center">🧠 Lab 5 - SQL Injection UNION Attack: Retrieving Data from Other Tables</h3>
 
 <p align="center">
