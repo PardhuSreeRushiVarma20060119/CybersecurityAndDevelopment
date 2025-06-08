@@ -314,7 +314,7 @@ On Oracle: Use FROM DUAL if required.
   <b>Lab: SQL injection UNION attack, retrieving data from other tables</b><br>
   <i>Target: Exfiltrate usernames and passwords from the <code>users</code> table via UNION-based SQL injection.</i>
 </p>
----
+
 
 ### 🧠 Lab Context
 
