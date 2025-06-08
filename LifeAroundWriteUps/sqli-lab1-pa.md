@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/focus-SQL%20Injection-red?style=flat-square">
-  <img src="https://img.shields.io/badge/goal-Display%20Unreleased%20Products-green?style=flat-square">
+  <img src="https://img.shields.io/badge/focus-SQL%20Injection-darkred?style=flat-square">
+  <img src="https://img.shields.io/badge/goal-Display%20Unreleased%20Products-darkblue?style=flat-square">
 </p>
 
 ---
