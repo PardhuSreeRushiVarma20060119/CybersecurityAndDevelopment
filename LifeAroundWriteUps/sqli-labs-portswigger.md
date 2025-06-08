@@ -88,8 +88,6 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 | Boolean OR | `' OR 1=1--` | Always true condition |
 | Error-Based | `' AND 1=CAST((CHR(113)||CHR(107)||CHR(112)||CHR(107)||CHR(113))||(SELECT (CASE WHEN (1=1) THEN 1 ELSE 0 END))::text||CHR(113)||CHR(122)||CHR(120)||CHR(113)||CHR(113) AS NUMERIC)--` | Can cause errors and leak info |
 
----
-
 ### ✅ Lab Status
 > ✔️ **Completed** - Successfully display unreleased products.
 
