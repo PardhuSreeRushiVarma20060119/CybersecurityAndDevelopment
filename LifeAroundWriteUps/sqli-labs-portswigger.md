@@ -239,8 +239,6 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 | ORDER BY         | `' ORDER BY 1--` | Orders by column 1                               |
 | ORDER BY         | `' ORDER BY 3--` | If this breaks → original has less than 3 cols   |
 
----
-
 ### ✅ Lab Status
 
 > ✔️ Completed - Null-based UNION injection to identify correct column count.
