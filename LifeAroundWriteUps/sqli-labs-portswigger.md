@@ -78,9 +78,6 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 ```
 
 - `1=1` is always true → All products from all categories shown.
-
-⚠️ **Warning**: Be cautious with `OR 1=1`. It can impact `UPDATE` or `DELETE` operations if reused elsewhere in code.
-
 ---
 
 ### 🧩 Injection Cheat Sheet
@@ -171,8 +168,6 @@ Here:
 > ✔️ **Completed** - Successfully bypassed authentication and logged in as administrator.
 ---
 
-
----
 ### 📚 Learning Takeaways
 
 - SQL comments can terminate rest of a query.
