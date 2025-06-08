@@ -13,7 +13,7 @@
 
 ---
 
-<h3 align="center">🧠 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
+<h3 align="center">🤫 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
 
 ### 🧠 Lab Context
 
@@ -88,15 +88,20 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ------
 
-<h3 align="center">Lab-2 - SQL Injection Vulnerability Allowing Login Bypass</h3>
+<h3 align="center"> 💉Lab-2 - SQL Injection Vulnerability Allowing Login Bypass </h3>
+
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
+
 ---
+
 ## 🎯 Objective
 Perform a SQL injection attack to log in to the application as the `administrator` user.
+
 ---
+
 ## 🧪 Scenario Description
 
 This lab contains a SQL injection vulnerability in the **login function**.
@@ -110,26 +115,32 @@ SELECT * FROM users WHERE username = '<input>' AND password = '<input>'
 Since the application doesn’t implement proper sanitization, you can exploit this to bypass authentication.
 
 ---
+
 ## 🧠 Understanding the Attack
 Injecting the following payload into the `username` field:
 ```
 administrator'--
 ```
+
 ### Why it works?
 This transforms the backend query to:
 
 ```sql
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
 ```
+
 Here:
 - `--` comments out the rest of the query (including password check)
 - Only the username is validated, and since it's correct, login is bypassed
 
 ---
+
 ## 🧰 Tools Used
 - 🔍 **Burp Suite**: Used to intercept and modify HTTP request
 - 🔑 **Browser**: To view result post-exploit
+
 ---
+
 ## 🚦 Steps to Solve
 <details>
 <summary>📋 <strong>Step-by-step Instructions</strong></summary>
