@@ -29,19 +29,17 @@
 
 ```bash
 LifeAroundCybersecurity-Repo/
-├── 🧠 LetsDoWriteUps/
+├── 🧠 LifeAroundWriteUps/
 │   └── TryHackMe, Portswigger Academy etc.
-├── 🔍 LetsDoReconTools/
-│   └── Passive and Active Info Gathering Scripts
-├── 💀 LetsDoMalwareAnalysis/
+├── 💀 LifeAroundMalwareAnalysis/
 │   └── Static & Dynamic Reports, RE Scripts
-├── ☁️ LetsDoCloudSecurity/
+├── ☁️ LifeAroundCloudSecurity/
 │   └── AWS, Azure, GCP, Cloud Attacks
-├── 🛠️ LetsExploitChallenges/
+├── 🛠️ LifeAroundExploitChallenges/
 │   └── Random Exploitation Challenges, CTFs
-├── 🧪 LetsDoHomeLabs/
+├── 🧪 LifeAroundHomeLabs/
 │   └── VM Configs, FlareVM, Docker Envs
-└── 📚 LetsDoNotes/
+└── 📚 LifeAroundMyNotes/
     └── Certs, Concepts, Walkthroughs
 ```
 
