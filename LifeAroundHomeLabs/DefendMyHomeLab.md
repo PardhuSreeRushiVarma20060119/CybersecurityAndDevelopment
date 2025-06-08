@@ -7,9 +7,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/focus-CyberSecurity-red?style=flat-square">
-  <img src="https://img.shields.io/badge/OS-RockyLinux9%20%7C%20Kali2025.1c%20%7C%20Parrot6.3-blueviolet?style=flat-square">
+  <img src="https://img.shields.io/badge/OS-RockyLinux9%20%7C%20Kali2025.1c%20%7C%20Parrot6.3%20%7C%20Ubuntu24.04.2-blueviolet?style=flat-square">
   <img src="https://img.shields.io/badge/SIEM%20%26%20XDR-Active-darkgreen?style=flat-square">
-  <img src="https://img.shields.io/badge/status-Setup Complete-black?style=flat-square">
+  <img src="https://img.shields.io/badge/status-Ongoing-blue?style=flat-square">
 </p>
 
 ## 🧭 Navigation
@@ -26,7 +26,7 @@
 ---
 ## 🚀 Introduction
 
-In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro**.
+In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro 17**.
 
 ---
 
@@ -155,8 +155,11 @@ This setup now serves as my central **Watchtower**—collecting logs, detecting 
 > *Wazuh Agent Log In Parrot*
 ![agent-log-in-parrot](https://github.com/user-attachments/assets/c50a4abb-f4bb-4058-ad2c-75828b1bfc3f)
 
+> *Wazuh Agent Log In Ubuntu*
+![agent-log-in-ubuntu](https://github.com/user-attachments/assets/75b003af-3bf5-424f-a85b-b6e9946fa614)
+
 > *Wazuh Agents Dashboard in Rocky9*
-![WADinRocky9](https://github.com/user-attachments/assets/b2b5c118-3dd1-4fab-847a-f36edc26d157)
+![WAD-in-Rocky9](https://github.com/user-attachments/assets/bf7e83bf-810e-4fdb-bb2b-73a00d82f31e)
 
 > *Recent MITRE ATT&CK Framework Attempts In Parrot From Rocky9*
 ![MitreAtt&ckInParrot](https://github.com/user-attachments/assets/01b124ed-ffc5-4597-8abb-c946fd848c0b)
