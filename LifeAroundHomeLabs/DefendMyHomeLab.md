@@ -26,7 +26,7 @@
 ---
 ## 🚀 Introduction
 
-In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro**.
+In my ongoing journey of mastering cybersecurity, I transitioned from an old-school, scattered cyber lab into a centralized, having modern defensive watchtower. This blog details how I built a fully functioning **XDR (Extended Detection and Response)** and **SIEM (Security Information and Event Management)** system at home using **Wazuh** on **Rocky Linux 9**, monitoring multiple offensive and development VMs running on **VMware Workstation Pro 17**.
 
 ---
 
