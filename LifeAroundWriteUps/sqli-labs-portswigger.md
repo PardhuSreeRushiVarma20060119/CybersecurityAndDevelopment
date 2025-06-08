@@ -187,5 +187,5 @@ Here:
 Built with ❤️ by [PardhuVarma](https://linkedin.com/in/pardhu-sri-rushi-varma-konduru-696886279)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-Lab%20Completed-darkgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/status-Lab%20in%20Progress-green?style=for-the-badge">
 </p>
