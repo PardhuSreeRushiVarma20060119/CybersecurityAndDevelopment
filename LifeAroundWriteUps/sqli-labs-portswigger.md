@@ -388,7 +388,7 @@ Use the credentials you retrieved to log in as the administrator through the pro
 ---
 
 ## 🎯 Goal
-✅ Retrieve all usernames and passwords and log in as the `administrator` user.
+> ✅ Retrieve all usernames and passwords and log in as the `administrator` user.
 ---
 
 ## 🧠 Strategy & Execution
