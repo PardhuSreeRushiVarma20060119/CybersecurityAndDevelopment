@@ -92,17 +92,16 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
+
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
 
----
-
-## 🎯 Objective
+### 🎯 Objective
 Perform a SQL injection attack to log in to the application as the `administrator` user.
 
 ---
 
-## 🧪 Scenario Description
+### 🧪 Scenario Description
 
 This lab contains a SQL injection vulnerability in the **login function**.
 
@@ -116,7 +115,7 @@ Since the application doesn’t implement proper sanitization, you can exploit t
 
 ---
 
-## 🧠 Understanding the Attack
+### 🧠 Understanding the Attack
 Injecting the following payload into the `username` field:
 ```
 administrator'--
@@ -135,13 +134,13 @@ Here:
 
 ---
 
-## 🧰 Tools Used
+### 🧰 Tools Used
 - 🔍 **Burp Suite**: Used to intercept and modify HTTP request
 - 🔑 **Browser**: To view result post-exploit
 
 ---
 
-## 🚦 Steps to Solve
+### 🚦 Steps to Solve
 <details>
 <summary>📋 <strong>Step-by-step Instructions</strong></summary>
 
@@ -159,7 +158,7 @@ Here:
 </details>
 
 ---
-## ✅ Lab Status
+### ✅ Lab Status
 > ✔️ **Completed** - Successfully bypassed authentication and logged in as administrator.
 ---
 
