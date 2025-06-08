@@ -1,5 +1,5 @@
 
-<h1 align="center">🧠 PortSwigger SQL Injection Lab-1</h1>
+<h1 align="center">🧠 PortSwigger SQL Injection Labs</h1>
 
 <p align="center">
   <b>🔍 Retrieving Hidden Data via SQL Injection</b><br>
@@ -12,6 +12,8 @@
 </p>
 
 ---
+
+<h3 align="center">🧠 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
 
 ## 🧠 Lab Context
 
