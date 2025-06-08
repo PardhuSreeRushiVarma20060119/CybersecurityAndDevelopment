@@ -556,3 +556,7 @@ Built with ❤️ by [PardhuVarma](https://linkedin.com/in/pardhu-sri-rushi-varm
 </p>
 
 ![1594620297476](https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199)
+
+
+<img width="1665" alt="Portswigger Web Security Academy" src="https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199" />
+
