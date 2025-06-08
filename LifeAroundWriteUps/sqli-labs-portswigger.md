@@ -384,7 +384,7 @@ Use the credentials you retrieved to log in as the administrator through the pro
 </p>
 
 ## 🧠 Lab Context
-This lab contains a SQL injection vulnerability in the product category filter. The response from the query is shown in the application, allowing you to perform a UNION-based SQL injection to retrieve data from another table: `users`, which contains the columns `username` and `password`.
+> This lab contains a SQL injection vulnerability in the product category filter. The response from the query is shown in the application, allowing you to perform a UNION-based SQL injection to retrieve data from another table: `users`, which contains the columns `username` and `password`.
 ---
 
 ## 🎯 Goal
