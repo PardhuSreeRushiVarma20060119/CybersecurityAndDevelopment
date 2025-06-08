@@ -555,8 +555,7 @@ Built with ❤️ by [PardhuVarma](https://linkedin.com/in/pardhu-sri-rushi-varm
   <img src="https://img.shields.io/badge/status-Lab%20in%20Progress-darkgreen?style=for-the-badge">
 </p>
 
-![1594620297476](https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199)
+<img width="1665" alt="Portswigger Web Security Academy" src="https://github.com/user-attachments/assets/20bf615d-f2fa-4411-826c-d92629597e99" />
 
-
-<img width="1665" alt="Portswigger Web Security Academy" src="https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199" />
+![portswiggeracad](https://github.com/user-attachments/assets/20bf615d-f2fa-4411-826c-d92629597e99)
 
