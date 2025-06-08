@@ -93,7 +93,7 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 ------
 
-<h3 align="center"> 💉Lab-2 - SQL Injection Vulnerability Allowing Login Bypass </h3>
+<h3 align="center"> 💉Lab 2 - SQL Injection Vulnerability Allowing Login Bypass </h3>
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
