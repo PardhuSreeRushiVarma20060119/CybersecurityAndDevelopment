@@ -1,4 +1,4 @@
-![portswiggeracad](https://github.com/user-attachments/assets/b75ac3a7-3476-4e40-a46c-e7dbc3fd2949) <img width="1665" alt="Screenshot 2024-03-19 at 1 20 15 AM" src="https://github.com/user-attachments/assets/95fad69b-5461-4ca1-acd9-04677f7dd0e2" /> ![1594620297476](https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199)
+<img width="1665" alt="Screenshot 2024-03-19 at 1 20 15 AM" src="https://github.com/user-attachments/assets/95fad69b-5461-4ca1-acd9-04677f7dd0e2" />
 
 
 <h1 align="center">🧠 PortSwigger SQL Injection Labs</h1>
@@ -554,3 +554,5 @@ Built with ❤️ by [PardhuVarma](https://linkedin.com/in/pardhu-sri-rushi-varm
 <p align="center">
   <img src="https://img.shields.io/badge/status-Lab%20in%20Progress-darkgreen?style=for-the-badge">
 </p>
+
+![1594620297476](https://github.com/user-attachments/assets/db43e605-3ca7-46e4-b70c-8d365059d199)
