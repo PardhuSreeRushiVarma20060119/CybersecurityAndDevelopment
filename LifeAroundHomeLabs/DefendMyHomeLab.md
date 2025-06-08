@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/focus-CyberSecurity-red?style=flat-square">
-  <img src="https://img.shields.io/badge/OS-RockyLinux9%20%7C%20Kali2025.1c%20%7C%20Parrot6.3-blueviolet?style=flat-square">
+  <img src="https://img.shields.io/badge/OS-RockyLinux9%20%7C%20Kali2025.1c%20%7C%20Parrot6.3%20%7C%20Ubuntu24.04.2-blueviolet?style=flat-square">
   <img src="https://img.shields.io/badge/SIEM%20%26%20XDR-Active-darkgreen?style=flat-square">
   <img src="https://img.shields.io/badge/status-Ongoing-blue?style=flat-square">
 </p>
