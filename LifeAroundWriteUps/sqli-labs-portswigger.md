@@ -2,8 +2,8 @@
 <h1 align="center">🧠 PortSwigger SQL Injection Labs</h1>
 
 <p align="center">
-  <b>🔍 Retrieving Hidden Data via SQL Injection</b><br>
-  <i>Lab: SQL Injection vulnerability in product category filter</i>
+  <b>🔍 Portswigger SQLi Labs</b><br>
+  <i>Lab: SQL Injection vulnerability</i>
 </p>
 
 <p align="center">
@@ -14,6 +14,11 @@
 ---
 
 <h3 align="center">🤫 Lab 1 - Retrieving Hidden Data via SQL Injection</h3>
+
+<p align="center">
+  <b>Lab: SQL Injection Vulnerability allows retriving hidden data</b><br>
+  <i>Target: display unreleased products via SQL Injection.</i>
+</p>
 
 ### 🧠 Lab Context
 
@@ -92,7 +97,6 @@ SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
 
 <p align="center">
   <b>Lab: SQL Injection Vulnerability Allowing Login Bypass</b><br>
-
   <i>Target: Login as <code>administrator</code> by bypassing authentication via SQL Injection.</i>
 </p>
 
