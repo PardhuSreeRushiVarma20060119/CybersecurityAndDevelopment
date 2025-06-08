@@ -38,7 +38,7 @@ LifeAroundCybersecurity-Repo/
 ├── 🛠️ LifeAroundExploitChallenges/
 │   └── Random Exploitation Challenges, CTFs
 ├── 🧪 LifeAroundHomeLabs/
-│   └── VM Configs, FlareVM, Docker Envs
+│   └── VM Configs, FlareVM, Etc
 └── 📚 LifeAroundMyNotes/
     └── Certs, Concepts, Walkthroughs
 ```
