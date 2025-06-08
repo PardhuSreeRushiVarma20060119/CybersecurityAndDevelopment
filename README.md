@@ -193,4 +193,4 @@ Let's share knowledge and collaborate!
 - [🌐 LinkedIn](linkedin.com/in/pardhu-sri-rushi-varma-konduru-696886279)
 - [📧 Email](pardhusreerushivarma@gmail.com)
 
-<p align="center"> <i>“The quieter you become, the more you are able to hear.”</i> </p> <p align="center"> <img src="https://img.shields.io/badge/status-Keep_Hacking_Alive-purple?style=for-the-badge&logo=github"> </p>
+<p align="center"> <i>“The quieter you become, the more you are able to hear.”</i> </p> <p align="center"> <img src="https://img.shields.io/badge/status-Keep_Hacking_Alive-violet?style=for-the-badge&logo=github"> </p>
