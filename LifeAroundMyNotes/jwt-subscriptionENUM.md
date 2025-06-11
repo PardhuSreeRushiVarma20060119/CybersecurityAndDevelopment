@@ -148,4 +148,4 @@ Commands for both cases goes like :
 > Connect-AzAccount -AccessToken $Token -AccountID <Tenant-ID>
 
 Note :  Make Sure You Convert Token Into Secure-String 
-- $Token= ConvertTo-SecureString "<token-value>" -AsPlainText -Force
+> $Token= ConvertTo-SecureString "<token-value>" -AsPlainText -Force
