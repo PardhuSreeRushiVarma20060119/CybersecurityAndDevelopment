@@ -18,9 +18,8 @@
  "iss": "https://sts.windows.net/143198c4-77be-42f7-b18e-95c5b693e6b9/"
 ```
 
-```
-Connect-AzAccount -AccessToken eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJPZG40UHMtWXZ3d3VXeHRKdEwwVmtLV0tsRlh0MGJJSmZfMnBtd0tHQ28iLCJhbGciOiJSUzI1NiIsIng1dCI6IkNOdjBPSTNSd3FsSEZFVm5hb01Bc2hDSDJYRSIsImtpZCI6IkNOdjBPSTNSd3FsSEZFVm5hb01Bc2hDSDJYRSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20vIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTQzMTk4YzQtNzdiZS00MmY3LWIxOGUtOTVjNWI2OTNlNmI5LyIsImlhdCI6MTc0OTYxMzc4MywibmJmIjoxNzQ5NjEzNzgzLCJleHAiOjE3NDk3MDA0ODMsImFpbyI6ImsyUmdZUERkRk5ScHR5dTZhV1dvN1VuYjg5LzBBQT09IiwiYXBwX2Rpc3BsYXluYW1lIjoiaXQtdm0iLCJhcHBpZCI6IjdkZTkwNjVjLTJkNDItNGJjNy04NDBmLWU2ODY5NmRiNTNjYyIsImFwcGlkYWNyIjoiMiIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzE0MzE5OGM0LTc3YmUtNDJmNy1iMThlLTk1YzViNjkzZTZiOS8iLCJpZHR5cCI6ImFwcCIsIm9pZCI6Ijg2Y2EzOTU1LTZjN2UtNDhkNS05ZThkLWI2YjFkMTczYzhjMCIsInJoIjoiMS5BSEFBeEpneEZMNTM5MEt4anBYRnRwUG11UU1BQUFBQUFBQUF3QUFBQUFBQUFBQWtBUUJ3QUEuIiwic3ViIjoiODZjYTM5NTUtNmM3ZS00OGQ1LTllOGQtYjZiMWQxNzNjOGMwIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkFTIiwidGlkIjoiMTQzMTk4YzQtNzdiZS00MmY3LWIxOGUtOTVjNWI2OTNlNmI5IiwidXRpIjoiWVpoY1NzNkI2RVNFSklTUmZrUldBZyIsInZlciI6IjEuMCIsIndpZHMiOlsiZjJlZjk5MmMtM2FmYi00NmI5LWI3Y2YtYTEyNmVlNzRjNDUxIiwiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc19mdGQiOiJTb19yOV92M05PUmwxZklpYkdrbzJkR1I0VHhwZGNPd2JTdmlNc3JxZWVRQmRYTmxZWE4wTFdSemJYTSIsInhtc19pZHJlbCI6IjcgOCIsInhtc19yZCI6IjAuNDJMbFlCSmlMQkFTNGVBVUVqakxLeXQ0eW9EVGFkZlcwMGVFbkRxVWdLSWNRZ0xNREJCd0FFb0RBQSIsInhtc190Y2R0IjoxNjI5OTgzNjAyfQ.S5e0xmoWI0kcqdhTmPTKl8MJJabVU2FYnZeG_ueUwuVBGmc_cXbWGqkbpBF75cpgUIKVXuaXSlLB2TkGd2y3TQxjHGmviOieJyPEbt2I9AVSnEScU2GsFNgrHA2VPVTtuDU8OfOf51JsVxIfQ4nBsvVTbAviKWcbZXVFF1rvml8IJtsfuErOgPI3w0-PIqjousAoaB63or1sbIqv-yGxmzj1fLUwvl0G_SU2nEhw36YLUQoMUBX3LXAGaLspqV_W26GoREPLB-fauhIRd6NTqkPqBkO2jCLOEz0n3NZpj8c4Pc2YJeuc3TkyDrHyh7eCx1upBChaVA5WOXOY0IXw -AccountId 143198c4-77be-42f7-b18e-95c5b693e6b9
-```
+> Connect-AzAccount -AccessToken eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJPZG40UHMtWXZ3d3VXeHRKdEwwVmtLV0tsRlh0MGJJSmZfMnBtd0tHQ28iLCJhbGciOiJSUzI1NiIsIng1dCI6IkNOdjBPSTNSd3FsSEZFVm5hb01Bc2hDSDJYRSIsImtpZCI6IkNOdjBPSTNSd3FsSEZFVm5hb01Bc2hDSDJYRSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20vIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTQzMTk4YzQtNzdiZS00MmY3LWIxOGUtOTVjNWI2OTNlNmI5LyIsImlhdCI6MTc0OTYxMzc4MywibmJmIjoxNzQ5NjEzNzgzLCJleHAiOjE3NDk3MDA0ODMsImFpbyI6ImsyUmdZUERkRk5ScHR5dTZhV1dvN1VuYjg5LzBBQT09IiwiYXBwX2Rpc3BsYXluYW1lIjoiaXQtdm0iLCJhcHBpZCI6IjdkZTkwNjVjLTJkNDItNGJjNy04NDBmLWU2ODY5NmRiNTNjYyIsImFwcGlkYWNyIjoiMiIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzE0MzE5OGM0LTc3YmUtNDJmNy1iMThlLTk1YzViNjkzZTZiOS8iLCJpZHR5cCI6ImFwcCIsIm9pZCI6Ijg2Y2EzOTU1LTZjN2UtNDhkNS05ZThkLWI2YjFkMTczYzhjMCIsInJoIjoiMS5BSEFBeEpneEZMNTM5MEt4anBYRnRwUG11UU1BQUFBQUFBQUF3QUFBQUFBQUFBQWtBUUJ3QUEuIiwic3ViIjoiODZjYTM5NTUtNmM3ZS00OGQ1LTllOGQtYjZiMWQxNzNjOGMwIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkFTIiwidGlkIjoiMTQzMTk4YzQtNzdiZS00MmY3LWIxOGUtOTVjNWI2OTNlNmI5IiwidXRpIjoiWVpoY1NzNkI2RVNFSklTUmZrUldBZyIsInZlciI6IjEuMCIsIndpZHMiOlsiZjJlZjk5MmMtM2FmYi00NmI5LWI3Y2YtYTEyNmVlNzRjNDUxIiwiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc19mdGQiOiJTb19yOV92M05PUmwxZklpYkdrbzJkR1I0VHhwZGNPd2JTdmlNc3JxZWVRQmRYTmxZWE4wTFdSemJYTSIsInhtc19pZHJlbCI6IjcgOCIsInhtc19yZCI6IjAuNDJMbFlCSmlMQkFTNGVBVUVqakxLeXQ0eW9EVGFkZlcwMGVFbkRxVWdLSWNRZ0xNREJCd0FFb0RBQSIsInhtc190Y2R0IjoxNjI5OTgzNjAyfQ.S5e0xmoWI0kcqdhTmPTKl8MJJabVU2FYnZeG_ueUwuVBGmc_cXbWGqkbpBF75cpgUIKVXuaXSlLB2TkGd2y3TQxjHGmviOieJyPEbt2I9AVSnEScU2GsFNgrHA2VPVTtuDU8OfOf51JsVxIfQ4nBsvVTbAviKWcbZXVFF1rvml8IJtsfuErOgPI3w0-PIqjousAoaB63or1sbIqv-yGxmzj1fLUwvl0G_SU2nEhw36YLUQoMUBX3LXAGaLspqV_W26GoREPLB-fauhIRd6NTqkPqBkO2jCLOEz0n3NZpj8c4Pc2YJeuc3TkyDrHyh7eCx1upBChaVA5WOXOY0IXw -AccountId 143198c4-77be-42f7-b18e-95c5b693e6b9
+
 
 ---------
 
@@ -102,32 +101,30 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkNOdjBPSTNSd3FsSEZFVm5hb01Bc2hDSDJY
 
 > Claims Table From jwt.io 
 
-+----------------+---------------------------------------------------------------------------------------------------------------------------+
-| Field          | Value                                                                                                               	     |
-+----------------+---------------------------------------------------------------------------------------------------------------------------+
-| aud            | https://management.azure.com/                                                                                             |
-| iss            | https://sts.windows.net/143198c4-77be-42f7-b18e-95c5b693e6b9/                                                             |
-| iat            | 1749621017 (Wed Jun 11 2025 11:20:17 GMT+0530)                                                                            |
-| nbf            | 1749621017 (Wed Jun 11 2025 11:20:17 GMT+0530)                                                                            |
-| exp            | 1749707717 (Thu Jun 12 2025 11:25:17 GMT+0530)                                                                            |
-| aio            | k2RgYPhSsrYp64qF9Bzdo1P3HfevAQA=                                                                                          |
-| appid          | 7de9065c-2d42-4bc7-840f-e68696db53cc                                                                                      |
-| appidacr       | 2                                                                                                                         |
-| groups         | ["859e8edd-059b-476d-aad7-c1da396bec21"]                                                                                  |
-| idp            | https://sts.windows.net/143198c4-77be-42f7-b18e-95c5b693e6b9/                                                             |
-| idtyp          | app                                                                                                                       |
-| oid            | 86ca3955-6c7e-48d5-9e8d-b6b1d173c8c0                                                                                      |
-| rh             | 1.AHAAxJgxFL5390KxjpXFtpPmuUZIf3kAutdPukPawfj2MBMkAQBwAA.                                                                 |
-| sub            | 86ca3955-6c7e-48d5-9e8d-b6b1d173c8c0                                                                                      |
-| tid            | 143198c4-77be-42f7-b18e-95c5b693e6b9                                                                                      |
-| uti            | vEHKN6r7jUa3UAm9hhdKAw                                                                                                    |
-| ver            | 1.0                                                                                                                       |
-| xms_ftd        | zeCEHL0Qk4tQ5qI8agLJuj9vdl6wv6dQ9zRfnWmuX3wBdXNlYXN0LWRzbXM                                                               |
-| xms_idrel      | 7 26                                                                                                                      |
-| xms_mirid      |/subscriptions/b78b4f4a-d993-49d3-9f98-c8752ce9c711/resourcegroups/IT-RG/providers/Microsoft.Compute/virtualMachines/it-vm |
-| xms_rd         | 0.42LlYBJiLBAS4eAUErA7cSfNUfyp_yzdluOz_JQXAEU5hATcPOorGXZd99_lfOvgj28GwgA                                                 |
-| xms_tcdt       | 1629983602                                                                                                                |
-+----------------+---------------------------------------------------------------------------------------------------------------------------+
+| Field         | Value |
+|---------------|-------|
+| **aud**       | https://management.azure.com/ |
+| **iss**       | https://sts.windows.net/143198c4-77be-42f7-b18e-95c5b693e6b9/ |
+| **iat**       | 1749621017 (Wed Jun 11 2025 11:20:17 GMT+0530) |
+| **nbf**       | 1749621017 (Wed Jun 11 2025 11:20:17 GMT+0530) |
+| **exp**       | 1749707717 (Thu Jun 12 2025 11:25:17 GMT+0530) |
+| **aio**       | k2RgYPhSsrYp64qF9Bzdo1P3HfevAQA= |
+| **appid**     | 7de9065c-2d42-4bc7-840f-e68696db53cc |
+| **appidacr**  | 2 |
+| **groups**    | ["859e8edd-059b-476d-aad7-c1da396bec21"] |
+| **idp**       | https://sts.windows.net/143198c4-77be-42f7-b18e-95c5b693e6b9/ |
+| **idtyp**     | app |
+| **oid**       | 86ca3955-6c7e-48d5-9e8d-b6b1d173c8c0 |
+| **rh**        | 1.AHAAxJgxFL5390KxjpXFtpPmuUZIf3kAutdPukPawfj2MBMkAQBwAA. |
+| **sub**       | 86ca3955-6c7e-48d5-9e8d-b6b1d173c8c0 |
+| **tid**       | 143198c4-77be-42f7-b18e-95c5b693e6b9 |
+| **uti**       | vEHKN6r7jUa3UAm9hhdKAw |
+| **ver**       | 1.0 |
+| **xms_ftd**   | zeCEHL0Qk4tQ5qI8agLJuj9vdl6wv6dQ9zRfnWmuX3wBdXNlYXN0LWRzbXM |
+| **xms_idrel** | 7 26 |
+| **xms_mirid** | /subscriptions/b78b4f4a-d993-49d3-9f98-c8752ce9c711/resourcegroups/IT-RG/providers/Microsoft.Compute/virtualMachines/it-vm |
+| **xms_rd**    | 0.42LlYBJiLBAS4eAUErA7cSfNUfyp_yzdluOz_JQXAEU5hATcPOorGXZd99_lfOvgj28GwgA |
+| **xms_tcdt**  | 1629983602 |
 
 
 > things we look into.
