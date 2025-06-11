@@ -1,6 +1,6 @@
 <h1 align="center">Azure Red Teaming</h1>
 
-##day1
+## Day1
 
 ```
 {
@@ -28,7 +28,7 @@
 
 
 
-##day2
+## Day2
 
 
 > curl -H "Metadata:true"  "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/"
