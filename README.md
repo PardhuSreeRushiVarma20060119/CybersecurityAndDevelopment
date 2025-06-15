@@ -147,8 +147,14 @@ Secure containerized labs & sandboxing
     <img src="https://img.shields.io/badge/-FlareVM-0078D4?style=flat&logo=windows&logoColor=white" title="FlareVM (Windows-based)"/>
   </td>
 </tr>
- 
-
+ <tr>
+  <td><strong>🕸️ Web Security Modules</strong></td>
+  <td>
+    <img src="https://img.shields.io/badge/-Classic_Web_Attacks-gray?style=flat&logo=html5&logoColor=white" title="Old-school but still critical web attacks like SQLi, XSS, CSRF"/>
+    <img src="https://img.shields.io/badge/-Modern_Web_Attacks-blue?style=flat&logo=javascript&logoColor=white" title="JWT, CORS, WebSockets, SSRF, Prototype Pollution, etc."/>
+    <img src="https://img.shields.io/badge/-API_Attacks-yellow?style=flat&logo=graphql&logoColor=black" title="GraphQL, REST, Race Conditions, NoSQLi, OAuth, etc."/>
+  </td>
+</tr>
   </tbody>
 </table>
 
