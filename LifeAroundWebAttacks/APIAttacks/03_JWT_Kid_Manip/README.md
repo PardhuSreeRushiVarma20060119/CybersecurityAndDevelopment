@@ -125,8 +125,8 @@ Attacking the key rotation process
 
 
 ## What the script now demonstrates:
-> ALG=none bypass - Creates unsigned tokens
-> KID path traversal - LFI attempts via KID header manipulation
-> Malicious KID payloads - SQL injection, XSS, and edge cases
-> Token structure analysis - Decoding and header inspection
-> Algorithm confusion attacks - RS256→HS256 vulnerability concept
+- ALG=none bypass - Creates unsigned tokens
+- KID path traversal - LFI attempts via KID header manipulation
+- Malicious KID payloads - SQL injection, XSS, and edge cases
+- Token structure analysis - Decoding and header inspection
+- Algorithm confusion attacks - RS256→HS256 vulnerability concept
