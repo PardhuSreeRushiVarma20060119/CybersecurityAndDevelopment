@@ -39,8 +39,8 @@ LifeAroundCybersecurity-Repo/
 │   └── Random Exploitation Challenges, CTFs
 ├── 🧪 LifeAroundHomeLabs/
 │   └── VM Configs, FlareVM, Etc
-|── 🕸️ LifeAroundWebSecurity/
-|   └── Classic, Modern, API
+├── 🕸️ LifeAroundWebSecurity/
+│   └── Classic, Modern, API
 └── 📚 LifeAroundMyNotes/
     └── Certs, Concepts, Walkthroughs
 ```
