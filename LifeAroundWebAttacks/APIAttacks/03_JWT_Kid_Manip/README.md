@@ -111,11 +111,11 @@ jwt encode --alg HS256 --secret "$(cat /dev/null)" '{"user":"admin"}'
 
 ### 🛠 Tools to Practice
 
-jwt_tool.py
-AuthAnalyzer
-jwt.io
-Postman with Bearer header injection
-Burp Suite Repeater + Decoder
+- jwt_tool.py
+- AuthAnalyzer
+- jwt.io
+- Postman with Bearer header injection
+- Burp Suite Repeater + Decoder
 
 ### 📌 Pro Tip
 If the server uses a JWKS endpoint (/.well-known/jwks.json), try:
