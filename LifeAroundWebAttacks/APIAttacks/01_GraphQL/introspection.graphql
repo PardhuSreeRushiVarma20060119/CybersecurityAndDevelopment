@@ -1,0 +1,24 @@
+# This GraphQL query is used to introspect the entire schema.
+# Attackers use this to enumerate types, queries, and sensitive fields.
+
+query IntrospectionQuery {
+  __schema {
+    queryType { name }
+    mutationType { name }
+    types {
+      name
+      kind
+      fields {
+        name
+        type {
+          name
+          kind
+          ofType {
+            name
+            kind
+          }
+        }
+      }
+    }
+  }
+}

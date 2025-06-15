@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reflected XSS Lab</title>
+</head>
+<body>
+  <h2>Reflected XSS Demo</h2>
+  <form method="GET">
+    <input type="text" name="input" placeholder="Enter input">
+    <button type="submit">Submit</button>
+  </form>
+  <div>
+    Output: <span id="output"></span>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const input = params.get("input");
+    if (input) {
+      document.getElementById("output").innerHTML = input;
+    }
+  </script>
+</body>
+</html>

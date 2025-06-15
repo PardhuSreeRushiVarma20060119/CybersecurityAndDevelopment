@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clickjacking</title>
+</head>
+<body>
+  <h2>Victim Site (Framed)</h2>
+  <iframe src="http://example.com/target-site.html" width="800" height="600" style="opacity:0.5;position:absolute;z-index:1;"></iframe>
+  <button style="position:absolute;top:100px;left:100px;z-index:2;">Click me!</button>
+</body>
+</html>
