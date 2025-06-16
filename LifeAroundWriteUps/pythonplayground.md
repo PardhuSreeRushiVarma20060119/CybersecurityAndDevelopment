@@ -15,13 +15,6 @@
 - ✅ Misconfigured Binaries
 
 ---
-
-## 🗂️ Appendix Archive
-
-> **Password:** `1 kn0w 1 5h0uldn'7!`
-
----
-
 ## 🎯 Task 1: Hack it!
 
 > *Jump in and grab those flags! All in the usual places: `/home/someuser`, `/root`*
