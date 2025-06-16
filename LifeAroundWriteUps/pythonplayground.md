@@ -1,4 +1,4 @@
-# Python Playground
+# Python Playground From TryHackMe
 
 Be creative!
 
@@ -21,50 +21,42 @@ Password: `1 kn0w 1 5h0uldn'7!`
 Jump in and grab those flags! They can all be found in the usual places (/home/someuser and /root).
 
 ```
-kali@kali:~/CTFs/tryhackme/Python Playground$ sudo nmap -A -sS -sC -sV -O 10.10.251.33
-[sudo] password for kali:
-Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-18 13:51 CEST
-Nmap scan report for 10.10.251.33
-Host is up (0.038s latency).
-Not shown: 998 closed ports
+──(zenrage-a1105㉿ZenRage-A1105)-[~/thm]
+└─$ sudo nmap -A -sS -sC -sV -O 10.10.192.182
+[sudo] password for zenrage-a1105: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-06-16 20:20 IST
+Nmap scan report for 10.10.192.182
+Host is up (0.23s latency).
+Not shown: 998 closed tcp ports (reset)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
+| ssh-hostkey: 
 |   2048 f4:af:2f:f0:42:8a:b5:66:61:3e:73:d8:0d:2e:1c:7f (RSA)
 |   256 36:f0:f3:aa:6b:e3:b9:21:c8:88:bd:8d:1c:aa:e2:cd (ECDSA)
 |_  256 54:7e:3f:a9:17:da:63:f2:a2:ee:5c:60:7d:29:12:55 (ED25519)
 80/tcp open  http    Node.js Express framework
 |_http-title: Python Playground!
-No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
-TCP/IP fingerprint:
-OS:SCAN(V=7.80%E=4%D=10/18%OT=22%CT=1%CU=39766%PV=Y%DS=2%DC=T%G=Y%TM=5F8C2C
-OS:59%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OP
-OS:S(O1=M508ST11NW7%O2=M508ST11NW7%O3=M508NNT11NW7%O4=M508ST11NW7%O5=M508ST
-OS:11NW7%O6=M508ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)EC
-OS:N(R=Y%DF=Y%T=40%W=F507%O=M508NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=
-OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
-OS:R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%
-OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
-OS:%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%C
-OS:D=S)
-
+Device type: general purpose
+Running: Linux 4.X
+OS CPE: cpe:/o:linux:linux_kernel:4.15
+OS details: Linux 4.15
 Network Distance: 2 hops
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-TRACEROUTE (using port 143/tcp)
-HOP RTT      ADDRESS
-1   37.95 ms 10.8.0.1
-2   38.07 ms 10.10.251.33
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   239.31 ms 10.21.0.1
+2   239.53 ms 10.10.192.182
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 25.13 seconds
+Nmap done: 1 IP address (1 host up) scanned in 32.97 seconds
+
 ```
+[http://10.10.192.182/](http://10.10.192.182/)
 
-[http://10.10.251.33/](http://10.10.251.33/)
+[http://10.10.192.182/login.html](http://10.10.192.182/login.html)
 
-[http://10.10.251.33/login.html](http://10.10.251.33/login.html)
-
-[http://10.10.251.33/signup.html](http://10.10.251.33/signup.html)
+[http://10.10.192.182/signup.html](http://10.10.192.182/signup.html)
 
 ```
 kali@kali:~/CTFs/tryhackme/Python Playground$ gobuster dir -u http://10.10.251.33 -w /usr/share/dirb/wordlists/common.txt -x html
