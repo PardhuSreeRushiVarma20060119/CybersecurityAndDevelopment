@@ -78,11 +78,34 @@ gobuster dir -u http://10.10.251.33 -w /usr/share/dirb/wordlists/common.txt -x h
 ```
 
 **Results:**
-
-- `/admin.html` ✅  
-- `/index.html`  
-- `/login.html`  
-- `/signup.html`  
+```
+┌──(zenrage-a1105㉿ZenRage-A1105)-[~/thm]
+└─$ gobuster dir -u http://10.10.192.182 -w /usr/share/dirb/wordlists/common.txt -x html
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.192.182
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              html
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/admin.html           (Status: 200) [Size: 3134]
+/index.html           (Status: 200) [Size: 941]
+/index.html           (Status: 200) [Size: 941]
+/login.html           (Status: 200) [Size: 549]
+/signup.html          (Status: 200) [Size: 549]
+Progress: 9228 / 9230 (99.98%)
+===============================================================
+Finished
+===============================================================
+ ```
 
 🔗 [http://10.10.192.182/admin.html](http://10.10.192.182/admin.html)  
 🔗 [View Source](view-source:http://10.10.192.182/admin.html)
