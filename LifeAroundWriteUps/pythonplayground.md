@@ -8,11 +8,11 @@
 
 ## 🧠 Topics
 
-- ✅ Network Enumeration  
-- ✅ Web Enumeration  
-- ✅ Web Poking  
+- ✅ Network Enumeration (Nmap)
+- ✅ Web Enumeration (Gobuster)
+- ✅ JavaScript Login Bypass Logic 
 - ✅ Python Scripting (Decoder)  
-- ✅ Misconfigured Binaries  
+- ✅ Misconfigured Binaries
 
 ---
 
