@@ -201,7 +201,7 @@ nc -lnvp 9001
 ```bash
 cat /root/flag1.txt
 ```
-`THM{7e0b5cf043975e3c104a458a8d4f6f2f}`
+`THM{flag1}`
 
 ---
 
@@ -209,7 +209,7 @@ cat /root/flag1.txt
 ```bash
 cat /home/connor/flag2.txt
 ```
-`THM{69a36d6f9da10d23ca0dbfdf6e691ec5}`
+`THM{flag2}`
 
 ---
 
@@ -219,12 +219,6 @@ cat /home/connor/flag2.txt
 cd /root
 cat flag3.txt
 ```
-`THM{be3adc69c25ad14eb79da4eb57925ad1}`
+`THM{flag3}`
 
 </details>
-
-## 🧠 Tips
-
-- Use `<details>` and `<summary>` in `.md` to make content collapsible  
-- Render this using **Markdown Preview Enhanced**, **Obsidian**, or static site generators for best effects  
-- For interactivity, embed `copy.js`, `highlight.js`, or use GitHub Pages with custom JS
