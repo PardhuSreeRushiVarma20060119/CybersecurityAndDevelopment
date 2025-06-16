@@ -74,7 +74,7 @@ Nmap done: 1 IP address (1 host up) scanned in 32.97 seconds
 <summary>📁 Gobuster Enumeration</summary>
 
 ```bash
-gobuster dir -u http://10.10.251.33 -w /usr/share/dirb/wordlists/common.txt -x html
+gobuster dir -u http://10.10.192.182 -w /usr/share/dirb/wordlists/common.txt -x html
 ```
 
 **Results:**
