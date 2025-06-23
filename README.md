@@ -127,6 +127,7 @@ LLMs in Cybersecurity Use-Case
         <img src="https://img.shields.io/badge/Wazuh-0054A6?style=flat&logo=wazuh&logoColor=white" title="SIEM & endpoint monitoring"/>
         <img src="https://img.shields.io/badge/Sysmon-000000?style=flat&logo=windows&logoColor=white" title="Windows Event Monitoring"/>
         <img src="https://img.shields.io/badge/ELK_Stack-005571?style=flat&logo=elasticstack&logoColor=white" title="Log collection & visualization"/>
+        <img src="https://img.shields.io/badge/Grafana-orange?style=flat&logo=elasticstack&logoColor=white" title="Metrics To Dashboards"/>
       </td>
     </tr>
 
