@@ -1,9 +1,4 @@
----
-layout: post
-title: "Harnessing LLMs & LoRA in DevSecOps and Secure Software Development"
-date: 2025-06-22
-author: PardhuVarma
-tags: [LLM, LoRA, DevSecOps, Cybersecurity, MirageC2, DTI-Vault, CodeLlama]
+
 ---
 
 # Harnessing LLMs & LoRA in DevSecOps and Secure Software Development
