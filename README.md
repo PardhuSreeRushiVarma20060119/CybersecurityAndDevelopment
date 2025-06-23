@@ -162,6 +162,7 @@ LLMs in Cybersecurity Use-Case
   <td><strong>🤖Large Language Models</strong></td>
   <td>
     <img src="https://img.shields.io/badge/Ollama-557C94?style=flat&logo=ollama&logoColor=white" title="Large Language Models"/>
+    <img src="https://img.shields.io/badge/LoRA-557C94?style=flat&logo=LoRA&logoColor=white" title="Low-Rank Adaptation (LoRA)"/>
   </td>
 </tr>
   </tbody>
