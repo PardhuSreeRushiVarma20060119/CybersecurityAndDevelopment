@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Security Training Lab</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data:;">
+  <style>
+    body { font-family: Arial, sans-serif; background: #ffffff; color: #000000; padding: 20px; }
+    .section { margin-bottom: 40px; border-bottom: 1px dashed #555; padding-bottom: 20px; }
+    iframe { width: 300px; height: 150px; border: none; }
+    .hidden { display: none; }
+    .clickbait { position: absolute; top: 100px; left: 100px; background: rgb(255, 255, 255); color: rgb(100, 100, 100); padding: 10px; z-index: 2; }
+    .iframe-trap { opacity: 0.1; position: absolute; top: 100px; left: 100px; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<h1>🔐 Web Security Training Lab</h1>
+<p>Explore safe simulations of real-world web security issues like XSS, phishing, HTML smuggling, and more.</p>
+
+<div class="section">
+  <h2>🧪 XSS Test</h2>
+  <button onclick="xss()">Run XSS</button>
+</div>
+
+<div class="section">
+  <h2>🔒 Phishing Awareness</h2>
+  <form onsubmit="return phishing()">
+    <label>Email: <input id="email" type="email"></label><br>
+    <label>Password: <input id="pass" type="password"></label><br>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- Hidden Sections Activated in Evil Mode -->
+<div id="evil" class="hidden">
+  <!-- Previous Sections -->
+
+  <div class="section">
+    <h2>🚫 Service Worker Abuse</h2>
+    <button onclick="registerWorker()">Register Malicious SW</button>
+  </div>
+
+  <div class="section">
+    <h2>📁 Cache Poisoning</h2>
+    <button onclick="poisonCache()">Poison Cache</button>
+  </div>
+
+  <div class="section">
+    <h2>⚡ CVE-based Web Emulation</h2>
+    <button onclick="simulateCVE()">Run Simulated CVE</button>
+    <pre id="cveOut"></pre>
+  </div>
+
+  <div class="section">
+    <h2>📅 CSRF Simulation</h2>
+    <iframe srcdoc="<form action='https://victim.com/delete' method='POST'><input type='submit' value='Submit CSRF'></form>" ></iframe>
+  </div>
+
+  <div class="section">
+    <h2>🌐 CORS Misconfiguration</h2>
+    <button onclick="corsAttack()">Fetch Cross-Origin Data</button>
+    <pre id="corsOut"></pre>
+  </div>
+
+  <div class="section">
+    <h2>🚗 Open Redirect</h2>
+    <a href="?redirect=https://evil.com" onclick="return redirectEvil(event)">Click to Continue</a>
+  </div>
+
+  <div class="section">
+    <h2>🏡 Autofill Stealing</h2>
+    <form>
+      <input type="text" name="username" autocomplete="username" style="position:absolute;left:-9999px">
+      <input type="password" name="password" autocomplete="current-password" style="position:absolute;left:-9999px">
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>👁️ Enhanced Clickjacking</h2>
+    <iframe src="https://example.com" style="opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>📊 HTML Injection</h2>
+    <div id="htmlInject"></div>
+    <input type="text" oninput="htmlInject(this.value)" placeholder="Enter HTML">
+  </div>
+
+  <div class="section">
+    <h2>🚩 Tabnabbing</h2>
+    <a href="https://example.com" target="_blank" onclick="setTimeout(() => window.open('', '_blank').location = 'https://evil.com', 2000)">Open Tab</a>
+  </div>
+
+  <div class="section">
+    <h2>📝 Shadow DOM Obfuscation</h2>
+    <div id="shadowHost"></div>
+  </div>
+
+  <div class="section">
+    <h2>🎭 Drag-and-Drop Hijack</h2>
+    <div draggable="true" ondragstart="dragStart(event)" style="background:#333;padding:10px;">Drag Me</div>
+    <textarea ondrop="drop(event)" ondragover="event.preventDefault()"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>↩️ Reverse Tabnabbing</h2>
+    <a href="https://attacker.com" target="_blank" rel="noopener">Go to External Page</a>
+  </div>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const evil = urlParams.get('mode') === 'evil';
+  if (evil) document.getElementById("evil").classList.remove("hidden");
+
+  function xss() {
+    alert("XSS Simulated! document.cookie = " + document.cookie);
+  }
+
+  function phishing() {
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("pass").value;
+    alert("Captured credentials (simulated):\nEmail: " + email + "\nPass: " + pass);
+    return false;
+  }
+
+  function registerWorker() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(() => alert('SW Registered (Simulated)'));
+    }
+  }
+
+  function poisonCache() {
+    fetch('/malicious.js', { cache: 'reload' }).then(() => alert('Cache Poisoning Attempted'));
+  }
+
+  function simulateCVE() {
+    const output = document.getElementById("cveOut");
+    output.textContent = "[CVE-2020-XXXXX] Simulated logic flaw triggered in vulnerable widget!";
+  }
+
+  function corsAttack() {
+    fetch('https://evil.com/api/data', { mode: 'cors' })
+      .then(res => res.text())
+      .then(txt => document.getElementById('corsOut').textContent = txt)
+      .catch(err => document.getElementById('corsOut').textContent = 'Blocked or Failed');
+  }
+
+  function redirectEvil(event) {
+    event.preventDefault();
+    const url = new URL(window.location);
+    const redir = url.searchParams.get("redirect");
+    window.location.href = redir;
+    return false;
+  }
+
+  function htmlInject(value) {
+    document.getElementById("htmlInject").innerHTML = value;
+  }
+
+  function dragStart(event) {
+    event.dataTransfer.setData("text/plain", "This is a fake drag payload!");
+  }
+
+  function drop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text/plain");
+    event.target.value = data;
+  }
+
+  // Shadow DOM Setup
+  const shadow = document.getElementById("shadowHost").attachShadow({ mode: "open" });
+  shadow.innerHTML = `<form><input type='text' placeholder='Hidden in Shadow DOM'></form>`;
+</script>
+
+</body>
+</html>
