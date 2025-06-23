@@ -95,7 +95,7 @@ LLMs in Cybersecurity Use-Case
   <tr>
       <td><strong>🛡️ Offensive Security</strong></td>
       <td>
-        <img src="https://img.shields.io/badge/Metasploit-000000?style=flat&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMzkgMzdMMTYzIDY2djMyTDEyMCA5OGwzMyA2NXYzOGw2OCAzOWgxNzJsNjYtMzd2LTQzbDI4LTQ4LTUxLTNWMzdsLTk4LTIwLTYwIDIweiIvPgogIDxwYXRoIGQ9Ik0yMzIgMjY5bC02MiA0M2wtMyA3M2g1NmwxNi02M3oiLz4KICA8cGF0aCBkPSJNMTgyIDIxOGg3NnY1MGgtNzZ6Ii8+Cjwvc3ZnPg==&label=Metasploit" title="Exploit Framework"/>
+        <img src="https://img.shields.io/badge/Metasploit-blue?style=flat&logo=cobaltstrike&logoColor=blue" title="Exploitation Framework"/>
         <img src="https://img.shields.io/badge/Cobalt_Strike-333?style=flat&logo=cobaltstrike&logoColor=blue" title="Red Team C2"/>
         <img src="https://img.shields.io/badge/Nmap-0088cc?style=flat&logo=gnupg&logoColor=white" title="Network mapping & recon"/>
         <img src="https://img.shields.io/badge/BloodHound-red?style=flat&logo=bloodhound&logoColor=white" title="Active Directory Enumeration"/>
