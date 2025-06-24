@@ -32,7 +32,7 @@ LifeAroundCybersecurity-Development/
 ├── 🧠 LifeAroundWriteUps/
 │   └── TryHackMe, Portswigger Academy etc.
 ├── 💀 LifeAroundMalwareAnalysis/
-│   └── Static & Dynamic Reports, RE Scripts
+│   └── Static, Dynamic Reports, RE Scripts
 ├── ☁️ LifeAroundCloudSecurity/
 │   └── AWS, Azure, GCP, Cloud Attacks
 ├── 🛠️ LifeAroundExploitChallenges/
@@ -41,7 +41,7 @@ LifeAroundCybersecurity-Development/
 │   └── VM Configs, FlareVM, Etc
 ├── 🕸️ LifeAroundWebSecurity/
 │   └── Classic, Modern, API
-├── 🤖 LifeAroundLLMs/
+├── 🤖 LifeAroundDevSecOps&LLMs/
 │   └── Blogs, And Workflows
 └── 📚 LifeAroundMyNotes/
     └── Certs, Concepts, Walkthroughs
