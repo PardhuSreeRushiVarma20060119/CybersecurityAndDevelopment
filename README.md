@@ -1,8 +1,8 @@
-<h1 align="center">🔐 LifeAroundCybersecurity-Repo 🔐</h1>
+<h1 align="center">🔐 Life Around Cybersecurity & Development 🔐</h1>
 
 <p align="center">
   <b>Explore | Build | Break | Learn</b><br>
-  <i>A living repository documenting my journey through Cybersecurity.</i>
+  <i>A living repository documenting my journey through Cybersecurity & Development.</i>
 </p>
 
 <p align="center">
@@ -28,7 +28,7 @@
 ## 📦 Repository Structure
 
 ```bash
-LifeAroundCybersecurity-Repo/
+LifeAroundCybersecurity-Development/
 ├── 🧠 LifeAroundWriteUps/
 │   └── TryHackMe, Portswigger Academy etc.
 ├── 💀 LifeAroundMalwareAnalysis/
@@ -48,7 +48,7 @@ LifeAroundCybersecurity-Repo/
 ```
 
 ## 🎯 Purpose
-This repo reflects my active grind in the cyber realm—from scripting my own tools to breaking down malware, simulating red team scenarios, and securing cloud environments.
+This repo reflects my active grind in the cybersecurity & secure development —from scripting my own tools to breaking down malware, simulating red team scenarios, and securing cloud environments.
 
 🎯 Ultimate Goals:
 
@@ -58,6 +58,7 @@ Cloud Red Teaming (AWS & Azure, GCP)
 Deep Malware Analysis & Reverse Engineering
 Secure containerized labs & sandboxing
 LLMs in Cybersecurity Use-Case
+DevSecOps In Cybersecurity & Software Development.
 
 ## ⚒️ Tech & Tools
 
@@ -168,40 +169,6 @@ LLMs in Cybersecurity Use-Case
 </tr>
   </tbody>
 </table>
-
-
-## 📂 Collapsible Sections
-
-<details> 
-<summary>📖 <strong>Writeups & Notes</strong></summary>
-THM, HTB, PortSwigger labs
-PDF/Markdown walkthroughs
-CVE exploitation practices
-Cert-specific notes (OSCP, CRTO, AZ-500)
-</details> 
-
-<details> <summary>⚙️ <strong>Tools & Scripts</strong></summary>
-Auto recon & enumeration tools
-Bash, Python, PowerShell payloads
-Custom YARA rules for malware detection
-</details> 
-
-<details> <summary>☁️ <strong>Cloud & Infra</strong></summary>
-IAM privilege escalation maps
-Logging configs (CloudTrail, Sentinel)
-Container attack scenarios
-</details> 
-
-<details> <summary>🔬 <strong>Malware Analysis & RE</strong></summary>
-Decompiled code & analysis
-Dynamic execution logs
-Suspicious behavior mapping
-</details> 
-
-<details> <summary>🧪<strong>Home Labs</strong></summary>
-VM Setup: Rocky Linux, FlareVM, REMnux, Kali, etc.
-</details>
-
 ---
 ## 🚨 Disclaimer
 > ⚠️ All content in this repository is for educational and ethical purposes only. You are solely responsible for how you use this information.
