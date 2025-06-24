@@ -169,6 +169,7 @@ DevSecOps In Cybersecurity & Software Development.
 </tr>
   </tbody>
 </table>
+
 ---
 ## 🚨 Disclaimer
 > ⚠️ All content in this repository is for educational and ethical purposes only. You are solely responsible for how you use this information.
