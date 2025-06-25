@@ -11,17 +11,17 @@ Researchers, open-source developers, fine-tuning practitioners, and early adopte
 
 ---
 
-### 1. The Evolution of Efficient Fine-Tuning
+## 1. The Evolution of Efficient Fine-Tuning
 
-(**Pre-2021**): Full fine-tuning was the norm.  
+### (**Pre-2021**): Full fine-tuning was the norm.  
 - HuggingFace + TPUs/GPUs  
 - Inaccessible for most people  
 
-(**2021-2022**): Prompt-tuning, Prefix-tuning  
+### (**2021-2022**): Prompt-tuning, Prefix-tuning  
 - Low-rank methods began showing promise  
 - Papers like : "The Power of Scale for Parameter-Efficient Prompt Tuning" hinted at future direction  
 
-(**2022-2023**): LoRA (Microsoft Research)  
+### (**2022-2023**): LoRA (Microsoft Research)  
 - Changed everything.  
 - Reduced trainable parameters by 10,000x in some tasks  
 - Became the default in OSS communities like HuggingFace + PEFT  
@@ -30,7 +30,7 @@ Researchers, open-source developers, fine-tuning practitioners, and early adopte
 
 ---
 
-### 2. The Practicality Gap: What Papers Don't Tell You.
+## 2. The Practicality Gap: What Papers Don't Tell You.
 
 Even though LoRA is "lightweight" on paper, real usage shows:
 
@@ -43,7 +43,7 @@ Even though LoRA is "lightweight" on paper, real usage shows:
 
 ---
 
-### 3. A Pattern of Repeated Failures
+## 3. A Pattern of Repeated Failures
 
 From GitHub issues, HF forums, and Discords:
 
@@ -54,7 +54,7 @@ These failures are **never explained by existing tooling**.
 
 ---
 
-### 4. What an Ecosystem Should Look Like
+## 4. What an Ecosystem Should Look Like
 
 For LoRA to be truly accessible:
 
@@ -68,7 +68,7 @@ For LoRA to be truly accessible:
 
 ---
 
-### 5. Enter OpenLoRa: Beyond Scripts, Towards Intelligence
+## 5. Enter OpenLoRa: Beyond Scripts, Towards Intelligence
 
 > *OpenLoRA* is not another wrapper. It's a training environment that evolves.
 
