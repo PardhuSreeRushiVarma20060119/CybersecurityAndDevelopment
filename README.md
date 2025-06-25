@@ -19,7 +19,6 @@
 - [📦 Repository Structure](#-repository-structure)
 - [🎯 Purpose](#-purpose)
 - [⚒️ Tech & Tools](#️-tech--tools)
-- [📂 Collapsible Sections](#-collapsible-sections)
 - [🚨 Disclaimer](#-disclaimer)
 - [📬 Connect](#-connect)
 
@@ -173,6 +172,16 @@ DevSecOps In Cybersecurity & Software Development.
 ---
 ## 🚨 Disclaimer
 > ⚠️ All content in this repository is for educational and ethical purposes only. You are solely responsible for how you use this information.
+
+---
+## Projects UseCases : 
+1. [*PhishVault Repository*](https://github.com/Tejaswini4119/PhishVault)
+2. [*MirageC2 Backend-Repo*](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)
+3. 🏗️ *Decentralised Threat Intelligence Vault - Repo* (NOt Yet Initialised)
+4. 🚧 *OpenLoRA* - *Revolutionizing the Operational Training for Large Language Models* (initialised but not public)
+
+
+
 
 ---
 ## 📬 Connect
