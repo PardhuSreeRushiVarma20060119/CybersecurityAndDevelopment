@@ -48,7 +48,6 @@ In real-world DevSecOps:
 
 And they **can all run on the same base model locally**!
 - [LoRA Github Repo](https://github.com/microsoft/LoRA)
-- [Peft by HuggingFace](https://github.com/huggingface/peft)
 
 > *"LoRA doesn’t rewrite intelligence — it refocuses it. Like handing your AI a flashlight and saying: ‘Look here, this is where it matters.’"*
 
@@ -69,6 +68,7 @@ model = AutoModelForCausalLM.from_pretrained("codellama/CodeLlama-7b-Instruct-hf
 peft_config = LoraConfig(task_type="CAUSAL_LM", r=8, lora_alpha=32)
 peft_model = get_peft_model(model, peft_config)
 ```
+- [Peft by HuggingFace](https://github.com/huggingface/peft)
 
 > *"Training a LoRA isn’t just an experiment. It’s how you teach an AI to speak your dialect of code and chaos."*
 
