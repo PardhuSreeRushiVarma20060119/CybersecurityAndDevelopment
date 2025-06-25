@@ -86,6 +86,13 @@ peft_model = get_peft_model(model, peft_config)
 - Parses CVEs, builds STIX, YAML hardening  
 - React UI micro-gen with Tailwind and forms  
 
+### 3. **OpenLoRa**
+- Local-first LoRA trainer (CLI + optional Web UI)
+- LLM-assisted log explainer and training advisor
+- Memory-aware training runs (dataset + parameter recall)
+- Integrated Prometheus/Grafana observability with AI annotations
+- Dataset sanity checks and auto-prompt generation
+
 > *"I don’t ask my LLM to code for me. I ask it to think with me — faster."*
 
 ---
@@ -123,8 +130,9 @@ And with **LoRA**, you can shape that buddy to your exact workflow.
 
 ## 📦 Want to contribute?
 
-- 🚧 DTI-Vault on GitHub *(Project Not Initialised Yet)*  
-- 🔗 [MirageC2](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)  
+- 🚧 DTI-Vault on GitHub *(Project Not Initialised Yet)*
+- 🧠 OpenLoRA on GitHub *(Project Not Initialised Yet)*  
+- 🔗 [MirageC2 on GitHub](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)  
 
 ---
 
