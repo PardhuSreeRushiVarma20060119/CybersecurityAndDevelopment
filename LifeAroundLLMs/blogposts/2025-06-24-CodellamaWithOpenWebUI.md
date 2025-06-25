@@ -3,7 +3,7 @@
 
 # Operationalizing CodeLlama with Open WebUI for Local LLM Inference Workflows
 
-*“Not everything powerful needs the cloud. Sometimes, the intelligence belongs at home.”*
+*“Not everything powerful needs the cloud, servers, infrastructure. Sometimes, the intelligence belongs at home.”*
 
 ---
 
