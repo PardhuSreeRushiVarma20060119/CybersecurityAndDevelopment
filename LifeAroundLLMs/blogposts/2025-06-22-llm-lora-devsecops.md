@@ -47,8 +47,8 @@ In real-world DevSecOps:
 - 🧪 A LoRA for shell scripting, threat detection logic, or container hardening  
 
 And they **can all run on the same base model locally**!
-
-[LoRA Github Repo](https://github.com/microsoft/LoRA)
+- [LoRA Github Repo](https://github.com/microsoft/LoRA)
+- [Peft by HuggingFace](https://github.com/huggingface/peft)
 
 > *"LoRA doesn’t rewrite intelligence — it refocuses it. Like handing your AI a flashlight and saying: ‘Look here, this is where it matters.’"*
 
