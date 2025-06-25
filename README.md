@@ -177,7 +177,7 @@ DevSecOps In Cybersecurity & Software Development.
 ## Projects UseCases : 
 1. [*PhishVault Repository*](https://github.com/Tejaswini4119/PhishVault)
 2. [*MirageC2 Backend-Repo*](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)
-3. 🏗️ *Decentralised Threat Intelligence Vault - Repo* (NOt Yet Initialised)
+3. 🏗️ *Decentralised Threat Intelligence Vault - Repo* (Not Yet Initialised)
 4. 🚧 *OpenLoRA* - *Revolutionizing the Operational Training for Large Language Models* (initialised but not public)
 
 
