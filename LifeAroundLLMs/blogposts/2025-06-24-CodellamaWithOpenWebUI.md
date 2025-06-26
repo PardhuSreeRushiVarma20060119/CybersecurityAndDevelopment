@@ -52,19 +52,14 @@ This makes it perfect for:
 This setup was tested on a 16GB RAM laptop with Ollama and Docker installed.
 
 ### Step 1: Install & Run Ollama
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
 For Windows, download from: https://ollama.com/download
+![ollama](https://github.com/user-attachments/assets/ad5ed529-6735-4d93-9cba-078d51ecf929)
 
 ### Step 2: Pull CodeLlama
 
 ```bash
 ollama pull codellama:7b
 ```
-
 To test:
 
 ```bash
@@ -79,10 +74,15 @@ Run Open WebUI using Docker:
 docker run -d   -p 3000:3000   --name open-webui   -e OLLAMA_BASE_URL=http://host.docker.internal:11434   ghcr.io/open-webui/open-webui:main
 ```
 
+![Docker Pull OpenWebUI](https://github.com/user-attachments/assets/bcc36991-921c-4bfe-a464-ab977a803d96)
+![Logs Of The Container](https://github.com/user-attachments/assets/632365fb-2d84-4785-8f09-b9519141b599)
+![Container Health](https://github.com/user-attachments/assets/9fb334e6-5f2a-4a18-b783-2b4a8159a9ab)
+
 Then open:  
 http://localhost:3000
 
-You are now chatting with CodeLlama through a local web interface.
+![OpenWebUI](https://github.com/user-attachments/assets/63ccd154-ea26-44a9-8dc5-0b8887978160)
+You are now chatting with CodeLlama (LLM) through a local web interface.
 
 ---
 
@@ -121,6 +121,8 @@ This setup turns CodeLlama into a personal AI code engineer. Use it for:
 
 Running on CPU-only with 16GB RAM is viable for light to medium coding tasks.
 
+generally for very smooth workflows, better go quantized or smaller models, or increasing your ram > 16GB.
+
 ---
 
 ## What Comes Next?
@@ -132,7 +134,7 @@ Running on CPU-only with 16GB RAM is viable for light to medium coding tasks.
 
 ## Final Thoughts
 
-> *“You don’t need the cloud to build intelligence. Sometimes, the smartest dev in the room is the one running on your localhost.”*
+> *“You don’t need the cloud, heavy infrastructure, super specialized GPU's, servers etc, to build intelligence. Sometimes, the smartest dev in the room is the one running on your localhost.”*
 
 CodeLlama + Open WebUI is more than just a local LLM test — it’s a window into the future of personal AI agents, private development copilots, and autonomous tooling for secure software workflows.
 Try it. Build with it. Break it. Train it. Let your LLM Understand Your Dialect.
