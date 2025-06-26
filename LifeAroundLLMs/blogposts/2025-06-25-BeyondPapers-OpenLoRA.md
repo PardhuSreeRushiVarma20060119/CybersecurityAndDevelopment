@@ -5,9 +5,6 @@
 > *Blog on OpenLoRA : Tracing the research evolution of LoRA and why OpenLoRa must exist.*
 ---
 
-> *Audience : Researchers, open-source developers, fine-tuning practitioners, and early adopters exploring AI tooling.*
----
-
 ## 1. The Evolution of Efficient Fine-Tuning
 
 ### (**Pre-2021**): Full fine-tuning was the norm.  
