@@ -74,6 +74,7 @@ It's what a research-to-reality bridge should be:
 - Self-correcting  
 - User-guiding  
 
+> *Audience : Researchers, open-source developers, fine-tuning practitioners, and early adopters exploring AI tooling.*
 ---
 
 ## Ending Note
