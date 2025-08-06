@@ -15,7 +15,7 @@ In physical engagements, red teamers simulate real-world criminal behavior:
 
 Unlike digital assessments, the risks are **immediate, visible, and often unpredictable.**
 
-> Even if your badge says "Red Team," to the public or law enforcement, you may appear to be a criminal actor.
+> Even if your badge says "Red Team," to the public or law enforcement, you may appear to be a **criminal actor**.
 
 ---
 
