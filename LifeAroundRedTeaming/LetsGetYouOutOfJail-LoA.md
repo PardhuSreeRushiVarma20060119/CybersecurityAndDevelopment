@@ -158,7 +158,8 @@ Do **NOT** reach for the LoA suddenly — treat the moment like a **police stop*
 
 ---
 
-## 🧭 Author’s Note (From A Reddit User)
+### 🧭 Author’s Note (From A Reddit User)
 
-These recommendations come from **over a decade of real-world red team experience**, including detainments involving helicopters, firearms, and law enforcement. Trust me: you’d rather have your LoA and not need it, than need it and not have it.
+> These recommendations come from **over a decade of real-world red team experience**, including detainments involving helicopters, firearms, and law enforcement. Trust me: you’d rather have your LoA and not need it, than need it and not have it.
+
 **Stay authorized. Stay alive. Stay sharp.**
