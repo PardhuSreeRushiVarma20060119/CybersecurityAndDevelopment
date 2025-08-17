@@ -161,4 +161,3 @@ Emphasize the importance of using key-based authentication for SSH.
 | IIS web.config         | `type web.config` → `findstr connectionString`   | Database credentials often in cleartext             |
 | Windows Saved Creds    | `cmdkey /list` → `runas /savecred`               | Spawn shell as saved user, retrieve flag            |
 | PuTTY                  | `reg query ... /f "Proxy"`                       | Proxy username/password stored in registry          |
-```
