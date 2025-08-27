@@ -81,7 +81,7 @@ peft_model = get_peft_model(model, peft_config)
 - Custom module builder (Fastify, MongoDB)  
 - Agent logic assistant (Python over Tor)    
 
-### 3. **OpenLoRa (Under Research & Resource Planning)**
+### 2. **OpenLoRa (Under Research & Resource Planning)**
 - Local-first LoRA trainer (CLI + optional Web UI)
 - LLM-assisted log explainer and training advisor
 - Memory-aware training runs (dataset + parameter recall)
