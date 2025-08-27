@@ -76,17 +76,12 @@ peft_model = get_peft_model(model, peft_config)
 
 ## 🧪 How I Use LLMs in My Cybersecurity Projects
 
-### 1. **MirageC2**
+### 1. **MirageC2 (Internal Development)**
 - CLI + backend fine tuning  
 - Custom module builder (Fastify, MongoDB)  
-- Agent logic assistant (Python over Tor)  
+- Agent logic assistant (Python over Tor)    
 
-### 2. **DTI-Vault**
-- LLM auto-generates plugin handlers  
-- Parses CVEs, builds STIX, YAML hardening  
-- React UI micro-gen with Tailwind and forms  
-
-### 3. **OpenLoRa**
+### 3. **OpenLoRa (Under Research & Resource Planning)**
 - Local-first LoRA trainer (CLI + optional Web UI)
 - LLM-assisted log explainer and training advisor
 - Memory-aware training runs (dataset + parameter recall)
@@ -125,14 +120,6 @@ Local LLMs are the future of **DevSecOps copilots**. You don’t need to rent GP
 And with **LoRA**, you can shape that buddy to your exact workflow.
 
 > *"Co-engineering isn’t letting go. It’s letting AI carry the boilerplate while you carry the vision."*
-
----
-
-## 📦 Want to contribute?
-
-- 🚧 DTI-Vault on GitHub *(Project Not Initialised Yet)*
-- 🧠 OpenLoRA on GitHub *(Project Not Initialised Yet)*  
-- 🔗 [MirageC2 on GitHub](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)  
 
 ---
 
