@@ -1,3 +1,7 @@
+> This folder holds my TryHackMe writeups — lab notes, messy proofs, and dumb mistakes I pretend were "research." The corrupted log is just for flavor: a fake, goth-ish server scrap for laughs — look, cringe, or get spooked, but nothing here is real-world malice, just chaotic practice and bad jokes.
+
+
+
 --- BEGIN WRTUP.LOG ---
 
 [2025-10-01T00:59:58Z] <init> sys.start -> daemon "underveil" v0.9.1
@@ -197,7 +201,3 @@
 [2025-10-01T01:43:36Z] <boot> : reboot -> /dev/null
 
 --- END WRTUP.LOG ---
-
-
-
-> This folder holds my TryHackMe writeups — lab notes, messy proofs, and dumb mistakes I pretend were "research." The corrupted log is just for flavor: a fake, goth-ish server scrap for laughs — look, cringe, or get spooked, but nothing here is real-world malice, just chaotic practice and bad jokes.
