@@ -40,10 +40,8 @@ LifeAroundCybersecurity-Development/
 │   └── VM Configs, FlareVM, Etc
 ├── 🕸️ LifeAroundWebSecurity/
 │   └── Classic, Modern, API
-├── 🤖 LifeAroundDevSecOps&LLMs/
-│   └── Blogs, And Workflows
-└── 📚 LifeAroundWriteups/
-    └── Walkthroughs
+└── 🤖 LifeAroundDevSecOps&LLMs/
+    └── Blogs, And Workflows
 ```
 
 ## 🎯 Purpose
