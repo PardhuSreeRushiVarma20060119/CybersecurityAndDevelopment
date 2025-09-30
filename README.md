@@ -42,8 +42,8 @@ LifeAroundCybersecurity-Development/
 │   └── Classic, Modern, API
 ├── 🤖 LifeAroundDevSecOps&LLMs/
 │   └── Blogs, And Workflows
-└── 📚 LifeAroundMyNotes/
-    └── Certs, Concepts, Walkthroughs
+└── 📚 LifeAroundWriteups/
+    └── Walkthroughs
 ```
 
 ## 🎯 Purpose
