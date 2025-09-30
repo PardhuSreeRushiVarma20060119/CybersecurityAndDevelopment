@@ -1,6 +1,5 @@
 <img width="1665" alt="Screenshot 2024-03-19 at 1 20 15 AM" src="https://github.com/user-attachments/assets/95fad69b-5461-4ca1-acd9-04677f7dd0e2" />
 
-
 <h1 align="center">🧠 PortSwigger SQL Injection Labs</h1>
 
 <p align="center">
