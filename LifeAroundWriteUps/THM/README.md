@@ -1,5 +1,202 @@
-### practicing on the platform TryHackme and HackTheBox
-I'll be uploading my writeups here: 
-https://jesusgavancho.gitbook.io/writeups/
+--- BEGIN WRTUP.LOG ---
 
-:)
+[2025-10-01T00:59:58Z] <init> sys.start -> daemon "underveil" v0.9.1
+[2025-10-01T01:00:01Z] <r3f9b2c1> conn=0x7f8 AUTH_INIT
+[2025-10-01T01:00:02Z] <9d0e7a4b> : ping /practice
+[SYS] [conn=0x7f8] AUTH OK — session 0x1a2b
+[NET] iface=eth0 up | mac=00:0a:95:9d:68:16
+
+[2025-10-01T01:02:13Z] <a3f9b2c1> : cmd=practice
+[2025-10-01T01:02:14Z] <9d0e7a4b> : fk around & commit war crimes
+[LOG] writelog -> /var/log/underveil/chan.1 rotated
+
+[2025-10-01T01:03:02Z] <z7f#1c> : ??// corrupted??
+[2025-10-01T01:03:05Z] <f0x8e9> : ████ ░▒▓ ▓▒░ ███
+[DBG] read: 128/4096 bytes -> 0x4f 0x2b 0x?? 0x00 0x9c
+
+[2025-10-01T01:04:07Z] <c4b1e8f0> : enum: start / sweep
+[2025-10-01T01:04:08Z] <2f7d3c9a> : damn right, stalk everything that moves
+[NET] \x1b[31mRcvd malformed packet (len=0x0f)\x1b[0m
+[PKT] DROP src=10.0.0.5:443 -> dst=192.0.2.1:8080 (partial)
+
+[2025-10-01T01:04:11Z] <*> <???> : ??\x00\xff\xfe
+[TRACE] stack: 0x00ff->0xdead..0xbeef (truncated)
+
+[2025-10-01T01:06:22Z] <8e2a0d5f> : priv_escalation -> probe
+[2025-10-01T01:06:23Z] <b1c9f3e7> : overthrow the fkng government
+[LOG] -- corrupted: 4f 2b ?? ?? 00 9c
+[ERR] write: EIO (short write) fd=12
+
+[2025-10-01T01:07:00Z] <x1x1x1> conn=0x8ab TRY_REUSE -> FAIL
+[NET] RTT jitter=213ms packet_loss=3%
+
+[2025-10-01T01:08:31Z] <d0f6a2b3> : brute_force /login
+[2025-10-01T01:08:32Z] <4a7c1e9d> : beat the sht outta this login
+[NET] [ttl=64 hop=7] * * 192.0.2.0
+[PKT] 0x00 0a ff ee .. 7b (noise)
+
+[2025-10-01T01:08:35Z] <x9q3> : !!▒▒▒▒▒▒▒▒▒▒
+[IO] read: 0/4096 — retrying (x3)
+[ALERT] IDS sig#217 matched -> suppress
+
+[2025-10-01T01:10:45Z] <f9b3c6a0> : docs/writeups -> push?
+[2025-10-01T01:10:46Z] <0c8e4b2f> : public confessions of my crimes
+[ERR] filehandle=0x0 closed unexpectedly
+[FS] inode 0x7f0 free -> reuse?
+
+[2025-10-01T01:11:01Z] <g4h5j6k7> : AUTH_REQ / token=eyJhbGciOi...
+[SYS] token decode -> PARTIAL (base64 truncated)
+[PKT] partial dump: YmFzZTY0Oj09.. (truncated)
+
+[2025-10-01T01:12:51Z] <1a7d5f2c> : flags? leftover?
+[2025-10-01T01:12:52Z] <e6b0c9d8> : leave no witnesses
+[PACKET] DROP: 0x9f..0x3a (partial payload)
+[ERR] shm_open -> EEXIST (race)
+
+[2025-10-01T01:12:55Z] <q3w4e> : ░▒▓▒░▒▒▒▓
+[NET] ARP: who-has 198.51.100.2 tell 192.0.2.1
+
+[2025-10-01T01:14:12Z] <r8t7y6u5> : conn=0x9f1 KEEPALIVE
+[NET] [SYN] src=203.0.113.77:52412 -> dst=10.10.10.10:22
+[WARN] syn flood? rate=120/s
+
+[2025-10-01T01:15:03Z] <7c2b9f01> : net.topo -> mesh
+[2025-10-01T01:15:04Z] <3b8d6e4a> : organize damn crime syndicates
+[SIGNAL] RSSI -95 dBm — ghost node detected
+[HW] iface=lo: pkt_err=0x0a (weird)
+
+[2025-10-01T01:15:10Z] <f1x7c> : ÷×¥≈∆
+[DBG] rnd_seed mismatch -> reseed
+
+[2025-10-01T01:17:19Z] <9f4e1b6c> : vuln_scan: init
+[2025-10-01T01:17:20Z] <a2d7c0f5> : strip-search machines till they squeal
+[TRACE] 0x7d4e: "�|p\x00\xff" (truncated)
+[IO] mmap: MAP_FAILED -> fallback to read()
+
+[2025-10-01T01:17:25Z] <x0f9d> : ▒▒▒▒▒▒▒▒▒▒▒▒▒
+[PKT] malformed hdr: 0x4b 0x00 ?? ?? 0x1f
+
+[2025-10-01T01:18:02Z] <random> : LOGIN_ATTEMPT user=0x4f2b (anon)
+[SEC] captcha bypass? heur=0.87 -> flag for manual
+
+[2025-10-01T01:19:28Z] <5e0c2a9b> : soc_eng vectors?
+[2025-10-01T01:19:29Z] <c8b4f1e2> : fk it, just lie professionally
+[ALERT] IDS sig#459 triggered — suppressing output
+[DEV] user-agent: "goth-bot/1.4" fingerprint mismatch
+
+[2025-10-01T01:20:01Z] <zzzzzzzz> : 0x00 0x00 0x00 0x00
+[CORE] /dev/zero @0x00ff: 00 00 00 00 00 00
+
+[2025-10-01T01:21:36Z] <2b9a4c7d> : reverse_shell -> stable?
+[2025-10-01T01:21:37Z] <6d3f0e8a> : drag that damn soul outta the system
+[SYS] >>> partial dump: cHJvY2Vzczogc2luZGVy (truncated)
+[ERR] writev: EPIPE on fd=6
+
+[2025-10-01T01:21:42Z] <x5v2> : ▓▒░▓▒░▒░▒▓
+[NET] tcpdump: truncated frame — payload lost
+
+[2025-10-01T01:22:10Z] <unread1> : CLUSTER SYNC -> ok?
+[SYNC] ack=0x1a commit=0x0ff (inconsistent) -> rollback
+
+[2025-10-01T01:23:44Z] <4f1e8a2b> : hash_crack batch#12
+[2025-10-01T01:23:45Z] <8c7d2b5f> : smash till it confesses
+[IO] read: 0/4096 — retrying (x3)
+[PKT] ERR: checksum mismatch (0xabc != 0x7f2)
+
+[2025-10-01T01:23:50Z] <z8k1> : ∆ƒ©≈¥ ß∞
+[LOG] rotate -> /var/log/underveil/chan.2.gz size=5.4MB
+
+[2025-10-01T01:24:05Z] <h7g6f5d4> : AUTH_FAIL uid=0x0b (rate_limit)
+[SEC] throttle: backoff=30s
+
+[2025-10-01T01:25:51Z] <0d6b3f9e> : defense_depth? cover?
+[2025-10-01T01:25:52Z] <f2a9c4b0> : bury that sht six feet under
+[CORE] wipe-seq START -> 0x01 .. 0x?? .. ABORT
+[ERR] device /dev/sdb: I/O error @ sector 0x1f4b
+
+[2025-10-01T01:26:18Z] <q9w8e7r6> : noise: ████▒▒▒▒
+[NET] jitter spike -> 789ms
+
+[2025-10-01T01:27:00Z] <h1j2k3l4> : conn_reset from 198.51.100.9
+[SYS] session 0x3b terminated — reason: TIMEOUT (0x08)
+
+[2025-10-01T01:28:05Z] <b7c0e1d3> : fw prune -> ruleset 0x4
+[2025-10-01T01:28:06Z] <1e4f9a2c> : bonfire with the damn logs
+[NET] dropped: icmp type=3 code=1
+
+[2025-10-01T01:29:11Z] <m2n3b4v5> : SCAN_REPLY -> lots of open ports (truncated)
+[PKT] 0x7f 0x2e 0x00 .. 0xff .. 0x00
+
+[2025-10-01T01:30:12Z] <3d8f2b6a> : forensic-kit ready?
+[2025-10-01T01:30:13Z] <9a0c5e7b> : clean up the damn murder scene
+[LOG] wipe: 0x00..0xFF pattern applied (partial)
+[DBG] filefrag -> missing extents: 0x3a..0x3f
+
+[2025-10-01T01:31:00Z] <p0x4q9> : MALFORMED_HDR \x00\xff\xaa
+[ERR] parser -> unexpected token at 0x2b
+
+[2025-10-01T01:32:19Z] <6a1b4e0f> : osint / persona harvest
+[2025-10-01T01:32:20Z] <d4c7f8a3> : stalk with Google and a grudge
+[ALERT] tor_gw detected -> circuit unstable
+
+[2025-10-01T01:33:02Z] <g0r7t6y5> : HEARTBEAT -> lost (x2)
+[NET] partial retransmit -> seq mismatch
+
+[2025-10-01T01:34:27Z] <e0b9c6d2> : passwd_policy -> rotate
+[2025-10-01T01:34:28Z] <7f2a1c5e> : damn tyranny of characters
+[WARN] passwd-store corrupted: CRC mismatch
+[IO] attempted restore -> file truncated
+
+[2025-10-01T01:35:11Z] <o9p8q7r6> : noise_inject -> OK
+[PKT] 0x00 0xff 0xee 0x11 .. [random]
+
+[2025-10-01T01:36:33Z] <a5d2f0b8> : ctf drop?
+[2025-10-01T01:36:34Z] <0b9e6c3f> : capture the fk???
+[SYS] forked process 0x9e -> process_corrupted....
+[DBG] zombie_count ++ -> 5
+
+[2025-10-01T01:37:10Z] <y7u6i5o4> : CONN_LEAK detected
+[TRACE] fdtable: [3,4,5,6,9,0x??,0x??]
+
+[2025-10-01T01:38:41Z] <c1f7a3e6> : ir -> ready
+[2025-10-01T01:38:42Z] <5b8d0f2c> : damn panic cleanup crew
+[PKT] RETRANS: 0x3f..0x4a (timeouts)
+
+[2025-10-01T01:39:00Z] <k8l7m6n5> : garbage: "\x00\xff\xfe\xfd"
+[LOG] entropy low -> reseed RNG
+
+[2025-10-01T01:40:49Z] <2e6c9a0b> : pentest scope?
+[2025-10-01T01:40:50Z] <8b3f1d7e> : legalized fkn breaking & entering
+[SYS] hw_id: 0x0badc0de | sig: 3f:4d:5a
+
+[2025-10-01T01:41:22Z] <p9o8i7u6> : MALFORMED_JSON { "cmd":
+[ERR] json_parse -> unexpected EOF at pos 12
+
+[2025-10-01T01:42:56Z] <f4a8c9d1> : learn_responsibly?
+[2025-10-01T01:42:57Z] <6c0b2e3f> : good luck covering ur ass
+[SIGNAL] jitter=219ms | packet_loss=12%
+
+[2025-10-01T01:43:12Z] <??> : \x00\xff\xfe��
+[2025-10-01T01:43:13Z] <4b2c9a8f> : (illegible) — ████ ████ █
+[2025-10-01T01:43:15Z] <z9x8c7v6> LOGIN_FAILED x17 -> RATE_LIMIT
+
+[2025-10-01T01:43:18Z] <e4f3d2c1> : //sys: purge? [Y/N] -- no response
+[SYS] purge queued -> requires auth HSM:0xdead
+
+[2025-10-01T01:43:22Z] <a3f9b2c1> : end /practice
+[SYS] session 0x1a2b terminated — reason: UNKNOWN (0xDEAD)
+
+[2025-10-01T01:43:30Z] <corrupt> : ░▒▒▒▒▒▒ CORRUPTED TAIL
+[PKT] tail: 0x00..0xff .. 0x?? 0x?? 0x?? 0x7b
+--- partial tail follows ---
+[2025-10-01T01:43:31Z] <???> : ████ ████
+[2025-10-01T01:43:32Z] <ff1e2d3c> : (illegible) — restart daemon???
+[2025-10-01T01:43:33Z] <x9x9x9x9> : \x01\x02\x03\x04\x05\x06
+[2025-10-01T01:43:34Z] <z1z2z3z4> : LOGIN_FAILED x3 -> BLOCK
+[2025-10-01T01:43:35Z] <ghost> : ███ ERROR: SEGFAULT @ 0x00ff
+[2025-10-01T01:43:36Z] <boot> : reboot -> /dev/null
+--- END WRTUP.LOG ---
+
+
+
+> This folder holds my TryHackMe writeups — lab notes, messy proofs, and dumb mistakes I pretend were "research." The corrupted log is just for flavor: a fake, goth-ish server scrap for laughs — look, cringe, or get spooked, but nothing here is real-world malice, just chaotic practice and bad jokes.
