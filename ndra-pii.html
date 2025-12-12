@@ -2,69 +2,95 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>NDRA-PII – Technical Specification Document</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="NDRA-PII: Neuro-Semantic Multi-Agent PII Intelligence System integrated with Microsoft Presidio. Technical specification document." />
+<title>NDRA-PII – Technical Design Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- PRINT-OPTIMIZED, HIGH CONTRAST, TECHNICAL DESIGN FORMAT -->
 <style>
   body {
-    margin: 0;
-    padding: 24px;
-    font-family: system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
-    background: #0f172a;
-    color: #e5e7eb;
-    line-height: 1.6;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    margin: 40px auto;
+    padding: 0 20px;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.55;
   }
 
-  h1, h2, h3 {
-    color: #f1f5f9;
+  h1, h2, h3, h4 {
+    color: #0a3a7e; /* Engineering-blue headers */
     font-weight: 600;
+    margin-top: 32px;
   }
 
-  h1 { font-size: 28px; margin-top: 0; }
-  h2 { font-size: 22px; margin-top: 32px; }
-  h3 { font-size: 18px; margin-top: 22px; }
+  h1 { font-size: 32px; margin-top: 0; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 17px; }
 
   p, li {
     font-size: 15px;
-    color: #cbd5e1;
+    color: #000000;
   }
 
   pre {
-    background: #1e293b;
-    padding: 12px;
-    border-radius: 8px;
+    background: #f4f4f4;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
     overflow-x: auto;
-    border: 1px solid #334155;
+    border-radius: 4px;
+    font-size: 14px;
   }
 
   code {
-    background: #1e293b;
-    padding: 3px 6px;
-    border-radius: 6px;
-    border: 1px solid #334155;
+    background: #efefef;
+    border: 1px solid #ccc;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 14px;
   }
 
-  ul { margin-left: 24px; }
+  ul, ol {
+    margin-left: 24px;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 18px 0;
+    margin: 16px 0;
   }
 
   th, td {
-    border: 1px solid #334155;
+    border: 1px solid #333;
     padding: 8px;
     font-size: 14px;
   }
-  th { background: #1e293b; color: #f8fafc; }
-  tr:nth-child(even) { background: #1b2536; }
-  .section-divider {
+
+  th {
+    background: #e6e6e6;
+    font-weight: bold;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #999;
     margin: 40px 0;
-    border-top: 1px solid #334155;
+  }
+
+  /* Print-specific rules */
+  @media print {
+    body { 
+      margin: 20mm 15mm;
+      font-size: 12pt;
+      color: #000000;
+    }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 18pt; }
+    h3 { font-size: 14pt; }
+    pre, code { 
+      font-size: 10pt; 
+      background: #f2f2f2 !important;
+    }
   }
 </style>
 </head>
@@ -73,279 +99,315 @@
 
 <h1>NDRA-PII  
 <br>Neuro-Semantic Multi-Agent PII Intelligence System  
-<br><span style="font-size:16px;color:#38bdf8;">Integrated with Microsoft Presidio</span>
+<br><span style="font-size:18px;color:#0a3a7e;">Technical Design Document (with Microsoft Presidio)</span>
 </h1>
 
 <p>
-This document is the authoritative technical specification for the NDRA-PII system.  
-It describes the architecture, pipelines, agents, rule logic, data models, security requirements, and technical workflows required for full implementation, including Microsoft Presidio integration.
+This document describes the full engineering design of NDRA-PII: a neuro-semantic, multi-agent PII intelligence system integrating Microsoft Presidio for detection and anonymization.
 </p>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="vision">1. Vision</h2>
+<h2>1. System Overview</h2>
 <p>
-NDRA-PII is an enterprise-grade platform for end-to-end PII detection, classification, reasoning, redaction, audit, and compliance automation across unstructured documents.  
-It uses:
+NDRA-PII is a multi-agent platform for PII detection, contextual reasoning, rule-based compliance enforcement, redaction, and auditability.
 </p>
 
 <ul>
-  <li>Microsoft Presidio for deterministic PII detection + anonymization</li>
-  <li>NDRA Multi-Agent Swarm for semantic reasoning, context understanding, retrieval, policy enforcement, risk scoring, and explainability</li>
-  <li>Neuro-Symbolic Rule Language (NSRL) for policy rule execution</li>
+  <li>Supports documents, scans, images, emails, OCR text</li>
+  <li>Uses Microsoft Presidio for deterministic PII detection</li>
+  <li>Uses LLMs for semantic reasoning & contextual inference</li>
+  <li>Uses a Neuro-Symbolic Rule Layer (NSRL) for policy logic</li>
 </ul>
 
-<p>
-It supports documents, emails, images, scans, PDFs, OCR, and multimodal data.
-</p>
+<hr>
 
-<div class="section-divider"></div>
+<h2>2. Architecture</h2>
 
-<h2 id="architecture">2. High-Level Architecture</h2>
-<p>The system is organized into layered components:</p>
+<h3>2.1 Layered Architecture</h3>
 
 <ul>
-  <li>Document ingestion</li>
-  <li>OCR + layout extraction</li>
-  <li>Semantic chunking</li>
-  <li>Presidio PII detection</li>
-  <li>Embedding + vector retrieval</li>
-  <li>Multi-Agent orchestration (Kafka / event-driven)</li>
-  <li>NSRL reasoning layer</li>
-  <li>Risk scoring</li>
-  <li>Presidio anonymization/redaction</li>
-  <li>Explainability + provenance + audit logs</li>
-  <li>UI dashboards and PDF rendering</li>
+  <li><strong>Ingestion Layer</strong>: Upload, email intake, API intake</li>
+  <li><strong>Document Intelligence</strong>: OCR, layout detection, semantic chunking</li>
+  <li><strong>PII Detection Layer</strong>: Presidio AnalyzerEngine + custom NER</li>
+  <li><strong>Semantic Retrieval Layer</strong>: Embedding computation, vector DB, hybrid retrieval</li>
+  <li><strong>Agent Orchestration</strong>: Kafka or event-driven microservices</li>
+  <li><strong>Reasoning Layer</strong>: NSRL rule interpreter</li>
+  <li><strong>Risk Layer</strong>: Quantified scoring model</li>
+  <li><strong>Redaction Layer</strong>: Presidio Anonymization Engine</li>
+  <li><strong>Explainability + Audit</strong>: Provenance, rule traces, decision JSON</li>
+  <li><strong>UI Layer</strong>: PDF viewer, highlights, dashboards</li>
 </ul>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="pipeline">3. Core Processing Pipeline</h2>
+<h2>3. End-to-End Pipeline</h2>
 
-<h3>3.1 Step 1 – Ingestion</h3>
-<p>Documents are uploaded and stored with metadata. A worker queues preprocessing.</p>
+<h3>3.1 Step 1 — Ingestion</h3>
+<p>Accept files via API or UI. Store in object storage. Queue processing.</p>
 
-<h3>3.2 Step 2 – Document Intelligence</h3>
+<h3>3.2 Step 2 — OCR & Chunking</h3>
 <p>
-OCR (Tesseract/PaddleOCR) extracts text.  
-Layout engines (LayoutLM/Donut) detect structure.  
-Semantic chunking produces 300–800 token chunks.
+Use PaddleOCR or Tesseract → text extraction.  
+Use LayoutLM/Donut → tables/forms segmentation.  
+Chunk text into 300–800 token semantic segments.
 </p>
 
-<h3>3.3 Step 3 – Presidio PII Detection</h3>
+<h3>3.3 Step 3 — Presidio PII Detection</h3>
 <p>
-Presidio AnalyzerEngine is run on every chunk.  
-Outputs include: entity type, start/end spans, confidence, recognizer name.
+Run AnalyzerEngine per chunk:
 </p>
 
-<h3>3.4 Step 4 – PII Fusion</h3>
+<pre>entity_type, start, end, score, recognizer_type</pre>
+
+<h3>3.4 Step 4 — PII Fusion</h3>
 <p>
-Combine Presidio results with NER + LLM-based extraction.  
-Remove overlap and normalize types.
+Merge:
+</p>
+<ul>
+  <li>Presidio recognitions</li>
+  <li>NER outputs</li>
+  <li>LLM-based evidence</li>
+</ul>
+
+<h3>3.5 Step 5 — Retrieval</h3>
+<p>
+Compute embeddings (MiniLM, LegalBERT).  
+Store in vector DB (Milvus/Pinecone/Chroma).  
+Retrieve context for reasoning.
 </p>
 
-<h3>3.5 Step 5 – Retrieval Layer</h3>
-<p>
-Embeddings computed using MiniLM, LegalBERT, or domain models.  
-Vector DB → retrieve context chunks around PII.
-</p>
+<h3>3.6 Step 6 — NSRL Reasoning</h3>
+<p>Apply organizational policies.</p>
 
-<h3>3.6 Step 6 – NSRL Reasoning</h3>
-<p>
-Rules check conditions such as:
-</p>
-
+Example:
 <pre>
 WHEN pii.subtype == "aadhaar"
 AND doc.type == "contract"
-THEN severity = high, action = escalate
+THEN action = escalate
+THEN severity = high
 </pre>
 
-<h3>3.7 Step 7 – Risk Scoring</h3>
+<h3>3.7 Step 7 — Risk Scoring</h3>
 <p>
-Compute numeric risk_score (0–100) based on PII density, types, channel, and document type.
+Compute risk_score based on PII quantity, types, document channel, exposure.
 </p>
 
-<h3>3.8 Step 8 – Redaction</h3>
+<h3>3.8 Step 8 — Redaction</h3>
 <p>
-Presidio AnonymizerEngine masks, replaces, or removes sensitive text.
+Use Presidio AnonymizerEngine:
 </p>
 
-<h3>3.9 Step 9 – Explainability + Audit</h3>
+<ul>
+  <li>mask</li>
+  <li>replace</li>
+  <li>tokenize</li>
+  <li>remove</li>
+</ul>
+
+<h3>3.9 Step 9 — Explainability</h3>
 <p>
-Timeline, rule firing sequence, chunk usage, provenance, and audit hash are generated.
+Produce:
 </p>
 
-<h3>3.10 Step 10 – UI Delivery</h3>
-<p>
-PDF with highlights, risk summary, redacted preview, and exportable JSON decision.
-</p>
+<ul>
+  <li>chunk usage</li>
+  <li>PII span maps</li>
+  <li>rule firing order</li>
+  <li>audit hash</li>
+</ul>
 
-<div class="section-divider"></div>
+<h3>3.10 Step 10 — Output Delivery</h3>
+<p>UI displays risk ratings, PII highlights, redacted documents.</p>
 
-<h2 id="agents">4. Multi-Agent Swarm</h2>
+<hr>
+
+<h2>4. Multi-Agent Architecture</h2>
 
 <table>
 <tr>
   <th>Agent</th>
-  <th>Role</th>
+  <th>Description</th>
   <th>Uses Presidio?</th>
 </tr>
+
 <tr>
   <td>Preprocessing Agent</td>
-  <td>OCR, layout, chunking</td>
+  <td>OCR + layout analysis + chunking</td>
   <td>No</td>
 </tr>
+
 <tr>
   <td>PII Extractor Agent</td>
-  <td>Runs Presidio AnalyzerEngine</td>
-  <td>Yes</td>
+  <td>Runs AnalyzerEngine on each chunk</td>
+  <td><strong>Yes</strong></td>
 </tr>
+
 <tr>
-  <td>PII Fusion Agent</td>
-  <td>Merge Presidio + NER + LLM results</td>
-  <td>Indirectly</td>
+  <td>Fusion Agent</td>
+  <td>Join Presidio, NER, LLM spans</td>
+  <td>Indirect</td>
 </tr>
+
 <tr>
-  <td>NSRL Reasoner Agent</td>
-  <td>Policy rule evaluation</td>
+  <td>Retrieval Agent</td>
+  <td>Hybrid semantic search</td>
+  <td>No</td>
+</tr>
+
+<tr>
+  <td>NSRL Reasoner</td>
+  <td>Execute rule DSL</td>
   <td>Consumes Presidio outputs</td>
 </tr>
+
 <tr>
-  <td>Risk Analyzer Agent</td>
-  <td>Risk score & flags</td>
+  <td>Risk Agent</td>
+  <td>Compute risk_score</td>
   <td>Consumes Presidio outputs</td>
 </tr>
+
 <tr>
   <td>Redaction Agent</td>
-  <td>Uses Presidio AnonymizerEngine</td>
-  <td>Yes</td>
+  <td>Uses AnonymizerEngine for masking</td>
+  <td><strong>Yes</strong></td>
+</tr>
+
+<tr>
+  <td>Explainability Agent</td>
+  <td>Event timeline + audit</td>
+  <td>No</td>
 </tr>
 </table>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="models-data">5. Data Models</h2>
+<h2>5. Data Model Definitions</h2>
 
-<h3>Document Object</h3>
-<pre>{
-  "doc_id": "doc_001",
-  "filename": "file.pdf",
-  "pages": 8,
+<h3>5.1 Document Object</h3>
+<pre>
+{
+  "doc_id": "D001",
+  "filename": "contract.pdf",
   "mime": "application/pdf",
-  "status": "processed"
-}</pre>
+  "pages": 12
+}
+</pre>
 
-<h3>Chunk Object</h3>
-<pre>{
-  "chunk_id": "c_001",
-  "text": "...",
+<h3>5.2 Chunk Object</h3>
+<pre>
+{
+  "chunk_id": "C001",
+  "doc_id": "D001",
   "page": 3,
+  "text": "...",
   "coords": [x, y, w, h]
-}</pre>
+}
+</pre>
 
-<h3>PII Object</h3>
-<pre>{
-  "pii_id": "p_001",
-  "type": "aadhaar",
-  "method": ["presidio"],
+<h3>5.3 PII Object</h3>
+<pre>
+{
+  "pii_id": "P001",
+  "doc_id": "D001",
+  "chunk_id": "C001",
+  "type": "government_id",
+  "subtype": "aadhaar",
   "confidence": 0.98
-}</pre>
+}
+</pre>
 
-<h3>Decision Object</h3>
-<pre>{
+<h3>5.4 Decision Object</h3>
+<pre>
+{
+  "decision_id": "DEC001",
   "risk_score": 86,
-  "rules_fired": [...],
-  "suggested_action": "redact_and_escalate"
-}</pre>
+  "rules_fired": ["R100", "R245"],
+  "action": "redact_and_escalate"
+}
+</pre>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="difficulty-timeline">6. Difficulty & Timeline</h2>
+<h2>6. Rule Language (NSRL)</h2>
 
-<table>
-<tr>
-  <th>Version</th>
-  <th>Difficulty</th>
-  <th>Time</th>
-</tr>
-<tr>
-  <td>MVP</td>
-  <td>4 / 10</td>
-  <td>1–2 days</td>
-</tr>
-<tr>
-  <td>Advanced</td>
-  <td>6 / 10</td>
-  <td>1–3 weeks</td>
-</tr>
-<tr>
-  <td>Enterprise</td>
-  <td>8 / 10</td>
-  <td>4–5 months</td>
-</tr>
-</table>
+<h3>6.1 DSL Format</h3>
 
-<div class="section-divider"></div>
+<pre>
+rule_id: R_HIGH_AADHAAR
+when:
+  - pii.subtype == "aadhaar"
+  - doc.type == "contract"
+then:
+  - severity: high
+  - action: escalate
+</pre>
 
-<h2 id="security-kpi">7. Security & KPIs</h2>
+<h3>6.2 Engine Requirements</h3>
 
 <ul>
-  <li>Precision ≥ 95%</li>
-  <li>Recall ≥ 92%</li>
-  <li>Latency &lt; 8 seconds</li>
-  <li>Redaction accuracy ≈ 99%</li>
-  <li>Audit coverage: 100%</li>
+  <li>YAML parser → AST</li>
+  <li>AST → Executable rule functions (Python)</li>
+  <li>Support priorities & override rules</li>
+  <li>Version-controlled rulesets</li>
 </ul>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="stack">8. Tech Stack</h2>
+<h2>7. System KPIs</h2>
 
 <ul>
-  <li>FastAPI</li>
-  <li>Presidio Analyzer + Anonymizer</li>
-  <li>Postgres, Redis</li>
+  <li>PII Precision ≥ 95%</li>
+  <li>PII Recall ≥ 92%</li>
+  <li>False Positive Rate ≤ 5%</li>
+  <li>Latency per document ≤ 8s</li>
+  <li>Redaction Accuracy ≈ 99%</li>
+  <li>Audit Trace Coverage: 100%</li>
+</ul>
+
+<hr>
+
+<h2>8. Technology Stack</h2>
+
+<ul>
+  <li>FastAPI (Backend)</li>
+  <li>Python (Agents)</li>
+  <li>Presidio Analyzer & Anonymizer</li>
+  <li>Milvus / Pinecone / Chroma</li>
+  <li>Tesseract / PaddleOCR</li>
   <li>Kafka</li>
-  <li>Sentence Transformers</li>
-  <li>LayoutLM / Donut</li>
-  <li>Next.js UI</li>
+  <li>PostgreSQL</li>
+  <li>Next.js (UI)</li>
 </ul>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="workflow">9. Example Workflow</h2>
+<h2>9. Example Workflow</h2>
 
 <ol>
-  <li>Upload document</li>
+  <li>User uploads file</li>
   <li>OCR + chunking</li>
-  <li>Presidio runs PII detection</li>
-  <li>PII fusion + normalization</li>
-  <li>NSRL rule evaluation</li>
-  <li>Risk scoring</li>
-  <li>Presidio redaction</li>
-  <li>Explainability + audit log</li>
-  <li>UI output</li>
+  <li>Presidio identifies PII</li>
+  <li>Fusion agent consolidates spans</li>
+  <li>NSRL evaluates rules</li>
+  <li>Risk agent computes score</li>
+  <li>Presidio redacts</li>
+  <li>Explainability agent logs decision</li>
+  <li>UI displays output</li>
 </ol>
 
-<div class="section-divider"></div>
+<hr>
 
-<h2 id="antigravity">10. Antigravity-Ready Summary</h2>
-
-<p>
-Antigravity should interpret this document as the full implementation blueprint for NDRA-PII.  
-It must generate:
-</p>
+<h2>10. Antigravity IDE Implementation Notes</h2>
 
 <ul>
-  <li>Backend code (FastAPI)</li>
-  <li>Agent services (Python)</li>
-  <li>Presidio integration modules</li>
-  <li>NSRL rule engine</li>
-  <li>Vector DB pipeline</li>
-  <li>UI (Next.js)</li>
-  <li>Deployment manifests (Docker/K8s)</li>
+  <li>Use this document as the canonical reference</li>
+  <li>Break into subsystems: Backend, Agents, Rules, UI, OCR, Vector DB</li>
+  <li>Generate microservices for each agent</li>
+  <li>Autogenerate boilerplate using structured code templates</li>
 </ul>
+
+<hr>
 
 </body>
 </html>
