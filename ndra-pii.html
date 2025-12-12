@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NDRA-PII – Neuro-Semantic Multi-Agent PII Intelligence System (with Microsoft Presidio)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NDRA-PII: Neuro-Semantic Multi-Agent PII Intelligence System integrated with Microsoft Presidio for PII detection, redaction, reasoning, and audit." />
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-alt: #020617;
+      --card: #020617;
+      --primary: #38bdf8;
+      --primary-soft: rgba(56,189,248,0.16);
+      --accent: #a855f7;
+      --accent-soft: rgba(168,85,247,0.15);
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --success: #4ade80;
+      --warning: #facc15;
+      --code-bg: #020617;
+      --code-border: #1e293b;
+      --shadow-soft: 0 22px 45px rgba(15,23,42,0.85);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --blur: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 52%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px 16px 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1120px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .title-block {
+      max-width: 680px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148,163,184,0.35);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(var(--blur));
+    }
+
+    .badge--primary {
+      border-color: rgba(56,189,248,0.6);
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--primary);
+      box-shadow: 0 0 12px rgba(56,189,248,0.8);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(26px, 4vw, 32px);
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 640px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .meta-pill {
+      border-radius: var(--radius-pill);
+      padding: 4px 9px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(31,41,55,0.8);
+    }
+
+    .cta-panel {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.2), transparent 55%), radial-gradient(circle at bottom right, rgba(168,85,247,0.18), transparent 60%), rgba(15,23,42,0.96);
+      border: 1px solid rgba(51,65,85,0.9);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .cta-body {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 7px 14px;
+      font-size: 12px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.96);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn--primary {
+      border-color: rgba(56,189,248,0.9);
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #0b1120;
+      font-weight: 600;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    @media (min-width: 1024px) {
+      main {
+        grid-template-columns: 260px minmax(0, 1fr);
+        align-items: flex-start;
+      }
+    }
+
+    .side {
+      position: sticky;
+      top: 16px;
+      align-self: flex-start;
+    }
+
+    .toc {
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px rgba(15,23,42,0.8);
+    }
+
+    .toc-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .toc li {
+      margin-bottom: 5px;
+    }
+
+    .toc a {
+      color: var(--muted);
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    .content {
+      border-radius: 22px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15,23,42,0.96);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 20px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .content {
+        padding: 26px 26px 28px;
+      }
+    }
+
+    section {
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(31,41,55,0.75);
+      margin-bottom: 18px;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    section h2 {
+      font-size: 17px;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+
+    section h3 {
+      font-size: 14px;
+      margin: 12px 0 4px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 4px 0 8px;
+    }
+
+    ul, ol {
+      margin: 6px 0 8px 18px;
+      padding: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.95);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pill--success {
+      border-color: rgba(74,222,128,0.7);
+      color: var(--success);
+    }
+
+    .pill--danger {
+      border-color: rgba(248,113,113,0.8);
+      color: var(--danger);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0,1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(2,6,23,0.98));
+      border: 1px solid rgba(31,41,55,0.9);
+      padding: 10px 11px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(56,189,248,0.5);
+      color: var(--primary);
+      background: rgba(15,23,42,0.96);
+    }
+
+    pre, code {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+    }
+
+    pre {
+      background: var(--code-bg);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      border: 1px solid var(--code-border);
+      overflow-x: auto;
+      margin: 6px 0 10px;
+    }
+
+    code {
+      background: rgba(15,23,42,0.95);
+      padding: 2px 5px;
+      border-radius: 6px;
+      border: 1px solid rgba(31,41,55,0.8);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 10px;
+      font-size: 12px;
+    }
+
+    th, td {
+      border: 1px solid rgba(31,41,55,0.9);
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(15,23,42,0.98);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(15,23,42,0.9);
+    }
+
+    .kpi-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .kpi {
+      min-width: 120px;
+      padding: 7px 9px;
+      border-radius: var(--radius-md);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(31,41,55,0.9);
+      font-size: 11px;
+    }
+
+    .kpi-label {
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .kpi-value {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .download-hint {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header>
+        <div class="title-block">
+          <div class="badge-row">
+            <div class="badge badge--primary">
+              <span class="badge-dot"></span>
+              NDRA‑PII · Master Specification
+            </div>
+            <div class="badge">
+              Integrated with Microsoft Presidio
+            </div>
+          </div>
+          <h1>NDRA‑PII – Neuro‑Semantic Multi‑Agent PII Intelligence System</h1>
+          <p class="subtitle">
+            A production‑grade, multi‑agent platform that uses Microsoft Presidio for high‑precision PII detection and anonymization, and NDRA's neuro‑semantic swarm for context, reasoning, redaction, risk scoring, explainability, and governance.[web:1][web:2]
+          </p>
+          <div class="meta">
+            <span class="meta-pill">Domain: PII, Compliance, Cybersecurity, Doc Intelligence</span>
+            <span class="meta-pill">Stack: FastAPI · Next.js · Presidio · Vector DB · Kafka</span>
+            <span class="meta-pill">Target: Hackathons → Enterprise Deployments</span>
+          </div>
+        </div>
+        <div>
+          <div class="cta-panel">
+            <div class="cta-title">How to use this document</div>
+            <div class="cta-body">
+              Save this file as <code>ndra-pii-presidio.html</code> and open it in a browser, or host it as a static web page and link it in your README, pitch, or Antigravity project spec.
+            </div>
+            <div class="cta-buttons">
+              <button class="btn btn--primary">Usage: Antigravity / IDE Specs</button>
+              <button class="btn">Usage: Judges / CTO Pitch</button>
+            </div>
+          </div>
+          <div class="download-hint">
+            Tip: In most browsers, use "File → Save Page As…" to download, or commit the HTML to a repo and serve via GitHub Pages / static hosting.
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <aside class="side">
+          <nav class="toc">
+            <div class="toc-title">Contents</div>
+            <ul>
+              <li><a href="#vision">1. Vision</a></li>
+              <li><a href="#architecture">2. High‑Level Architecture</a></li>
+              <li><a href="#pipeline">3. Core Pipeline (NDRA‑PII + Presidio)</a></li>
+              <li><a href="#agents">4. Agents & Roles</a></li>
+              <li><a href="#pii-types">5. PII Types & Capabilities</a></li>
+              <li><a href="#models-data">6. Data Models & DSL</a></li>
+              <li><a href="#difficulty-timeline">7. Difficulty & Build Timeline</a></li>
+              <li><a href="#security-kpi">8. Security, Compliance & KPIs</a></li>
+              <li><a href="#stack">9. Tech Stack</a></li>
+              <li><a href="#workflow">10. Example Workflow</a></li>
+              <li><a href="#antigravity">11. Antigravity‑Ready Spec</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="content">
+          <!-- 1. Vision -->
+          <section id="vision">
+            <h2>1. Vision – What NDRA‑PII Does</h2>
+            <p>
+              NDRA‑PII is an enterprise‑grade system that ingests unstructured content (documents, emails, scans, images, voice transcripts), detects and classifies PII, understands context, scores risk, applies policy rules, redacts or quarantines, and produces fully explainable, auditable decisions.[web:1][web:2]
+            </p>
+            <p>
+              Microsoft Presidio provides deterministic, high‑precision PII detection and anonymization, while NDRA supplies the multi‑agent orchestration, semantic retrieval, rule logic (NSRL), UI, risk analytics, and multi‑tenant governance that wrap around it.[web:1][web:6]
+            </p>
+            <div class="pill-list">
+              <span class="pill pill--success">Detect</span>
+              <span class="pill pill--success">Reason</span>
+              <span class="pill pill--success">Score</span>
+              <span class="pill pill--success">Redact</span>
+              <span class="pill pill--success">Explain</span>
+              <span class="pill">Audit</span>
+            </div>
+          </section>
+
+          <!-- 2. High-Level Architecture -->
+          <section id="architecture">
+            <h2>2. High‑Level Architecture (with Presidio)</h2>
+            <p>
+              NDRA‑PII is structured as a layered, multi‑tenant platform: ingestion, document intelligence, Presidio‑based PII detection, retrieval and vector store, multi‑agent swarm, decision engine, and UI/audit layers.[web:1][web:5]
+            </p>
+            <p>
+              Presidio's AnalyzerEngine and AnonymizerEngine sit in the PII Detection and Remediation layers, while NDRA's agents handle OCR, chunking, retrieval, reasoning, risk, explainability, and governance across tenants.[web:2][web:6]
+            </p>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>Functional Layers</h3>
+                <ul>
+                  <li>Ingestion & Auth (UI, API, Email, SDK)</li>
+                  <li>Document Intelligence (OCR, layout, chunking)</li>
+                  <li>Presidio PII Detection (AnalyzerEngine + custom recognizers)</li>
+                  <li>Retrieval & Vector Store (dynamic embeddings)</li>
+                  <li>Multi‑Agent Orchestration (PII, NSRL, Risk, Redaction)</li>
+                  <li>Decision Engine & Actions</li>
+                  <li>UI, Dashboards, Audit & Governance</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Presidio's Role</h3>
+                <ul>
+                  <li>Context‑aware PII detection with predefined/custom recognizers.[web:1]</li>
+                  <li>Anonymization operators (mask, redact, replace, hash, tokenize).[web:2][web:15]</li>
+                  <li>Text, image, and structured data support through dedicated modules.[web:2]</li>
+                  <li>Extensible and deployable via Python, containers, or Kubernetes.[web:1][web:2]</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Core Pipeline -->
+          <section id="pipeline">
+            <h2>3. Core Pipeline – NDRA‑PII + Presidio</h2>
+            <h3>Step 1 – Ingest Document</h3>
+            <p>
+              Documents are uploaded via web UI, APIs, email harvester, or SDKs and stored in an object store with a corresponding document record in Postgres that captures tenant, file type, and status metadata.[web:5][web:6]
+            </p>
+            <p>
+              An asynchronous job is queued for preprocessing, allowing the system to scale horizontally and decouple ingestion from heavy processing.[web:5]
+            </p>
+
+            <h3>Step 2 – Document Intelligence</h3>
+            <p>
+              OCR engines (e.g., Tesseract or PaddleOCR) and layout models (e.g., LayoutLM/Donut) extract text, detect blocks/tables/forms, and map tokens to page coordinates.[web:6][web:7]
+            </p>
+            <p>
+              A semantic chunker creates clause‑aware chunks (roughly 300–800 tokens) with metadata such as page, section, heading, and token count, enabling downstream retrieval and explainability.
+            </p>
+
+            <h3>Step 3 – Presidio PII Extraction</h3>
+            <p>
+              For each chunk, Presidio's AnalyzerEngine detects PII entities using a mix of NER, regular expressions, rule‑based logic, and checksum validation, with support for multilingual detection and custom recognizers.[web:1][web:2]
+            </p>
+            <p>
+              Each detection yields entity type, score, start/end positions, and recognizer details, which NDRA normalizes into PII Objects attached to chunk IDs and PDF coordinates for later highlighting.[web:6]
+            </p>
+
+            <h3>Step 4 – PII Fusion Agent</h3>
+            <p>
+              A PII Fusion Agent merges Presidio results with NER and LLM‑based evidence extraction, resolving overlaps and conflicts into unified PII Objects that track detection method and confidence.[web:1][web:10]
+            </p>
+            <p>
+              This hybrid approach lets the system handle long‑tail or domain‑specific entities while still relying on Presidio's deterministic core for standard PII pattern coverage.[web:6][web:8]
+            </p>
+
+            <h3>Step 5 – Retrieval Layer (Optional)</h3>
+            <p>
+              An Embedding Agent routes between models such as MiniLM for generic text, LegalBERT for legal contracts, and BioBERT for healthcare forms, then populates a distributed vector DB like Milvus, Pinecone, or Chroma.[web:5][web:8]
+            </p>
+            <p>
+              A Retrieval Agent performs hybrid BM25 + dense retrieval to surface the most relevant clauses and context around PII when reasoning about risk and policy compliance.
+            </p>
+
+            <h3>Step 6 – NSRL Reasoning Engine</h3>
+            <p>
+              The Neuro‑Symbolic Rule Language (NSRL) expresses data‑handling rules over PII types, document types, and contextual metadata (e.g., channel, jurisdiction, tenant policy) as declarative rules.[web:10]
+            </p>
+            <p>
+              An NSRL Reasoner Agent compiles these rules into executable logic, evaluates them against PII Objects and document metadata, and uses LLMs for ambiguous clauses or natural‑language policy interpretation.
+            </p>
+
+            <h3>Step 7 – Risk Scoring Agent</h3>
+            <p>
+              A Risk Analyzer Agent computes a risk_score (0–100) based on the combination of PII categories, counts, density, exposure channel, and document type, informed by research on adaptive PII mitigation frameworks.[web:10]
+            </p>
+            <p>
+              It produces risk_flags (e.g., "identity cluster", "financial + contact"), recommended_actions, and inputs to dashboards and triage views.
+            </p>
+
+            <h3>Step 8 – Presidio Redaction Layer</h3>
+            <p>
+              When rules and risk outcomes require mitigation, a Redaction Agent uses Presidio's AnonymizerEngine to mask, remove, replace, hash, or tokenize detected entities in text, driven by operator configuration per PII type.[web:2][web:15]
+            </p>
+            <p>
+              For PDFs and images, NDRA maps spans to coordinates and applies visual redaction (e.g., black boxes, blur), using Presidio's image redaction capabilities where possible and maintaining an internal redaction map.[web:2]
+            </p>
+              <h3>Step 9 – Explainability & Audit</h3>
+            <p>
+              An Explainability Agent builds a decision timeline that shows which agents ran, which chunks and spans were used, which rules fired, and any LLM reasoning snippets used in borderline decisions.[web:12]
+            </p>
+            <p>
+              An audit log captures inputs, outputs, rule sets, and hashes of decision payloads, which can be forwarded to SIEM tools and used for compliance evidence and forensic investigations.[web:12][web:20]
+            </p>
+
+            <h3>Step 10 – UI Delivery</h3>
+            <p>
+              A web UI displays PDF pages with PII highlights, risk scores, action summaries, rule explanations, and side‑by‑side original vs. redacted previews to help reviewers understand and approve decisions.[web:5]
+            </p>
+            <p>
+              Triaging users can filter by tenant, channel, risk level, or document type and export decision JSON for integration with downstream systems or case management tools.
+            </p>
+          </section>
+
+          <!-- 4. Agents -->
+          <section id="agents">
+            <h2>4. NDRA‑PII Agents (Full Swarm)</h2>
+            <p>
+              NDRA‑PII runs as a multi‑agent swarm where each agent implements a focused responsibility and communicates via topics/queues, enabling horizontal scaling, resilience, and clear boundaries for testing.[web:13][web:16]
+            </p>
+            <p>
+              Presidio integration is concentrated in the PII Extractor and Redaction Agents, while other agents focus on OCR, retrieval, rules, risk, and explainability around those PII primitives.[web:1][web:2]
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Agent</th>
+                  <th>Role</th>
+                  <th>Uses Presidio?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Preprocessing Agent</td>
+                  <td>OCR, layout, chunking</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Embedding Agent</td>
+                  <td>Dynamic embedding router, vector creation</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Retrieval Agent</td>
+                  <td>Hybrid BM25 + dense retrieval</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>PII Extractor Agent</td>
+                  <td>Presidio AnalyzerEngine + NER + LLM extraction</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>PII Fusion Agent</td>
+                  <td>Merge & normalize PII spans, deduplicate</td>
+                  <td>Indirectly (consumes Presidio output)</td>
+                </tr>
+                <tr>
+                  <td>NSRL Reasoner Agent</td>
+                  <td>Apply policy rules over PII and context</td>
+                  <td>Consumes Presidio‑derived PII</td>
+                </tr>
+                <tr>
+                  <td>Risk Analyzer Agent</td>
+                  <td>Compute risk scores and flags</td>
+                  <td>Consumes Presidio‑derived PII</td>
+                </tr>
+                <tr>
+                  <td>Redaction Agent</td>
+                  <td>Use Presidio AnonymizerEngine to redact</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Explainability Agent</td>
+                  <td>Timeline, highlights, provenance</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Test Generator Agent</td>
+                  <td>Generate synthetic test cases & scenarios</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- 5. PII Types -->
+          <section id="pii-types">
+            <h2>5. PII Types & Presidio Capabilities</h2>
+            <p>
+              Presidio includes predefined recognizers for common PII such as credit cards, SSNs, phone numbers, emails, IP addresses, names, and locations, and can be extended with custom recognizers for regional and domain‑specific IDs.[web:1][web:2]
+            </p>
+            <p>
+              NDRA‑PII organizes these into categories (government IDs, contact info, financial data, personal data, sensitive health/biometric references) and maps them onto NSRL rule conditions and risk scoring logic.[web:8][web:10]
+            </p>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>Out‑of‑the‑Box</h3>
+                <ul>
+                  <li>Government IDs (SSN, tax IDs, national IDs).[web:1]</li>
+                  <li>Contact data (emails, phone numbers, IPs, URLs).[web:2]</li>
+                  <li>Financial data (credit/debit cards, bank details).[web:1][web:6]</li>
+                  <li>Names, locations, addresses, dates.[web:2]</li>
+                  <li>Custom NER‑based entities via spaCy/Transformers hooks.[web:1]</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Anonymization Operators</h3>
+                <ul>
+                  <li>Masking (e.g., "XXXX‑XXXX‑1234").[web:15]</li>
+                  <li>Redaction ("&lt;REDACTED&gt;" or style‑based removal).[web:15]</li>
+                  <li>Replacement and pseudonymization tokens.[web:6][web:15]</li>
+                  <li>Hashing (SHA/HMAC) and reversible tokenization.[web:18]</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6. Data Models & DSL -->
+          <section id="models-data">
+            <h2>6. Data Models & NSRL DSL</h2>
+            <p>
+              NDRA‑PII standardizes the flow with Document, Chunk, PII Object, and Decision JSON models, which agents read and write across the pipeline.[web:5][web:6]
+            </p>
+            <p>
+              The Neuro‑Symbolic Rule Language (NSRL) defines data‑handling rules as YAML/JSON conditions over these objects, compiled into executable rule logic by a dedicated Rule Engine.[web:10]
+            </p>
+
+            <h3>Core Objects (Conceptual)</h3>
+            <ul>
+              <li><strong>Document</strong>: IDs, tenant, filename, pages, MIME type, storage URL, status.</li>
+              <li><strong>Chunk</strong>: chunk_id, doc_id, page, text, coords, embedding_vector, metadata.</li>
+              <li><strong>PII Object</strong>: pii_id, doc_id, chunk_id, type, subtype, text, method[], confidence, coords.</li>
+              <li><strong>Decision</strong>: decision_id, doc_id, pii[], risk_score, rules_fired[], suggested_action, explainability, audit_hash.</li>
+            </ul>
+
+            <h3>NSRL Rule Examples (Conceptual)</h3>
+            <p>
+              Rules are expressed as high‑level conditions (e.g., "Aadhaar in contract → high severity") that compile into Python rule functions and can be versioned, tested, and overridden as policy changes.[web:10]
+            </p>
+            <p>
+              Conditions can match PII subtype, combinations (e.g., ID + address + DOB), document type, source channel, and jurisdiction, enabling fine‑grained governance.
+            </p>
+          </section>
+
+          <!-- 7. Difficulty & Timeline -->
+          <section id="difficulty-timeline">
+            <h2>7. Difficulty & Build Timeline (Presidio‑Assisted)</h2>
+            <p>
+              Using Presidio significantly reduces the difficulty of NDRA‑PII because it removes the need to handcraft regexes, checksums, and anonymizers for a broad set of PII types.[web:1][web:8]
+            </p>
+            <p>
+              This lets the team concentrate on orchestration, retrieval, rules, risk, and UI, which are more differentiated and higher‑value than low‑level pattern work.[web:6][web:12]
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Version</th>
+                  <th>Scope</th>
+                  <th>Approx. Difficulty</th>
+                  <th>Indicative Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hackathon MVP</td>
+                  <td>Basic ingestion, Presidio text detection, simple rules, basic UI</td>
+                  <td>4 / 10</td>
+                  <td>1–2 days</td>
+                </tr>
+                <tr>
+                  <td>Advanced Demo</td>
+                  <td>Multi‑agent, retrieval, NSRL, risk scoring, better UI</td>
+                  <td>6 / 10</td>
+                  <td>1–3 weeks</td>
+                </tr>
+                <tr>
+                  <td>Full Enterprise Platform</td>
+                  <td>Multi‑tenant, audits, dashboards, SIEM, hardening</td>
+                  <td>8 / 10</td>
+                  <td>4–5 months</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- 8. Security & KPIs -->
+          <section id="security-kpi">
+            <h2>8. Security, Compliance & KPIs</h2>
+            <p>
+              Presidio offers core capabilities for de‑identification and redaction but warns that automated detection cannot guarantee discovery of all sensitive data, so it should be combined with additional protections and governance.[web:2]
+            </p>
+            <p>
+              NDRA‑PII adds multi‑tenant isolation, SSO/OAuth2, RBAC, encrypted storage, SIEM forwarding, and full decision logging so that deployments can align with privacy regulations and internal security policies.[web:12][web:20]
+            </p>
+
+            <div class="kpi-row">
+              <div class="kpi">
+                <div class="kpi-label">PII Precision</div>
+                <div class="kpi-value">≥ 95%</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">PII Recall</div>
+                <div class="kpi-value">≥ 92%</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">False Positives</div>
+                <div class="kpi-value">≤ 5%</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">Redaction Accuracy</div>
+                <div class="kpi-value">≈ 99%</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">End‑to‑End Latency</div>
+                <div class="kpi-value">&lt; 8 seconds/doc</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">Audit Coverage</div>
+                <div class="kpi-value">100% decisions logged</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 9. Tech Stack -->
+          <section id="stack">
+            <h2>9. Recommended Tech Stack</h2>
+            <p>
+              The platform is intentionally built from widely used, open‑source‑friendly components so it can be prototyped quickly and hardened for enterprise later.[web:1][web:5]
+            </p>
+            <p>
+              Presidio is consumed as a Python SDK or container service; all other components use standard backend, frontend, and data infrastructure technologies.[web:1][web:2]
+            </p>
+            <div class="grid-2">
+              <div class="card">
+                <h3>Backend & Infra</h3>
+                <ul>
+                  <li>FastAPI (Python) for APIs.</li>
+                  <li>Microsoft Presidio Analyzer & Anonymizer.[web:1][web:2]</li>
+                  <li>Postgres for relational data.</li>
+                  <li>Redis for caching.</li>
+                  <li>Kafka (or similar) for events.</li>
+                  <li>Docker + Kubernetes for deployment.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>AI, Retrieval & UI</h3>
+                <ul>
+                  <li>Presidio recognizers + custom NER models.[web:1]</li>
+                  <li>LayoutLM/Donut for layout‑aware OCR.[web:7]</li>
+                  <li>Sentence Transformers for embeddings.</li>
+                  <li>Llama/Gemini (or equivalents) for reasoning.[web:10]</li>
+                  <li>Milvus / Pinecone / Chroma as vector DB.[web:5][web:8]</li>
+                  <li>Next.js + TailwindCSS + PDF.js for UI.[web:5]</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10. Example Workflow -->
+          <section id="workflow">
+            <h2>10. Example End‑to‑End Workflow</h2>
+            <p>
+              A typical flow: a user uploads a contract, NDRA‑PII chunks and runs it through Presidio, NSRL rules, risk scoring, and redaction, then surfaces a fully explainable decision in the UI with download and API hooks.[web:5][web:6]
+            </p>
+            <p>
+              This pattern generalizes to emails, scanned forms, and other unstructured sources, with only the ingestion adapters and OCR parameters changing.
+            </p>
+
+            <ol>
+              <li>User uploads a document via web or API.</li>
+              <li>Preprocessing Agent runs OCR, layout, and chunking.</li>
+              <li>PII Extractor Agent runs Presidio AnalyzerEngine on each chunk.[web:1][web:2]</li>
+              <li>PII Fusion Agent merges Presidio, NER, and LLM spans.</li>
+              <li>NSRL Reasoner evaluates policy rules on PII and context.[web:10]</li>
+              <li>Risk Analyzer computes risk_score and recommended actions.[web:10]</li>
+              <li>Redaction Agent uses Presidio AnonymizerEngine to redact.[web:2][web:15]</li>
+              <li>Explainability Agent builds timeline and highlights.</li>
+              <li>UI presents risk, actions, and previews; audit entry is logged.[web:12]</li>
+            </ol>
+          </section>
+
+          <!-- 11. Antigravity-Ready -->
+          <section id="antigravity">
+            <h2>11. Antigravity‑Ready Master Specification</h2>
+            <p>
+              This document can serve as a master specification for agentic IDEs such as Antigravity: it defines the architecture, agents, pipelines, data models, rule language, KPIs, and deployment expectations that such tools can translate into code and infrastructure.[web:13][web:16]
+            </p>
+            <p>
+              You can break it into sub‑specs for Backend, OCR, PII Detection, NSRL Engine, Retrieval, UI, and DevOps to generate services, agents, prompts, tests, and manifests programmatically.
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        NDRA‑PII (with Microsoft Presidio) – Reference spec. Presidio is an open‑source PII detection and de‑identification SDK by Microsoft; this document respects its licensing and does not reproduce its source content.[web:1][web:2]
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
