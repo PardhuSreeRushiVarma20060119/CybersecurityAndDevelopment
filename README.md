@@ -174,8 +174,7 @@ DevSecOps In Cybersecurity & Software Development.
 ---
 ## Projects UseCases : 
 1. [*PhishVault Repository*](https://github.com/Tejaswini4119/PhishVault)
-2. [*MirageC2 Backend-Repo*](https://github.com/PardhuSreeRushiVarma20060119/MirageC2-Backend)
-3. [*OpenLoRA* - *Revolutionizing the Operational Training for Large Language Models*](https://github.com/PardhuSreeRushiVarma20060119/OpenLoRA)
+2. [*OpenLoRA* - *Revolutionizing the Operational Training for Large Language Models*](https://github.com/PardhuSreeRushiVarma20060119/OpenLoRA)
 
 
 
@@ -184,6 +183,6 @@ DevSecOps In Cybersecurity & Software Development.
 ## 📬 Connect
 Let's share knowledge and collaborate! 
 - [🌐 LinkedIn](www.linkedin.com/in/pardhu-sri-rushi-varma-konduru-696886279)
-- [📧 Email](mailto:pardhusreerushivarma@gmail.com)
+- [📧 Email](mailto:pardhuvarma.cs@gmail.com)
 
 <p align="center"> <i>“The quieter you become, the more you are able to hear.”</i> </p> <p align="center"> <img src="https://img.shields.io/badge/status-Keep_Hacking_Alive-darkred?style=for-the-badge&logo=github"> </p>
