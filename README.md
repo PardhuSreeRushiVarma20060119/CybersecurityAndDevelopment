@@ -12,6 +12,10 @@
   <img src="https://img.shields.io/badge/status-Frozen-black?style=flat-square">
 </p>
 
+<p align="center">
+> this repo isnt currently active and maintained. < 
+</p>
+
 ---
 
 ## 🧭 Navigation
